@@ -1,0 +1,10 @@
+gv_Host = '164.52.212.8'
+gv_UserPort = 30000
+gv_UserTimeout = 900
+gv_DevicePort = 40000
+gv_DeviceTimeout = 10
+gv_UserIds = [1, 2]
+gv_UserNames = ['admin', 'user2']
+gv_UserPasswords = ['admin@1234', 'user2@1234']
+gv_UserTypes = ['admin', 'user']
+gv_UserDeviceMacs = [[250954385846520, 261949502124280, 1, 2], [250954385846520, 261949502124280, 1, 2]]
