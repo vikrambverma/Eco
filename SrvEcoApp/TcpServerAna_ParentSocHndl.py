@@ -1,186 +1,7 @@
-# =============================================================================
-"""
-
-Owner Name    : Vikramsingh
-Company Name  : ANA Software Limited
-Owner Address : SP-106, Silver Palace Apartment, Shobhagpura, Udaipur,
-              : Rajasthan, India, Pin Code - 313001
-Created Date  : 28-July-2021
-Licence       : MIT
-
-"""
-
-# -----------------------------------------------------------------------------
-import UtilAna
-import TcpServerAna_ChildSocHndl
-
-# ============================================================================
-class ParentTcpServerSocHndlAna:
-    """
-    """
-
-
-    # ------------------------------------------------------------------------
-    def __init__(self, i_my_str, i_debug_active):
-        # common parameters
-        self.s_my_str = i_my_str + ' '
-        self.s_debug_active = i_debug_active
-        self.s_rxdata_process_hndl = None
-        self.s_inactivity_timeout = 60
-        self.s_child_max = 0
-        self.s_child_obj = []
-
-        # server parameters
-        self.s_host = None
-        self.s_port = None
-        self.s_sock = None
-        self.s_event_rxq = []
-        self.s_listen_thread = None
-        self.s_listen_active = False
-        self.pf_Debug(0,'Created')
-
-
-    # ------------------------------------------------------------------------
-    def pf_Debug(self, i_id, i_msg):
-        if False != self.s_debug_active:
-            s = self.s_my_str + str(i_id) + '_' + i_msg
-            UtilAna.gf_DebugLog(s)
-
-
-    # ------------------------------------------------------------------------
-    def pf_Error(self, i_id, i_msg):
-        s = 'ERROR : ' + self.s_my_str + str(i_id) + '_' + i_msg
-        UtilAna.gf_DebugLog(s)
-
-
-    # ------------------------------------------------------------------------
-    def pf_CloseSock(self):
-        if None != self.s_sock:
-            if False == UtilAna.gf_CloseSocketAna(self.s_sock):
-                self.pf_Error(0, 'SOCKET Close Fails')
-            self.s_sock = None
-
-
-    # ------------------------------------------------------------------------
-    def pf_SaveRxEvents(self, i_id, i_event_id, i_event_data = None):
-        self.s_event_rxq.append([i_id, i_event_id, i_event_data])
-        self.pf_Debug(i_id, i_event_id)
-
-
-    # ------------------------------------------------------------------------
-    def pf_IsValidChildId(self, i_child_id):
-        return UtilAna.gf_ChkRange1ToMax(i_child_id, self.s_child_max)
-
-
-    # ------------------------------------------------------------------------
-    def pf_GetFreeChildId(self):
-        for i in range(0, self.s_child_max, 1):
-            if True == self.s_child_obj[ i ].gf_IsFree():
-                return i
-        return self.s_child_max
-
-
-    # ------------------------------------------------------------------------
-    def pf_ClosingReq(self):
-        if True == self.s_listen_active:
-            self.s_listen_active = False
-            self.pf_CloseSock()
-        else:
-            self.pf_Error(0, 'NOT_RUNING')
-
-    # ------------------------------------------------------------------------
-    def pf_ThreadFun_SrvListen(self):
-        srvsock = UtilAna.gf_SetListenSocketAna(self.s_host, self.s_port, self.s_child_max)
-        if None == srvsock:
-            self.pf_Error(0, 'Listen Start Fails')
-        self.s_sock = srvsock
-        self.pf_SaveRxEvents(0, 'START')
-        self.s_listen_active = True
-        while False != self.s_listen_active:
-            cltsock = UtilAna.gf_AcceptSocketAna(srvsock)
-            if None != cltsock:
-                i = self.pf_GetFreeChildId()
-                if i < self.s_child_max:
-                    self.s_child_obj[i].gf_StartThreads(cltsock)
-                else:
-                    UtilAna.gf_CloseSocketAna(cltsock)
-            else:
-                self.pf_CloseSock()
-                if True == self.s_listen_active:
-                    self.s_listen_active = False
-        self.pf_CloseSock()
-        self.pf_SaveRxEvents(0, 'STOP')
-        for i in range(0, self.s_child_max, 1):
-            self.s_child_obj[i].gf_ClosingReq()
-        UtilAna.gf_Sleep(1)
-        for i in range(0, self.s_child_max, 1):
-            while True:
-                if True == self.s_child_obj[0].gf_IsFree():
-                    self.s_child_obj.pop(0)
-                    break
-                UtilAna.gf_Sleep(1)
-        self.s_child_max = 0
-        self.s_listen_active = False
-        self.s_sock = None
-        self.s_listen_thread = None
-
-
-    # ------------------------------------------------------------------------
-    def pf_IsClosed(self):
-        if False == self.s_listen_active:
-            if None == self.s_listen_thread:
-                return True
-        return False
-
-
-    # ------------------------------------------------------------------------
-    def gf_Start(self, i_host, i_port, i_child_max, i_inactivity_timeout):
-        if True == self.pf_IsClosed():
-            UtilAna.gf_SocHostMsg(self.s_my_str, i_host, i_port, i_child_max, i_inactivity_timeout)
-            self.s_host = i_host
-            self.s_port = i_port
-            self.s_inactivity_timeout = i_inactivity_timeout
-            for i in range(0, i_child_max, 1):
-                c = TcpServerAna_ChildSocHndl.ChildTcpServerSocHndlAna(i, self)
-                self.s_child_obj.append(c)
-                self.s_child_max += 1
-            self.s_listen_thread = UtilAna.gf_StartThreadAna(self.pf_ThreadFun_SrvListen)
-        else:
-            self.pf_Error(0, 'RUNING')
-            
-
-    # ------------------------------------------------------------------------
-    def gf_Stop(self):
-        self.pf_ClosingReq()
-        while True:
-            if True == self.pf_IsClosed():
-                break
-            UtilAna.gf_Sleep(1)
-
-
-    # ------------------------------------------------------------------------
-    def gf_CloseClient(self, i_client_id):
-        if True == self.pf_IsValidChildId( i_client_id ):
-            self.s_child_obj[(i_client_id - 1)].gf_ClosingReq()
-        else:
-            self.pf_Error(0, 'INALID_STOP_REQ_' + str(i_client_id))
-
-
-    # ------------------------------------------------------------------------
-    def gf_SendOutMsg(self, i_client_id, in_out_msg):
-        if True == self.pf_IsValidChildId( i_client_id ):
-            self.s_child_obj[ (i_client_id - 1) ].gf_SendOutMsg( in_out_msg )
-        else:
-            self.pf_Error(0, 'INALID_SEND_OUT_MSG_REQ_' + str(i_client_id))
-
-
-    # ------------------------------------------------------------------------
-    def gf_GetEvents(self):
-        elen = len(self.s_event_rxq)
-        if elen > 0:
-            eSocId, eEveId, eEveData = self.s_event_rxq.pop(0)
-            return eSocId, eEveId, eEveData
-        else:
-            return None, None, None
-               
-        
+Ä¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼°PDDD°P°Pòîv¦Nr†¶¦\j–ÖN†¶Î–væ°PÂö¶†vžr†¶¦\‚r‚Êöf.î†N¦2–¶–.¦&°Pòîv¦N‚&&N¦ÎÎ\Ê
+´Œl4Ê–6n¦N
+†6†Æ¦‚†N.¶¦v.4ÊöF†æ®N†4ª&†–®N4°P\J†V†Î.†v4’v&–†4
+–vÂö&¦´ÌŒÌŒ°PÂN¦†.¦&"†.¦\L´R®6ž´LLŒ°P2–Æ¦vÆ¦\²’*°P°PDDD°P°PÄ´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´°P–¶öN.ª.–6‚v†°P–¶öN.*ÆÊ¦Nn¦N‚v†úÂ–6&ÊöÆv&6°P°PÄ¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼°PÆ6†ÎÎ
+†N¦v.*ÆÊ¦Nn¦NÊöÆv&6‚v†\°PDDD°PDDD°P°P°PÄ´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´°P&¦fúú–v–.úúÎ¦6f4–ú¶žúÎ.N4–ú&¦F®æú†Æ.–n¦”\°PÄÆö¶¶öv†N†¶¦.¦NÎ°PÎ¦6ftÎú¶žúÎ.N¼–ú¶žúÎ.NÔää°PÎ¦6ftÎú&¦F®æú†Æ.–n¦¼–ú&¦F®æú†Æ.–n¦°PÎ¦6ftÎúN&†.†úNöÆ¦ÎÎúv&6¼röv¦°PÎ¦6ftÎú–v†Æ.–n–.žú.–¶¦ö®.¼l°PÎ¦6ftÎúÆ–6&ú¶†¼°PÎ¦6ftÎúÆ–6&úöFV¼Úº°P°PÄÎ¦Nn¦N†N†¶¦.¦NÎ°PÎ¦6ftÎúöÎ.¼röv¦°PÎ¦6ftÎúöN.¼röv¦°PÎ¦6ftÎúÎöÆÖ¼röv¦°PÎ¦6ftÎú¦n¦v.úNŽ¼Úº°PÎ¦6ftÎú6–Î.¦vú.N¦†&¼röv¦°PÎ¦6ftÎú6–Î.¦vú†Æ.–n¦¼b†6Î¦°PÎ¦6ftfú"¦F®æ4äÂN¦†.¦&ä”°P°P°PÄ´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´°P&¦ffú"¦F®æÎ¦6f4–ú–&4–ú¶Îæ”\°P–fb†6Î¦„¼Î¦6ftÎú&¦F®æú†Æ.–n¦\°PÎ¼Î¦6ftÎú¶žúÎ.NÔÎ.N–ú–&”ÔäúäÔ–ú¶Îæ°Pª.–6‚v†tæfú"¦F®æ2öæÎ”°P°P°PÄ´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´°P&¦ffú¢NNöNÎ¦6f4–ú–&4–ú¶Îæ”\°PÎ¼ä¢JJòJ\äÔÎ¦6ftÎú¶žúÎ.NÔÎ.N–ú–&”ÔäúäÔ–ú¶Îæ°Pª.–6‚v†tæfú"¦F®æ2öæÎ”°P°P°PÄ´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´°P&¦ffúÂ6öÎ¦ÊöÆÖÎ¦6f”\°P–fröv¦„¼Î¦6ftÎúÎöÆÖ\°P–fb†6Î¦¼¼ª.–6‚v†tæfúÂ6öÎ¦ÊöÆÖ¦.‚v†Î¦6ftÎúÎöÆÖ”\°PÎ¦6ftfú¢NNöN4äÊòÂÒ¢*Â6öÎ¦b†–6Îä”°PÎ¦6ftÎúÎöÆÖ¼röv¦°P°P°PÄ´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´°P&¦ffúÊ†n¦J¢n¦v.ÎÎ¦6f4–ú–&4–ú¦n¦v.ú–&4–ú¦n¦v.ú&†.†¼röv¦”\°PÎ¦6ftÎú¦n¦v.úNŽt†¦v&Ú–ú–&4–ú¦n¦v.ú–&4–ú¦n¦v.ú&†.†º”°PÎ¦6ftfú"¦F®æ–ú–&4–ú¦n¦v.ú–&”°P°P°PÄ´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´°P&¦ffú’Îj†6–&Â–6&’&Î¦6f4–úÆ–6&ú–&”\°PN¦.®Nvª.–6‚v†tæfúÂÖJ†væ¦Œ*ö²†–úÆ–6&ú–&4Î¦6ftÎúÆ–6&ú¶†”°P°P°PÄ´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´°P&¦ffúâ¦.bN¦¦Â–6&’&Î¦6f”\°PföN––vN†væ¦4Î¦6ftÎúÆ–6&ú¶†4Œ”\°P–f*N®¦¼¼Î¦6ftÎúÆ–6&úöFVÚ–ºtæfú’ÎbN¦¦”\°PN¦.®Nv–°PN¦.®NvÎ¦6ftÎúÆ–6&ú¶†°P°P°PÄ´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´°P&¦ffúÂ6öÎ–væJ¦ŽÎ¦6f”\°P–f*N®¦¼¼Î¦6ftÎú6–Î.¦vú†Æ.–n¦\°PÎ¦6ftÎú6–Î.¦vú†Æ.–n¦¼b†6Î¦°PÎ¦6ftfúÂ6öÎ¦ÊöÆÖ”°P¦6Î¦\°PÎ¦6ftfú¢NNöN4ärò*úJªr’râä”°P°PÄ´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´°P&¦ffú*N¦†&b®vúÊNn2–Î.¦vÎ¦6f”\°PÎNnÎöÆÖ¼ª.–6‚v†tæfúÊ¦.2–Î.¦vÊöÆÖ¦.‚v†Î¦6ftÎúöÎ.4Î¦6ftÎúöN.4Î¦6ftÎúÆ–6&ú¶†”°P–fröv¦¼¼ÎNnÎöÆÖ\°PÎ¦6ftfú¢NNöN4ä2–Î.¦vÊ.†N.b†–6Îä”°PÎ¦6ftÎúÎöÆÖ¼ÎNnÎöÆÖ°PÎ¦6ftfúÊ†n¦J¢n¦v.Î4äÊ*‚J*ä”°PÎ¦6ftÎú6–Î.¦vú†Æ.–n¦¼*N®¦°Pî–6¦b†6Î¦„¼Î¦6ftÎú6–Î.¦vú†Æ.–n¦\°PÆ6.ÎöÆÖ¼ª.–6‚v†tæfú‚ÆÆ¦.ÊöÆÖ¦.‚v†ÎNnÎöÆÖ”°P–fröv¦„¼Æ6.ÎöÆÖ\°P–¼Î¦6ftfúâ¦.bN¦¦Â–6&’&”°P–f–<Î¦6ftÎúÆ–6&ú¶†\°PÎ¦6ftÎúÆ–6&úöFVÚ–ºtæfúÊ.†N.*N¦†&ÎÆ6.ÎöÆÖ”°P¦6Î¦\°Pª.–6‚v†tæfúÂ6öÎ¦ÊöÆÖ¦.‚v†Æ6.ÎöÆÖ”°P¦6Î¦\°PÎ¦6ftfúÂ6öÎ¦ÊöÆÖ”°P–f*N®¦¼¼Î¦6ftÎú6–Î.¦vú†Æ.–n¦\°PÎ¦6ftÎú6–Î.¦vú†Æ.–n¦¼b†6Î¦°PÎ¦6ftfúÂ6öÎ¦ÊöÆÖ”°PÎ¦6ftfúÊ†n¦J¢n¦v.Î4äÊ*ò
+ä”°PföN––vN†væ¦4Î¦6ftÎúÆ–6&ú¶†4Œ”\°PÎ¦6ftÎúÆ–6&úöFVÚ–ºtæfúÂ6öÎ–væJ¦Ž”°Pª.–6‚v†tæfúÊ6¦¦Œ”°PföN––vN†væ¦4Î¦6ftÎúÆ–6&ú¶†4Œ”\°Pî–6¦*N®¦\°P–f*N®¦¼¼Î¦6ftÎúÆ–6&úöFVÚºtæfú’ÎbN¦¦”\°PÎ¦6ftÎúÆ–6&úöFVtö”°PFN¦†Ö°Pª.–6‚v†tæfúÊ6¦¦Œ”°PÎ¦6ftÎúÆ–6&ú¶†¼°PÎ¦6ftÎú6–Î.¦vú†Æ.–n¦¼b†6Î¦°PÎ¦6ftÎúÎöÆÖ¼röv¦°PÎ¦6ftÎú6–Î.¦vú.N¦†&¼röv¦°P°P°PÄ´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´°P&¦ffú’ÎÂ6öÎ¦&Î¦6f”\°P–fb†6Î¦¼¼Î¦6ftÎú6–Î.¦vú†Æ.–n¦\°P–fröv¦¼¼Î¦6ftÎú6–Î.¦vú.N¦†&\°PN¦.®Nv*N®¦°PN¦.®Nvb†6Î¦°P°P°PÄ´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´°P&¦fæfúÊ.†N.Î¦6f4–úöÎ.4–úöN.4–úÆ–6&ú¶†4–ú–v†Æ.–n–.žú.–¶¦ö®.”\°P–f*N®¦¼¼Î¦6ftfú’ÎÂ6öÎ¦&”\°Pª.–6‚v†tæfúÊöÆöÎ.²ÎæÎ¦6ftÎú¶žúÎ.N4–úöÎ.4–úöN.4–úÆ–6&ú¶†4–ú–v†Æ.–n–.žú.–¶¦ö®.”°PÎ¦6ftÎúöÎ.¼–úöÎ.°PÎ¦6ftÎúöN.¼–úöN.°PÎ¦6ftÎú–v†Æ.–n–.žú.–¶¦ö®.¼–ú–v†Æ.–n–.žú.–¶¦ö®.°PföN––vN†væ¦4–úÆ–6&ú¶†4Œ”\°PÆ¼*ÆÊ¦Nn¦N‚v†úÂ–6&ÊöÆv&6tÂ–6&*ÆÊ¦Nn¦NÊöÆv&6‚v†–4Î¦6f”°PÎ¦6ftÎúÆ–6&úöFVt†¦v&Æ”°PÎ¦6ftÎúÆ–6&ú¶†Ô¼Œ°PÎ¦6ftÎú6–Î.¦vú.N¦†&¼ª.–6‚v†tæfúÊ.†N.*N¦†&‚v†Î¦6ftfú*N¦†&b®vúÊNn2–Î.¦v”°P¦6Î¦\°PÎ¦6ftfú¢NNöN4äJªr’râä”°P°P°PÄ´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´°P&¦fæfúÊ.öÎ¦6f”\°PÎ¦6ftfúÂ6öÎ–væJ¦Ž”°Pî–6¦*N®¦\°P–f*N®¦¼¼Î¦6ftfú’ÎÂ6öÎ¦&”\°PFN¦†Ö°Pª.–6‚v†tæfúÊ6¦¦Œ”°P°P°PÄ´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´°P&¦fæfúÂ6öÎ¦Â6–¦v.Î¦6f4–úÆ6–¦v.ú–&”\°P–f*N®¦¼¼Î¦6ftfú’Îj†6–&Â–6&’&–úÆ6–¦v.ú–&”\°PÎ¦6ftÎúÆ–6&úöFVÚ–úÆ6–¦v.ú–&´Œ”ºtæfúÂ6öÎ–væJ¦Ž”°P¦6Î¦\°PÎ¦6ftfú¢NNöN4ä’r‚2’"úÊ*ò
+úJ¢ŠúäÔÎ.N–úÆ6–¦v.ú–&””°P°P°PÄ´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´°P&¦fæfúÊ¦v&ò®.²ÎæÎ¦6f4–úÆ6–¦v.ú–&4–vúö®.ú¶Îæ”\°P–f*N®¦¼¼Î¦6ftfú’Îj†6–&Â–6&’&–úÆ6–¦v.ú–&”\°PÎ¦6ftÎúÆ–6&úöFVÚ–úÆ6–¦v.ú–&´Œ”ºtæfúÊ¦v&ò®.²Îæ–vúö®.ú¶Îæ”°P¦6Î¦\°PÎ¦6ftfú¢NNöN4ä’r‚2’"úÊ¢r"úòª*ú²ÊâúJ¢ŠúäÔÎ.N–úÆ6–¦v.ú–&””°P°P°PÄ´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´°P&¦fæfúâ¦.¢n¦v.ÎÎ¦6f”\°P¦6¦v¼6¦vÎ¦6ftÎú¦n¦v.úNŽ”°P–f¦6¦v|\°P¦ÊöÆ’&4¦¢n¦’&4¦¢n¦"†.†¼Î¦6ftÎú¦n¦v.úNŽtö”°PN¦.®Nv¦ÊöÆ’&4¦¢n¦’&4¦¢n¦"†.†°P¦6Î¦\°PN¦.®Nvröv¦4röv¦4röv¦°P°P°P
