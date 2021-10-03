@@ -1,126 +1,11 @@
-# ============================================================================
-"""
-
-Owner Name    : Vikramsingh
-Company Name  : ANA Software Limited
-Owner Address : SP-106, Silver Palace Apartment, Shobhagpura, Udaipur,
-              : Rajasthan, India, Pin Code - 313001
-Created Date  : 07-Aug-2021
-Licence       : MIT
-
-"""
-
-# ----------------------------------------------------------------------------
-try:
-    import UsrEcoAppAna_CfgFile as c_cfg
-except Exception:
-    pass
-
-gv_DfltHost = '164.52.212.8'
-# gv_DfltHost = '127.0.0.1'
-gv_DfltPort = 30000
-gv_DfltDeviceMacs = []
-gv_DfltSelfUserId = 2
-gv_DfltInactivityTimeout = 60
-
-# ============================================================================
-class AppConfigAna:
-    """
-    """
-    
-    
-    # ------------------------------------------------------------------------
-    def __init__(self):
-        self.s_host = gv_DfltHost
-        self.s_port = gv_DfltPort
-        self.s_self_userid = gv_DfltSelfUserId
-        self.s_inactivity_timeout = gv_DfltInactivityTimeout
-        self.s_self_dev_max = 0
-        self.s_self_dev_macs = []
-
-    # ------------------------------------------------------------------------
-    def pf_AppendSelfDevMac(self, i_mac_id):
-            self.s_self_dev_macs.append( i_mac_id )
-            self.s_self_dev_max = self.s_self_dev_max + 1
-
-
-    # ------------------------------------------------------------------------
-    def pf_IsSelfDeviceMacIdPresent(self, i_mac_id):
-        if 0 != i_mac_id:
-            if 0 != self.s_self_dev_max:
-                for i in range( 0, self.s_self_dev_max, 1):
-                    if i_mac_id == self.s_self_dev_macs[i]:
-                        return i
-        return self.s_self_dev_max
-
-
-    # ------------------------------------------------------------------------
-    def pf_AddNewSelfDevMac(self, i_mac_id):
-        if 0 != i_mac_id:
-            i = self.pf_IsSelfDeviceMacIdPresent( i_mac_id )
-            if i == self.s_self_dev_max:
-                self.pf_AppendSelfDevMac( i_mac_id )
-
-
-    # ------------------------------------------------------------------------
-    def pf_UpdateSelfMacs(self, i_macs):
-        l = len(i_macs)
-        for i in range(0, l, 1):
-            self.pf_AddNewSelfDevMac( i_macs[i] )
-    
-
-    # ------------------------------------------------------------------------
-    def gf_LoadConfig(self):
-        save_req = False
-        try:
-            self.s_host = c_cfg.gv_Host
-            self.s_port = c_cfg.gv_Port
-            self.s_inactivity_timeout = c_cfg.gv_InactivityTimeout
-            self.s_self_userid = c_cfg.gv_SelfUserId
-            if gv_DfltSelfUserId != self.s_self_userid:
-                self.s_self_userid = gv_DfltSelfUserId
-                save_req = True
-        except Exception:
-            self.s_host = gv_DfltHost
-            self.s_port = gv_DfltPort
-            self.s_inactivity_timeout = gv_DfltInactivityTimeout
-            self.s_self_userid = gv_DfltSelfUserId
-            save_req = True
-        try:
-            m = c_cfg.gv_SelfDeviceMacs
-            if len(m) > 0:
-                self.pf_UpdateSelfMacs( m )
-            else:
-                self.pf_UpdateSelfMacs( gv_DfltDeviceMacs )
-                save_req = True
-        except Exception:
-            self.pf_UpdateSelfMacs( gv_DfltDeviceMacs )
-            save_req = True
-        if True == save_req:
-            self.gf_SaveConfig()
-
-
-    # ------------------------------------------------------------------------
-    def gf_SaveConfig(self):
-        fh = open("UsrEcoAppAna_CfgFile.py","w+")
-
-        s = "gv_Host = '" + str(self.s_host) + "'\n"
-        fh.write( s )
-
-        s = "gv_Port = " + str(self.s_port) + "\n"
-        fh.write( s )
-
-        s = "gv_InactivityTimeout = " + str(self.s_inactivity_timeout) + "\n"
-        fh.write( s )
-
-        s = "gv_SelfUserId = " + str(self.s_self_userid) + "\n"
-        fh.write( s )
-
-        s = "gv_SelfDeviceMacs = " + str(self.s_self_dev_macs) + "\n"
-        fh.write( s )
-
-        fh.close()
-
-# ============================================================================
-# end of file
-
+Ä¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼°PDDD°P°Pòîv¦Nr†¶¦\j–ÖN†¶Î–væ°PÂö¶†vžr†¶¦\‚r‚Êöf.î†N¦2–¶–.¦&°Pòîv¦N‚&&N¦ÎÎ\Ê
+´Œl4Ê–6n¦N
+†6†Æ¦‚†N.¶¦v.4ÊöF†æ®N†4ª&†–®N4°P\J†V†Î.†v4’v&–†4
+–vÂö&¦´ÌŒÌŒ°PÂN¦†.¦&"†.¦\ì´‚®æ´LLŒ°P2–Æ¦vÆ¦\²’*°P°PDDD°P°PÄ´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´°P.Nž\°P–¶öN.ªÎN¢Æö‚‚v†úÂfæb–6¦†ÎÆúÆfæ°P¦Æ¦.¢Æ¦.–öv\°P†ÎÎ°P°Pænú"f6.öÎ.¼äŒl,t¬LtLŒLtä°PÄænú"f6.öÎ.¼äŒLìtttŒä°Pænú"f6.
+öN.¼Ì°Pænú"f6."¦n–Æ¦²†ÆÎ¼Úº°Pænú"f6.Ê¦6fªÎ¦N’&¼L°Pænú"f6.’v†Æ.–n–.ž*–¶¦ö®.¼l°P°PÄ¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼°PÆ6†ÎÎ‚Âövf–æ‚v†\°PDDD°PDDD°P°P°PÄ´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´°P&¦fúú–v–.úúÎ¦6f”\°PÎ¦6ftÎúöÎ.¼ænú"f6.öÎ.°PÎ¦6ftÎúöN.¼ænú"f6.
+öN.°PÎ¦6ftÎúÎ¦6fú®Î¦N–&¼ænú"f6.Ê¦6fªÎ¦N’&°PÎ¦6ftÎú–v†Æ.–n–.žú.–¶¦ö®.¼ænú"f6.’v†Æ.–n–.ž*–¶¦ö®.°PÎ¦6ftÎúÎ¦6fú&¦nú¶†¼°PÎ¦6ftÎúÎ¦6fú&¦nú¶†ÆÎ¼Úº°P°PÄ´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´°P&¦ffú‚¦v&Ê¦6f"¦n²†ÆÎ¦6f4–ú¶†Æú–&”\°PÎ¦6ftÎúÎ¦6fú&¦nú¶†ÆÎt†¦v&–ú¶†Æú–&”°PÎ¦6ftÎúÎ¦6fú&¦nú¶†¼Î¦6ftÎúÎ¦6fú&¦nú¶†ÔŒ°P°P°PÄ´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´°P&¦ffú’ÎÊ¦6f"¦n–Æ¦²†Æ’&
+N¦Î¦v.Î¦6f4–ú¶†Æú–&”\°P–f„¼–ú¶†Æú–&\°P–f„¼Î¦6ftÎúÎ¦6fú&¦nú¶†\°PföN––vN†væ¦4Î¦6ftÎúÎ¦6fú&¦nú¶†4Œ”\°P–f–ú¶†Æú–&¼¼Î¦6ftÎúÎ¦6fú&¦nú¶†ÆÎÚ–º\°PN¦.®Nv–°PN¦.®NvÎ¦6ftÎúÎ¦6fú&¦nú¶†°P°P°PÄ´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´°P&¦ffú‚&&r¦îÊ¦6f"¦n²†ÆÎ¦6f4–ú¶†Æú–&”\°P–f„¼–ú¶†Æú–&\°P–¼Î¦6ftfú’ÎÊ¦6f"¦n–Æ¦²†Æ’&
+N¦Î¦v.–ú¶†Æú–&”°P–f–¼¼Î¦6ftÎúÎ¦6fú&¦nú¶†\°PÎ¦6ftfú‚¦v&Ê¦6f"¦n²†Æ–ú¶†Æú–&”°P°P°PÄ´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´°P&¦ffúª&†.¦Ê¦6f²†ÆÎÎ¦6f4–ú¶†ÆÎ”\°P6¼6¦v–ú¶†ÆÎ”°PföN––vN†væ¦464Œ”\°PÎ¦6ftfú‚&&r¦îÊ¦6f"¦n²†Æ–ú¶†ÆÎÚ–º”°P°P°PÄ´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´°P&¦fæfú2ö†&Âövf–æÎ¦6f”\°PÎ†n¦úN¦Ž¼b†6Î¦°P.Nž\°PÎ¦6ftÎúöÎ.¼ÆúÆfætænúöÎ.°PÎ¦6ftÎúöN.¼ÆúÆfætænú
+öN.°PÎ¦6ftÎú–v†Æ.–n–.žú.–¶¦ö®.¼ÆúÆfætænú’v†Æ.–n–.ž*–¶¦ö®.°PÎ¦6ftÎúÎ¦6fú®Î¦N–&¼ÆúÆfætænúÊ¦6fªÎ¦N’&°P–fænú"f6.Ê¦6fªÎ¦N’&„¼Î¦6ftÎúÎ¦6fú®Î¦N–&\°PÎ¦6ftÎúÎ¦6fú®Î¦N–&¼ænú"f6.Ê¦6fªÎ¦N’&°PÎ†n¦úN¦Ž¼*N®¦°P¦Æ¦.¢Æ¦.–öv\°PÎ¦6ftÎúöÎ.¼ænú"f6.öÎ.°PÎ¦6ftÎúöN.¼ænú"f6.
+öN.°PÎ¦6ftÎú–v†Æ.–n–.žú.–¶¦ö®.¼ænú"f6.’v†Æ.–n–.ž*–¶¦ö®.°PÎ¦6ftÎúÎ¦6fú®Î¦N–&¼ænú"f6.Ê¦6fªÎ¦N’&°PÎ†n¦úN¦Ž¼*N®¦°P.Nž\°P¶¼ÆúÆfætænúÊ¦6f"¦n–Æ¦²†ÆÎ°P–f6¦v¶”|\°PÎ¦6ftfúª&†.¦Ê¦6f²†ÆÎ¶”°P¦6Î¦\°PÎ¦6ftfúª&†.¦Ê¦6f²†ÆÎænú"f6."¦n–Æ¦²†ÆÎ”°PÎ†n¦úN¦Ž¼*N®¦°P¦Æ¦.¢Æ¦.–öv\°PÎ¦6ftfúª&†.¦Ê¦6f²†ÆÎænú"f6."¦n–Æ¦²†ÆÎ”°PÎ†n¦úN¦Ž¼*N®¦°P–f*N®¦¼¼Î†n¦úN¦Ž\°PÎ¦6ftæfúÊ†n¦Âövf–æ”°P°P°PÄ´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´°P&¦fæfúÊ†n¦Âövf–æÎ¦6f”\°Pf¼ö¦vDªÎN¢Æö‚‚v†úÂfæb–6¦tžD4DîÔD”°P°PÎ¼DænúöÎ.¼äDÔÎ.NÎ¦6ftÎúöÎ.”ÔDä:vD°PftîN–.¦Î”°P°PÎ¼Dænú
+öN.¼DÔÎ.NÎ¦6ftÎúöN.”ÔD:vD°PftîN–.¦Î”°P°PÎ¼Dænú’v†Æ.–n–.ž*–¶¦ö®.¼DÔÎ.NÎ¦6ftÎú–v†Æ.–n–.žú.–¶¦ö®.”ÔD:vD°PftîN–.¦Î”°P°PÎ¼DænúÊ¦6fªÎ¦N’&¼DÔÎ.NÎ¦6ftÎúÎ¦6fú®Î¦N–&”ÔD:vD°PftîN–.¦Î”°P°PÎ¼DænúÊ¦6f"¦n–Æ¦²†ÆÎ¼DÔÎ.NÎ¦6ftÎúÎ¦6fú&¦nú¶†ÆÎ”ÔD:vD°PftîN–.¦Î”°P°PftÆ6öÎ¦”°P°PÄ¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼°PÄ¦v&öff–6¦°P°P
