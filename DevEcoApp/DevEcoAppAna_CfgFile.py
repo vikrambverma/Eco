@@ -1,4 +1,2 @@
-gv_Host = '164.52.214.4'
-gv_PortNum = 40000
-gv_InactivityTimeout = 10
-gv_DeviceMacs = [1, 2]
+ænúöÎ.¼äŒl,t¬LtLŒLtä°Pænú
+öN.r®¶¼,°Pænú’v†Æ.–n–.ž*–¶¦ö®.¼Œ°Pænú"¦n–Æ¦²†ÆÎ¼ÚŒ4Lº°P
