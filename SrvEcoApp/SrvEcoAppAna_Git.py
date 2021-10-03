@@ -33,7 +33,7 @@ YFileName = [
     "./o/UtilAna.py"
             ]
 
-ConvtFileXToYAna.gf_ConverXToYFileApp(XFileName, YFileName)
+#ConvtFileXToYAna.gf_ConverXToYFileApp(XFileName, YFileName)
 ConvtFileXToYAna.gf_ConverXToYFileApp(YFileName, XFileName)
 
 # ============================================================================
