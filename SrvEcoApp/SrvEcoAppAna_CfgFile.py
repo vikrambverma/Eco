@@ -1,4 +1,4 @@
-gv_Host = '164.52.212.8'
+gv_Host = '127.0.0.1'
 gv_UserPort = 30000
 gv_UserTimeout = 900
 gv_DevicePort = 40000

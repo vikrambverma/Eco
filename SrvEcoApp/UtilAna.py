@@ -211,7 +211,7 @@ def gf_RxdSocketAna(i_sock):
 # ============================================================================
 def gf_FileAna_Open( i_file_name ):
     try:
-        f = open( i_file_name, 'r+b')
+        f = open( i_file_name, 'w+')
         return f
     except Exception:
         gf_DebugLog( "File open fails : " + i_file_name )

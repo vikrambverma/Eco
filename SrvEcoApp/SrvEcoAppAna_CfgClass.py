@@ -18,8 +18,8 @@ try:
 except Exception:
     pass
 
-# gv_DfltHost = '127.0.0.1'
-gv_DfltHost = '164.52.212.8'
+gv_DfltHost = '127.0.0.1'
+# gv_DfltHost = '164.52.212.8'
 gv_DlftUserPort = 30000
 gv_DfltUserTimout = 900
 gv_DfltDevicePort = 40000
