@@ -18,34 +18,6 @@ import socket
 import os
 
 # ============================================================================
-def gf_FileNameDataTimeStr(i_mm, i_path="."):
-    dt = datetime.now()
-    s = dt.strftime(i_path + "/%d_%m_%Y")
-    try:
-        os.mkdir( s )
-    except Exception:
-        None
-    s = s + dt.strftime("/%d_%m_%Y_%H_") + str(i_mm) + ".txt"
-    return s
-
-# ============================================================================
-def gf_GetNowMinutes():
-    dt = datetime.now()
-    return dt.minute
-
-# ============================================================================
-def gf_GetDataStr():
-    dt = datetime.now()
-    s = dt.strftime("%d-%m-%Y")
-    return s
-
-# ============================================================================
-def gf_GetTimeHHMMSSStr():
-    dt = datetime.now()
-    s = dt.strftime("%H-%M-%S")
-    return s
-
-# ============================================================================
 def gf_GetDataTimeStr():
     dt = datetime.now()
     s = dt.strftime("%d-%m-%Y %H:%M:%S.%f : ")
@@ -129,7 +101,7 @@ def gf_StartExitKeyMonitorig():
 
 
 # ============================================================================
-def gf_StartThreadAna( i_thread_fun ):
+def gf_StartThreadAna( i_thread_fun):
     try:
         th = threading.Thread(target=i_thread_fun)
         th.start()
@@ -237,9 +209,9 @@ def gf_RxdSocketAna(i_sock):
 # ============================================================================
 # File Functions
 # ============================================================================
-def gf_FileAna_Open( i_file_name, i_file_mode ):
+def gf_FileAna_Open( i_file_name ):
     try:
-        f = open( i_file_name, i_file_mode)
+        f = open( i_file_name, 'r+b')
         return f
     except Exception:
         gf_DebugLog( "File open fails : " + i_file_name )
@@ -266,8 +238,7 @@ def gf_FileAna_FileLength( i_file_name ):
 def gf_FileAna_Write( i_file_hndl, i_wr_offset, i_wr_data ):
     retStatus = False
     try:
-        if None != i_wr_offset:
-            i_file_hndl.seek( i_wr_offset )
+        i_file_hndl.seek( i_wr_offset )
         i_file_hndl.write( i_wr_data )
         retStatus = True
     except Exception:
@@ -280,8 +251,7 @@ def gf_FileAna_Read( i_file_hndl, i_rd_offset, i_rd_cnt ):
     rdcnt = 0
     rddata = []
     try:
-        if None != i_rd_offset:
-            i_file_hndl.seek( i_rd_offset )
+        i_file_hndl.seek( i_rd_offset )
         rddata = i_file_hndl.read( i_rd_cnt )
         rdcnt = len( rddata )
         retSts = True

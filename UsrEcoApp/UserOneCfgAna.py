@@ -1,4 +1,4 @@
-gv_Master_CfgChanged = True
+gv_Master_CfgChanged = False
 gv_Master_DeviceTimeout = 10
 gv_Master_UserTimeout = 900
 gv_Master_UserNames = ['admin', 'user2']
