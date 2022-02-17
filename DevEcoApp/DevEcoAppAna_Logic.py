@@ -16,7 +16,7 @@ import DevEcoAppAna_CfgClass
 import TcpClientAna_ParentSocHndl
 import numpy as np
 
-gv_SmpleCount = 1024
+gv_SmpleCount = 1000
 gv_SinTime = np.arange(0,3.14,3.14/gv_SmpleCount)
 gv_Sinwave = np.sin( gv_SinTime )
 

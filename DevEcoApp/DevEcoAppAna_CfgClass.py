@@ -16,8 +16,8 @@ try:
 except Exception:
     pass
 
-gv_DfltHost = '164.52.212.8'
-# gv_DfltHost = '127.0.0.1'
+# gv_DfltHost = '164.52.212.8'
+gv_DfltHost = '127.0.0.1'
 gv_DfltPortNum = 40000
 gv_DfltInactivityTimeout = 10
 gv_DfltDeviceMacs = [1,2]
