@@ -1,2 +1,5 @@
-ænúöÎ.¼äŒl,t¬LtLŒLtä°Pænú
-öN.¼Ì°Pænú’v†Æ.–n–.ž*–¶¦ö®.¼l°PænúÊ¦6fªÎ¦N’&¼L°PænúÊ¦6f"¦n–Æ¦²†ÆÎ¼Úº°P
+gv_Host = '164.52.212.8'
+gv_Port = 30000
+gv_InactivityTimeout = 60
+gv_SelfUserId = 2
+gv_SelfDeviceMacs = []
