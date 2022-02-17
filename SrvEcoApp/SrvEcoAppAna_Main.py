@@ -1,4 +1,69 @@
-Ä¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼°PDDD°P°Pòîv¦Nr†¶¦\j–ÖN†¶Î–væ°PÂö¶†vžr†¶¦\‚r‚Êöf.î†N¦2–¶–.¦&°Pòîv¦N‚&&N¦ÎÎ\Ê
-´Œl4Ê–6n¦N
-†6†Æ¦‚†N.¶¦v.4ÊöF†æ®N†4ª&†–®N4°P\J†V†Î.†v4’v&–†4
-–vÂö&¦´ÌŒÌŒ°PÂN¦†.¦&"†.¦\ì´‚®æ´LLŒ°P2–Æ¦vÆ¦\²’*°P°PDDD°P°PÄ´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´°P–¶öN.ª.–6‚v†°P–¶öN.ÊNn¢Æö‚‚v†ú2öæ–Æ°P–¶öN.Î–æv†6°P°PænúJ¦Î.†N.‚¼b†6Î¦°Pænú¢–.‚¼b†6Î¦°PÄ¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼°P&¦fJ¦Î.†N.J¦Ž”\°Pæ6öF†6ænúJ¦Î.†N.‚°PænúJ¦Î.†N.‚¼*N®¦°P°P&¦f¢–.²ž‚Î–ævv®¶4fN†¶¦”\°Pæ6öF†6ænú¢–.‚°Pænú¢–.‚¼*N®¦°P°PÄ¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼°P&¦f‚‚v†ú²†–v–ú†úv†¶¦”\°Pæ6öF†6ænú¢–.‚°Pæ6öF†6ænúJ¦Î.†N.‚°P°Pª.–6‚v†tæfú‚Ê.†N.²Îæ–ú†úv†¶¦”°P°PÎúÎNn†úv&6¼ÊNn¢Æö‚‚v†ú2öæ–ÆtÊ¦Nn¦Nv&6‚v†J¦Î.†N.J¦Ž4*N®¦4*N®¦”°PÎúÎNn†úv&6tæfúÊ.†N.”°PÎ–æv†6tÎ–æv†6Î–æv†6tÊ’â’r*4¢–.²ž‚”°P°Pî–6¦b†6Î¦¼¼ænú¢–.‚\°Pª.–6‚v†tæfúÊ6¦¦Œ”°P–f*N®¦¼¼ænúJ¦Î.†N.‚\°Pª.–6‚v†tæfúÊ6¦¦¬”°PÎúÎNn†úv&6tæfúÊ.ö”°PÎúÎNn†úv&6tæfúÊ.†N.”°PænúJ¦Î.†N.‚¼b†6Î¦°P°PÎúÎNn†úv&6tæfúÊ.ö”°P°Pª.–6‚v†tæfú‚Ê.ö²Îæ–ú†úv†¶¦”°P°P°PÄ¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼°P&¦f¶†–v”´|röv¦\°P°PÄ¼v¦n¦N.¦N¶–v†.¦4ö.¦N.¦v.¦N¶–v†.¦†f.¦NÆö®v.°P¦–.úÆv.¼Œ°Pî–6¦¦–.úÆv.<L\°P‚‚v†ú²†–vD¢ÂòúÊ¢Jj¢JújŒtD”°P–f„¼¦–.úÆv.\°P¦–.úÆv.¼¦–.úÆv.ÔŒ°P°PÄ¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼°P–fúúv†¶¦úú¼¼äúú¶†–vúúä\°P¶†–v”°P°PÄ¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼°PÄ¦v&öff–6¦°P°P
+# ============================================================================
+"""
+
+Owner Name    : Vikramsingh
+Company Name  : ANA Software Limited
+Owner Address : SP-106, Silver Palace Apartment, Shobhagpura, Udaipur,
+              : Rajasthan, India, Pin Code - 313001
+Created Date  : 07-Aug-2021
+Licence       : MIT
+
+"""
+
+# ----------------------------------------------------------------------------
+import UtilAna
+import SrvEcoAppAna_Logic
+import signal
+
+gv_RestartApp = False
+gv_ExitApp = False
+# ============================================================================
+def RestartReq():
+    global gv_RestartApp
+    gv_RestartApp = True
+
+def ExitMyApp(signnum, frame):
+    global gv_ExitApp
+    gv_ExitApp = True
+
+# ============================================================================
+def AppAna_Main(i_app_name):
+    global gv_ExitApp
+    global gv_RestartApp
+    
+    UtilAna.gf_AppStartMsg(i_app_name)
+    
+    s_srvapp_hndl = SrvEcoAppAna_Logic.ServerHndlAna(RestartReq, True, True)
+    s_srvapp_hndl.gf_Start()
+    signal.signal(signal.SIGINT, ExitMyApp)
+
+    while False == gv_ExitApp:
+        UtilAna.gf_Sleep(1)
+        if True == gv_RestartApp:
+            UtilAna.gf_Sleep(5)
+            s_srvapp_hndl.gf_Stop()
+            s_srvapp_hndl.gf_Start()
+            gv_RestartApp = False
+
+    s_srvapp_hndl.gf_Stop()
+     
+    UtilAna.gf_AppStopMsg(i_app_name)
+
+
+# ============================================================================
+def main() -> None:
+
+    # 0 = never terminate, other then terminate after x count
+    exit_cnt = 1
+    while exit_cnt < 2:
+        AppAna_Main("ECO_SERVER_V1.0")
+        if 0 != exit_cnt:
+            exit_cnt = exit_cnt + 1
+
+# ============================================================================
+if __name__ == '__main__':
+    main()
+
+# ============================================================================
+# end of file
+

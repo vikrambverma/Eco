@@ -1,24 +1,288 @@
-Ä¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼°PDDD°P°Pòîv¦Nr†¶¦\j–ÖN†¶Î–væ°PÂö¶†vžr†¶¦\‚r‚Êöf.î†N¦2–¶–.¦&°Pòîv¦N‚&&N¦ÎÎ\Ê
-´Œl4Ê–6n¦N
-†6†Æ¦‚†N.¶¦v.4ÊöF†æ®N†4ª&†–®N4°P\J†V†Î.†v4’v&–†4
-–vÂö&¦´ÌŒÌŒ°PÂN¦†.¦&"†.¦\ì´‚®æ´LLŒ°P2–Æ¦vÆ¦\²’*°P°PDDD°P°PÄ´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´°P–¶öN.ª.–6‚v†°P–¶öN.–¶öN.6–F°P.Nž\°P–¶öN.ÊNn¢Æö‚‚v†úÂfæb–6¦†ÎÆfæ°P¦Æ¦.¢Æ¦.–öv\°P†ÎÎ°P°PÄænú"f6.öÎ.¼äŒLìtttŒä°Pænú"f6.öÎ.¼äŒl,t¬LtLŒLtä°Pænú"6f.ªÎ¦N
-öN.¼Ì°Pænú"f6.ªÎ¦N*–¶ö®.¼œ°Pænú"f6."¦n–Æ¦
-öN.¼,°Pænú"6f."¦n–Æ¦*–¶ö®.¼ŒŒ°P°Pænú"f6.ªÎ¦Nr†¶¦¼ä†&¶–vä°Pænú"f6.ªÎ¦N
-†ÎÎîöN&¼ä†&¶–vŒLÌ,ä°Pænú"f6.ªÎ¦N’&¼ŒÄ&öv.Æ†væ¦.–Î°Pænú"f6.ªÎ¦N*ž¦¼ä†&¶–väÄ&öv.Æ†væ¦.–Î°Pænú"f6.ªÎ¦N"¦n–Æ¦²†ÆÎ¼Úº°P°PÄ¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼°PÆ6†ÎÎ‚Âövf–æ‚v†\°P&¦fúú–v–.úúÎ¦6f”\°PÎ¦6ftÎúöÎ.¼ænú"f6.öÎ.°P°PÎ¦6ftÎú&¦n–Æ¦úöN.¼ænú"f6."¦n–Æ¦
-öN.°PÎ¦6ftÎú&¦n–Æ¦ú.–¶¦ö®.¼ænú"6f."¦n–Æ¦*–¶ö®.°PÎ¦6ftÎú&¦n–Æ¦ú¶†úÆv.¼°PÎ¦6ftÎú&¦n–Æ¦ú¶†ÆÎ¼Úº°P°PÎ¦6ftÎú®Î¦NúöN.¼ænú"6f.ªÎ¦N
-öN.°PÎ¦6ftÎú®Î¦Nú.–¶¦ö®.¼ænú"f6.ªÎ¦N*–¶ö®.°PÎ¦6ftÎú®Î¦Nú¶†úÆv.¼°PÎ¦6ftÎú®Î¦Nú–&Î¼Úº°PÎ¦6ftÎú®Î¦Núv†¶¦Î¼Úº°PÎ¦6ftÎú®Î¦Nú†ÎÎîöN&Î¼Úº°PÎ¦6ftÎú®Î¦Nú.ž¦Î¼Úº°PÎ¦6ftÎú®Î¦Nú&¦nú¶†¼Úº°PÎ¦6ftÎú®Î¦Nú&¦nú¶†ÆÎ¼Úº°P°PÄ´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´°P&¦ffúÂ6¦†N‚66ªÎN‚66’vföÎ¦6f”\°PföN––vN†væ¦46¦vÎ¦6ftÎú®Î¦Nú–&Î”4Œ”\°PÎ¦6ftÎú®Î¦Nú–&Îtö”°PföN––vN†væ¦46¦vÎ¦6ftÎú®Î¦Núv†¶¦Î”4Œ”\°PÎ¦6ftÎú®Î¦Núv†¶¦Îtö”°PföN––vN†væ¦46¦vÎ¦6ftÎú®Î¦Nú†ÎÎîöN&Î”4Œ”\°PÎ¦6ftÎú®Î¦Nú†ÎÎîöN&Îtö”°PföN––vN†væ¦46¦vÎ¦6ftÎú®Î¦Nú.ž¦Î”4Œ”\°PÎ¦6ftÎú®Î¦Nú.ž¦Îtö”°PföN––vN†væ¦46¦vÎ¦6ftÎú®Î¦Nú&¦nú¶†”4Œ”\°PÎ¦6ftÎú®Î¦Nú&¦nú¶†tö”°PföN––vN†væ¦46¦vÎ¦6ftÎú®Î¦Nú&¦nú¶†ÆÎ”4Œ”\°PÎ¦6ftÎú®Î¦Nú&¦nú¶†ÆÎtö”°PföN––vN†væ¦46¦vÎ¦6ftÎú&¦n–Æ¦ú¶†ÆÎ”4Œ”\°PÎ¦6ftÎú&¦n–Æ¦ú¶†ÆÎtö”°PÎ¦6ftÎú&¦n–Æ¦ú¶†úÆv.¼°PÎ¦6ftÎú®Î¦Nú¶†úÆv.¼°P°PÄ´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´°P&¦fæfúâ¦.ªÎ¦N’&Î¦6f4–ú®ÎNúöffÎ¦.”\°P–f–ú®ÎNúöffÎ¦.<Î¦6ftÎú®Î¦Nú¶†úÆv.\°PN¦.®NvÎ¦6ftÎú®Î¦Nú–&ÎÚ–ú®ÎNúöffÎ¦.º°P¦6Î¦\°PN¦.®Nv°P&¦fæfúâ¦.ªÎ¦Nr†¶¦Î¦6f4–ú®ÎNúöffÎ¦.”\°P–f–ú®ÎNúöffÎ¦.<Î¦6ftÎú®Î¦Nú¶†úÆv.\°PN¦.®NvÎ¦6ftÎú®Î¦Núv†¶¦ÎÚ–ú®ÎNúöffÎ¦.º°P¦6Î¦\°PN¦.®NvDD°P&¦fæfúâ¦.ªÎ¦N
-†ÎÎî†N&Î¦6f4–ú®ÎNúöffÎ¦.”\°P–f–ú®ÎNúöffÎ¦.<Î¦6ftÎú®Î¦Nú¶†úÆv.\°PN¦.®NvÎ¦6ftÎú®Î¦Nú†ÎÎîöN&ÎÚ–ú®ÎNúöffÎ¦.º°P¦6Î¦\°PN¦.®NvDD°P&¦fæfúâ¦.ªÎ¦N*ž¦Î¦6f4–ú®ÎNúöffÎ¦.”\°P–f–ú®ÎNúöffÎ¦.<Î¦6ftÎú®Î¦Nú¶†úÆv.\°PN¦.®NvÎ¦6ftÎú®Î¦Nú.ž¦ÎÚ–ú®ÎNúöffÎ¦.º°P¦6Î¦\°PN¦.®NvDD°P°P°PÄ´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´°P&¦ffú’ÎªÎ¦N’&
-N¦Î¦v.Î¦6f4–ú®ÎNú–&”\°PföN––vN†væ¦4Î¦6ftÎú®Î¦Nú¶†úÆv.4Œ”\°P–f–ú®ÎNú–&¼¼Î¦6ftÎú®Î¦Nú–&ÎÚ–º\°PN¦.®Nv–°PN¦.®NvÎ¦6ftÎú®Î¦Nú¶†úÆv.°P°P°PÄ´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´°P&¦ffú‚&&ªÎ¦N’&Î¦6f4–ú®ÎNú–&”\°P–f„¼–ú®ÎNú–&\°P–fÎ¦6ftÎú®Î¦Nú¶†úÆv.„¼Î¦6ftfú’ÎªÎ¦N’&
-N¦Î¦v.–ú®ÎNú–&”\°PN¦.®Nvb†6Î¦°PÎ¦6ftÎú®Î¦Nú–&Ît†¦v&–ú®ÎNú–&”°PÎ¦6ftÎú®Î¦Núv†¶¦Ît†¦v&DD”°PÎ¦6ftÎú®Î¦Nú†ÎÎîöN&Ît†¦v&DD”°PÎ¦6ftÎú®Î¦Nú.ž¦Ît†¦v&DD”°PÎ¦6ftÎú®Î¦Nú&¦nú¶†t†¦v&”°PÎ¦6ftÎú®Î¦Nú&¦nú¶†ÆÎt†¦v&Úº”°PÎ¦6ftÎú®Î¦Nú¶†úÆv.Ô¼Œ°PN¦.®Nv*N®¦°PN¦.®Nvb†6Î¦°P°PÄ´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´°P&¦fæfúÊ¦.ªÎ¦N’&Î¦6f4–ú®ÎNúöffÎ¦.4–ú®ÎNú–&”\°P–f„¼–ú®ÎNú–&\°P–f¼¼–ú®ÎNúöffÎ¦.\°PÎ¦6ftfúÂ6¦†N‚66ªÎN‚66’vfö”°PN¦.®NvÎ¦6ftfú‚&&ªÎ¦N’&–ú®ÎNú–&”°PN¦.®Nvb†6Î¦°P°P°P&¦fæfúÊ¦.ªÎ¦Nr†¶¦Î¦6f4–ú®ÎNúöffÎ¦.4–ú®ÎNúv†¶¦”\°P–f–ú®ÎNúöffÎ¦.<Î¦6ftÎú®Î¦Nú¶†úÆv.\°P–fænú"f6.ªÎ¦N’&¼¼Î¦6ftÎú®Î¦Nú–&ÎÚ–ú®ÎNúöffÎ¦.º\°P–ú®ÎNúv†¶¦¼ænú"f6.ªÎ¦Nr†¶¦°PÎ¦6ftÎú®Î¦Núv†¶¦ÎÚ–ú®ÎNúöffÎ¦.º¼–ú®ÎNúv†¶¦°PN¦.®Nv*N®¦°PN¦.®Nvb†6Î¦°P°P&¦fæfúÊ¦.ªÎ¦N
-†ÎÎî†N&Î¦6f4–ú®ÎNúöffÎ¦.4–ú®ÎNú†ÎÎî†N&”\°P–f–ú®ÎNúöffÎ¦.<Î¦6ftÎú®Î¦Nú¶†úÆv.\°PÄ–fænú"f6.ªÎ¦N’&¼¼Î¦6ftÎú®Î¦Nú–&ÎÚ–ú®ÎNúöffÎ¦.º\°PÄ–ú®ÎNú†ÎÎî†N&¼ænú"f6.ªÎ¦Nr†¶¦°PÎ¦6ftÎú®Î¦Nú†ÎÎîöN&ÎÚ–ú®ÎNúöffÎ¦.º¼–ú®ÎNú†ÎÎî†N&°PN¦.®Nv*N®¦°PN¦.®Nvb†6Î¦°P°P&¦fæfúÊ¦.ªÎ¦N*ž¦Î¦6f4–ú®ÎNúöffÎ¦.4–ú®ÎNú.ž¦”\°P–f–ú®ÎNúöffÎ¦.<Î¦6ftÎú®Î¦Nú¶†úÆv.\°P–fænú"f6.ªÎ¦N’&¼¼Î¦6ftÎú®Î¦Nú–&ÎÚ–ú®ÎNúöffÎ¦.º\°P–ú®ÎNú.ž¦¼ænú"f6.ªÎ¦N*ž¦°PÎ¦6ftÎú®Î¦Nú.ž¦ÎÚ–ú®ÎNúöffÎ¦.º¼–ú®ÎNú.ž¦°PN¦.®Nv*N®¦°PN¦.®Nvb†6Î¦°P°P&¦fæfúÊ¦.ªÎ¦N²†ÆÎ¦6f4–ú®ÎNúöffÎ¦.4–ú¶†Æ”\°P–f–ú®ÎNúöffÎ¦.<Î¦6ftÎú®Î¦Nú¶†úÆv.\°P¶†ÆÆv.¼Î¦6ftÎú®Î¦Nú&¦nú¶†Ú–ú®ÎNúöffÎ¦.º°PföN––vN†væ¦4¶†ÆÆv.4Œ”\°P–f–ú¶†Æ¼¼Î¦6ftÎú®Î¦Nú&¦nú¶†ÆÎÚ–ú®ÎNúöffÎ¦.ºÚ–º\°PN¦.®Nvb†6Î¦°PÎ¦6ftÎú®Î¦Nú&¦nú¶†ÆÎÚ–ú®ÎNúöffÎ¦.ºt†¦v&–ú¶†Æ”°PÎ¦6ftÎú®Î¦Nú&¦nú¶†Ú–ú®ÎNúöffÎ¦.ºÔ¼Œ°PföN––vN†væ¦4Î¦6ftÎú&¦n–Æ¦ú¶†úÆv.4Œ”\°P–f–ú¶†Æ¼¼Î¦6ftÎú&¦n–Æ¦ú¶†ÆÎÚ–º\°PN¦.®Nv*N®¦°PÎ¦6ftÎú&¦n–Æ¦ú¶†ÆÎt†¦v&–ú¶†Æ”°PÎ¦6ftÎú&¦n–Æ¦ú¶†úÆv.Ô¼Œ°PN¦.®Nv*N®¦°PN¦.®Nvb†6Î¦°P°PÄ´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´°P&¦ffúÊ¦.ªÎ¦N‚66’vföÎ¦6f4–úöffÎ¦.4–ú®ÎNú–&4–ú®ÎNúv†¶¦4°P–ú®ÎNú†ÎÎî†N&4–ú®ÎNú.ž¦4–ú¶†ÆÎ”\°PÎ¦6ftæfúÊ¦.ªÎ¦N’&–úöffÎ¦.4–ú®ÎNú–&”°PÎ¦6ftæfúÊ¦.ªÎ¦Nr†¶¦–úöffÎ¦.4–ú®ÎNúv†¶¦”°PÎ¦6ftæfúÊ¦.ªÎ¦N
-†ÎÎî†N&–úöffÎ¦.4–ú®ÎNú†ÎÎî†N&”°PÎ¦6ftæfúÊ¦.ªÎ¦N*ž¦–úöffÎ¦.4–ú®ÎNú.ž¦”°P¶†ÆÆv.¼6¦v–ú¶†ÆÎ”°PföN––vN†væ¦4¶†ÆÆv.4Œ”\°PÎ¦6ftæfúÊ¦.ªÎ¦N²†Æ–úöffÎ¦.4–ú¶†ÆÎÚ–º”°P°PÄ´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´°P&¦ffúÊ¦."f6.ªÎ¦NÎ¦6f”\°PÎ¦6ftfúÊ¦.ªÎ¦N‚66’vfö4°Pænú"f6.ªÎ¦N’&4°Pænú"f6.ªÎ¦Nr†¶¦4°Pænú"f6.ªÎ¦N
-†ÎÎîöN&4°Pænú"f6.ªÎ¦N*ž¦4°Pænú"f6.ªÎ¦N"¦n–Æ¦²†ÆÎ”°P°PÄ´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´°P&¦fæfú2ö†&Âövf–æÎ¦6f”\°PÎ¦6ftfúÂ6¦†N‚66ªÎN‚66’vfö”°P.Nž\°P–¶öN.6–FtN¦6ö†&Æfæ”°P¦Æ¦.¢Æ¦.–öv\°P†ÎÎ°PÎ†n¦úN¦Ž¼b†6Î¦°P.Nž\°PÎ¦6ftÎúöÎ.¼ÆfætænúöÎ.°PÎ¦6ftÎú®Î¦NúöN.¼ÆfætænúªÎ¦N
-öN.°PÎ¦6ftÎú®Î¦Nú.–¶¦ö®.¼ÆfætænúªÎ¦N*–¶¦ö®.°PÎ¦6ftÎú&¦n–Æ¦úöN.¼Æfætænú"¦n–Æ¦
-öN.°PÎ¦6ftÎú&¦n–Æ¦ú.–¶¦ö®.¼Æfætænú"¦n–Æ¦*–¶¦ö®.°P¦Æ¦.¢Æ¦.–öv\°PÎ¦6ftÎúöÎ.¼ænú"f6.öÎ.°PÎ¦6ftÎú®Î¦NúöN.¼ænú"6f.ªÎ¦N
-öN.°PÎ¦6ftÎú®Î¦Nú.–¶¦ö®.¼ænú"f6.ªÎ¦N*–¶ö®.°PÎ¦6ftÎú&¦n–Æ¦úöN.¼ænú"f6."¦n–Æ¦
-öN.°PÎ¦6ftÎú&¦n–Æ¦ú.–¶¦ö®.¼ænú"6f."¦n–Æ¦*–¶ö®.°PÎ†n¦úN¦Ž¼*N®¦°P.Nž\°P®¼ÆfætænúªÎ¦N’&Î°Pv¼ÆfætænúªÎ¦Nr†¶¦Î°P¼ÆfætænúªÎ¦N
-†ÎÎîöN&Î°P.¼ÆfætænúªÎ¦N*ž¦Î°P&¼ÆfætænúªÎ¦N"¦n–Æ¦²†ÆÎ°P–f6¦v®”¼¼6¦vv”¼¼6¦v”¼¼6¦v.”\°PföN––vN†væ¦46¦v®””\°PÎ¦6ftfúÊ¦.ªÎ¦N‚66’vfö–4®Ú–º4vÚ–º4Ú–º4®Ú–º4&Ú–º”°P–fÎ¦6ftÎú®Î¦Nú&¦nú¶†¼¼Î¦6ftfú’ÎªÎ¦N’&
-N¦Î¦v.ænú"f6.ªÎ¦N’&”\°PÎ¦6ftfúÊ¦."f6.ªÎ¦N”°PÎ†n¦úN¦Ž¼*N®¦°P¦6Î¦\°PÎ¦6ftfúÊ¦."f6.ªÎ¦N”°PÎ†n¦úN¦Ž¼*N®¦°P¦Æ¦.¢Æ¦.–öv\°PÎ¦6ftfúÊ¦."f6.ªÎ¦N”°PÎ†n¦úN¦Ž¼*N®¦°P–f*N®¦¼¼Î†n¦úN¦Ž\°PÎ¦6ftæfúÊ†n¦Âfæ”°P°PÄ´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´°P&¦ffúÊ†n¦b–6¦ÂfæÎ¦6f4f”\°PÎ¼DænúöÎ.¼äDÔÎ¦6ftÎúöÎ.ÔÎ.NDä:vD”°PftîN–.¦Î”°P°PÎ¼äænúªÎ¦N
-öN.¼äÔÎ.NÎ¦6ftÎú®Î¦NúöN.”ÔÎ.Nä:vä”°PftîN–.¦Î”°P°PÎ¼äænúªÎ¦N*–¶¦ö®.¼äÔÎ.NÎ¦6ftÎú®Î¦Nú.–¶¦ö®.”ÔÎ.Nä:vä”°PftîN–.¦Î”°P°PÎ¼äænú"¦n–Æ¦
-öN.¼äÔÎ.NÎ¦6ftÎú&¦n–Æ¦úöN.”ÔÎ.Nä:vä”°PftîN–.¦Î”°P°PÎ¼äænú"¦n–Æ¦*–¶¦ö®.¼äÔÎ.NÎ¦6ftÎú&¦n–Æ¦ú.–¶¦ö®.”ÔÎ.Nä:vä”°PftîN–.¦Î”°P°PÎ¼äænúªÎ¦N’&Î¼äÔÎ.NÎ¦6ftÎú®Î¦Nú–&Î”ÔÎ.Nä:vä”°PftîN–.¦Î”°P°PÎ¼äænúªÎ¦Nr†¶¦Î¼äÔÎ.NÎ¦6ftÎú®Î¦Núv†¶¦Î”ÔÎ.Nä:vä”°PftîN–.¦Î”°P°PÎ¼äænúªÎ¦N
-†ÎÎîöN&Î¼äÔÎ.NÎ¦6ftÎú®Î¦Nú†ÎÎîöN&Î”ÔÎ.Nä:vä”°PftîN–.¦Î”°P°PÎ¼äænúªÎ¦N*ž¦Î¼äÔÎ.NÎ¦6ftÎú®Î¦Nú.ž¦Î”ÔÎ.Nä:vä”°PftîN–.¦Î”°P°PÎ¼äænúªÎ¦N"¦n–Æ¦²†ÆÎ¼äÔÎ.NÎ¦6ftÎú®Î¦Nú&¦nú¶†ÆÎ”ÔÎ.Nä:vä”°PftîN–.¦Î”°P°PÄ´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´°P&¦fæfúÊ†n¦ÂfæÎ¦6f”\°Pf¼ö¦vDÊNn¢Æö‚‚v†úÂfæb–6¦tžD4DîÔD”°PÎ¦6ftfúÊ†n¦b–6¦Âfæf”°PftÆ6öÎ¦”°P°PÄ´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´°P&¦fæfúâ¦.²†Æ’&*öªÎ¦N’&2–Î.Î¦6f4–ú¶†Æú–&”\°P¶¼Úº°PföN––vN†væ¦4Î¦6ftÎú®Î¦Nú¶†úÆv.4Œ”\°PV¼Î¦6ftÎú®Î¦Nú&¦nú¶†Ú–º°PföNÖ–vN†væ¦4V4Œ”\°P–f–ú¶†Æú–&¼¼Î¦6ftÎú®Î¦Nú&¦nú¶†ÆÎÚ–ºÚÖº\°P¶t†¦v&–ÔŒ”°PFN¦†Ö°PN¦.®Nv¶°P°PÄ´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´°P&¦fæfúâ¦.ªÎ¦N’&*ö²†Æ2–Î.Î¦6f4–ú®ÎNú–&”\°P¶¼Úº°P–f*N®¦¼¼ª.–6‚v†tæfúÂÖJ†væ¦Œ*ö²†–ú®ÎNú–&4Î¦6ftÎú®Î¦Nú¶†úÆv.”\°P¶¼Î¦6ftÎú®Î¦Nú&¦nú¶†ÆÎÚ–ú®ÎNú–&´Œº°PN¦.®Nv¶°P°PÄ¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼°PÄ¦v&öff–6¦°P°P
+# ============================================================================
+"""
+
+Owner Name    : Vikramsingh
+Company Name  : ANA Software Limited
+Owner Address : SP-106, Silver Palace Apartment, Shobhagpura, Udaipur,
+              : Rajasthan, India, Pin Code - 313001
+Created Date  : 07-Aug-2021
+Licence       : MIT
+
+"""
+
+# ----------------------------------------------------------------------------
+import UtilAna
+import importlib
+try:
+    import SrvEcoAppAna_CfgFile as cfg
+except Exception:
+    pass
+
+# gv_DfltHost = '127.0.0.1'
+gv_DfltHost = '164.52.212.8'
+gv_DlftUserPort = 30000
+gv_DfltUserTimout = 900
+gv_DfltDevicePort = 40000
+gv_DlftDeviceTimout = 11
+
+gv_DfltUserName = 'admin'
+gv_DfltUserPassword = 'admin@1234'
+gv_DfltUserId = 1 # dont change this
+gv_DfltUserType = 'admin' # dont change this
+gv_DfltUserDeviceMacs = []
+
+# ============================================================================
+class AppConfigAna:
+    def __init__(self):
+        self.s_host = gv_DfltHost
+        
+        self.s_device_port = gv_DfltDevicePort
+        self.s_device_timeout = gv_DlftDeviceTimout
+        self.s_device_max_cnt = 0
+        self.s_device_macs = []
+
+        self.s_user_port = gv_DlftUserPort
+        self.s_user_timeout = gv_DfltUserTimout
+        self.s_user_max_cnt = 0
+        self.s_user_ids = []
+        self.s_user_names = []
+        self.s_user_passwords = []
+        self.s_user_types = []
+        self.s_user_dev_max = []
+        self.s_user_dev_macs = []
+
+    # ------------------------------------------------------------------------
+    def pf_ClearAllUsrAllInfo(self):
+        for i in range(0, len(self.s_user_ids), 1):
+            self.s_user_ids.pop(0)
+        for i in range(0, len(self.s_user_names), 1):
+            self.s_user_names.pop(0)
+        for i in range(0, len(self.s_user_passwords), 1):
+            self.s_user_passwords.pop(0)
+        for i in range(0, len(self.s_user_types), 1):
+            self.s_user_types.pop(0)
+        for i in range(0, len(self.s_user_dev_max), 1):
+            self.s_user_dev_max.pop(0)
+        for i in range(0, len(self.s_user_dev_macs), 1):
+            self.s_user_dev_macs.pop(0)
+        for i in range(0, len(self.s_device_macs), 1):
+            self.s_device_macs.pop(0)
+        self.s_device_max_cnt = 0
+        self.s_user_max_cnt = 0
+
+    # ------------------------------------------------------------------------
+    def gf_GetUserId(self, i_usr_offset):
+        if i_usr_offset < self.s_user_max_cnt:
+            return self.s_user_ids[i_usr_offset]
+        else:
+            return 0
+    def gf_GetUserName(self, i_usr_offset):
+        if i_usr_offset < self.s_user_max_cnt:
+            return self.s_user_names[i_usr_offset]
+        else:
+            return ""
+    def gf_GetUserPassward(self, i_usr_offset):
+        if i_usr_offset < self.s_user_max_cnt:
+            return self.s_user_passwords[i_usr_offset]
+        else:
+            return ""
+    def gf_GetUserType(self, i_usr_offset):
+        if i_usr_offset < self.s_user_max_cnt:
+            return self.s_user_types[i_usr_offset]
+        else:
+            return ""
+
+
+    # ------------------------------------------------------------------------
+    def pf_IsUserIdPresent(self, i_usr_id):
+        for i in range(0, self.s_user_max_cnt, 1):
+            if i_usr_id == self.s_user_ids[i]:
+                return i
+        return self.s_user_max_cnt
+        
+
+    # ------------------------------------------------------------------------
+    def pf_AddUserId(self, i_usr_id):
+        if 0 != i_usr_id:
+            if self.s_user_max_cnt != self.pf_IsUserIdPresent( i_usr_id ):
+                return False
+            self.s_user_ids.append(i_usr_id)
+            self.s_user_names.append("")
+            self.s_user_passwords.append("")
+            self.s_user_types.append("")
+            self.s_user_dev_max.append(0)
+            self.s_user_dev_macs.append([])
+            self.s_user_max_cnt += 1
+            return True
+        return False
+
+    # ------------------------------------------------------------------------
+    def gf_SetUserId(self, i_usr_offset, i_usr_id):
+        if 0 != i_usr_id:
+            if 0 == i_usr_offset:
+                self.pf_ClearAllUsrAllInfo()
+            return self.pf_AddUserId(i_usr_id)
+        return False
+        
+
+    def gf_SetUserName(self, i_usr_offset, i_usr_name):
+        if i_usr_offset < self.s_user_max_cnt:
+            if gv_DfltUserId == self.s_user_ids[i_usr_offset]:
+                i_usr_name = gv_DfltUserName
+            self.s_user_names[i_usr_offset] = i_usr_name
+            return True
+        return False
+
+    def gf_SetUserPassward(self, i_usr_offset, i_usr_passward):
+        if i_usr_offset < self.s_user_max_cnt:
+            # if gv_DfltUserId == self.s_user_ids[i_usr_offset]:
+            #     i_usr_passward = gv_DfltUserName
+            self.s_user_passwords[i_usr_offset] = i_usr_passward
+            return True
+        return False
+
+    def gf_SetUserType(self, i_usr_offset, i_usr_type):
+        if i_usr_offset < self.s_user_max_cnt:
+            if gv_DfltUserId == self.s_user_ids[i_usr_offset]:
+                i_usr_type = gv_DfltUserType
+            self.s_user_types[i_usr_offset] = i_usr_type
+            return True
+        return False
+
+    def gf_SetUserMac(self, i_usr_offset, i_mac):
+        if i_usr_offset < self.s_user_max_cnt:
+            maccnt = self.s_user_dev_max[i_usr_offset] 
+            for i in range(0, maccnt, 1):
+                if i_mac == self.s_user_dev_macs[i_usr_offset][i]:
+                    return False
+            self.s_user_dev_macs[i_usr_offset].append(i_mac)
+            self.s_user_dev_max[i_usr_offset] += 1
+            for i in range(0, self.s_device_max_cnt, 1):
+                if i_mac == self.s_device_macs[i]:
+                    return True
+            self.s_device_macs.append(i_mac)
+            self.s_device_max_cnt += 1
+            return True
+        return False
+
+    # ------------------------------------------------------------------------
+    def pf_SetUserAllInfo(self, i_offset, i_usr_id, i_usr_name,
+                          i_usr_passward, i_usr_type, i_macs):
+        self.gf_SetUserId(i_offset, i_usr_id)
+        self.gf_SetUserName(i_offset, i_usr_name)
+        self.gf_SetUserPassward(i_offset, i_usr_passward)
+        self.gf_SetUserType(i_offset, i_usr_type)
+        maccnt = len(i_macs)
+        for i in range(0, maccnt, 1):
+            self.gf_SetUserMac(i_offset, i_macs[i] )
+    
+    # ------------------------------------------------------------------------
+    def pf_SetDfltUser(self):
+        self.pf_SetUserAllInfo(0,
+                               gv_DfltUserId,
+                               gv_DfltUserName,
+                               gv_DfltUserPassword,
+                               gv_DfltUserType,
+                               gv_DfltUserDeviceMacs)
+
+    # ------------------------------------------------------------------------
+    def gf_LoadConfig(self):
+        self.pf_ClearAllUsrAllInfo()
+        try:
+            importlib.reload(cfg)
+        except Exception:
+            pass
+        save_req = False
+        try:
+            self.s_host = cfg.gv_Host
+            self.s_user_port = cfg.gv_UserPort
+            self.s_user_timeout = cfg.gv_UserTimeout
+            self.s_device_port = cfg.gv_DevicePort
+            self.s_device_timeout = cfg.gv_DeviceTimeout
+        except Exception:
+            self.s_host = gv_DfltHost
+            self.s_user_port = gv_DlftUserPort
+            self.s_user_timeout = gv_DfltUserTimout
+            self.s_device_port = gv_DfltDevicePort
+            self.s_device_timeout = gv_DlftDeviceTimout
+            save_req = True
+        try:
+            u = cfg.gv_UserIds
+            n = cfg.gv_UserNames
+            p = cfg.gv_UserPasswords
+            t = cfg.gv_UserTypes
+            d = cfg.gv_UserDeviceMacs
+            if len(u) == len(n) == len(p) == len(t):
+                for i in range( 0, len(u) ):
+                    self.pf_SetUserAllInfo(i, u[i], n[i], p[i], u[i], d[i])
+                if self.s_user_dev_max == self.pf_IsUserIdPresent( gv_DfltUserId ):
+                    self.pf_SetDfltUser()
+                    save_req = True
+            else:
+                self.pf_SetDfltUser()
+                save_req = True
+        except Exception:
+            self.pf_SetDfltUser()
+            save_req = True
+        if True == save_req:
+            self.gf_SaveCfg()
+    
+    # ------------------------------------------------------------------------
+    def pf_SaveFileCfg(self, fh):
+        s = "gv_Host = '" + self.s_host + str("'\n")
+        fh.write( s )
+
+        s = 'gv_UserPort = ' + str(self.s_user_port) + str('\n')
+        fh.write( s )
+
+        s = 'gv_UserTimeout = ' + str(self.s_user_timeout) + str('\n')
+        fh.write( s )
+
+        s = 'gv_DevicePort = ' + str(self.s_device_port) + str('\n')
+        fh.write( s )
+
+        s = 'gv_DeviceTimeout = ' + str(self.s_device_timeout) + str('\n')
+        fh.write( s )
+
+        s = 'gv_UserIds = ' + str(self.s_user_ids) + str('\n')
+        fh.write( s )
+
+        s = 'gv_UserNames = ' + str(self.s_user_names) + str('\n')
+        fh.write( s )
+
+        s = 'gv_UserPasswords = ' + str(self.s_user_passwords) + str('\n')
+        fh.write( s )
+
+        s = 'gv_UserTypes = ' + str(self.s_user_types) + str('\n')
+        fh.write( s )
+
+        s = 'gv_UserDeviceMacs = ' + str(self.s_user_dev_macs) + str('\n')
+        fh.write( s )
+
+    # ------------------------------------------------------------------------
+    def gf_SaveCfg(self):
+        fh = open("SrvEcoAppAna_CfgFile.py","w+")
+        self.pf_SaveFileCfg( fh )
+        fh.close()
+        
+    # ------------------------------------------------------------------------
+    def gf_GetMacIdToUserIdList(self, i_mac_id):
+        m = []
+        for i in range(0, self.s_user_max_cnt, 1):
+            j = self.s_user_dev_max[i]
+            for k in range(0, j, 1):
+                if i_mac_id == self.s_user_dev_macs[i][k]:
+                    m.append(i+1)
+                    break
+        return m
+
+    # ------------------------------------------------------------------------
+    def gf_GetUserIdToMacList(self, i_usr_id):
+        m = []
+        if True == UtilAna.gf_ChkRange1ToMax(i_usr_id, self.s_user_max_cnt):
+            m = self.s_user_dev_macs[i_usr_id-1]
+        return m
+
+# ============================================================================
+# end of file
+
