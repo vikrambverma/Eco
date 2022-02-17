@@ -1,12 +1,241 @@
-Ä¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼°PDDD°P°Pòîv¦Nr†¶¦\j–ÖN†¶Î–væ°PÂö¶†vr†¶¦\‚r‚Êöf.î†N¦2–¶–.¦&°Pòîv¦N‚&&N¦ÎÎ\Ê
-´Œl4Ê–6n¦N
-†6†Æ¦‚†N.¶¦v.4ÊöF†æ®N†4ª&†–®N4°P\J†V†Î.†v4’v&–†4
-–vÂö&¦´ÌŒÌŒ°PÂN¦†.¦&"†.¦\ì´‚®æ´LLŒ°P2–Æ¦vÆ¦\²’*°P°PDDD°P°PÄ´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´°P–¶öN.ª.–6‚v†°P–¶öN."¦n¢Æö‚‚v†úÂfæÂ6†ÎÎ°P–¶öN.*ÆÂ6–¦v.‚v†ú
-†N¦v.ÊöÆv&6°P–¶öN.v®¶†Îv°P°PænúÊ¶6¦Âö®v.¼ŒL,°PænúÊ–v*–¶¦¼vt†N†væ¦4ÌtŒ,4ÌtŒ,ôænúÊ¶6¦Âö®v.”°PænúÊ–vî†n¦¼vtÎ–vænúÊ–v*–¶¦”°P°PÄ¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼°PÆ6†ÎÎJ"†.†bN†¶¦‚v†\°P&¦fúú–v–.úúÎ¦6f4–ú¶†úÎ–^¦”\°PÎ¦6ftÎúN&¼F.¦†NN†–ú¶†úÎ–^¦”°PÎ¦6ftÎúNú–&¼–ú¶†úÎ–^¦°PÎ¦6ftÎúNúî6¦v¼°PÎ¦6ftÎú¶†úÎ–^¦¼–ú¶†úÎ–^¦°P&¦fæfúÂ6¦†NÎ¦6f”\°PÎ¦6ftÎúNú–&¼Î¦6ftÎú¶†úÎ–^¦°P&¦fæfúâ¦.bN†¶¦Î¦6f4–úÎöÆú–&4–ú&†.†4–úf®v”\°P&6¦v¼6¦v–ú&†.†”°PföN––vN†væ¦4&6¦v4Œ”\°P–fÎ¦6ftÎúNú–&|Î¦6ftÎú¶†úÎ–^¦´Œ\°PÎ¦6ftÎúNú–&¼°PÎ¦6ftÎúNúî6¦v¼L°PÎ¦6ftÎúN&ÚÎ¦6ftÎúNú–&º¼–ú&†.†Ú–º°PÎ¦6ftÎúNú–&Ô¼Œ°P–fÎ¦6ftÎúNú–&¼¼Î¦6ftÎúNúî6¦v\°P–fL¼¼Î¦6ftÎúNúî6¦v\°PÎ¦6ftÎúNúî6¦v¼ª.–6‚v†tæfúB–v†N2–*ö’v.Î¦6ftÎúN&Ú\Lº4L”°P–fÎ¦6ftÎúNúî6¦v<¬öNÎ¦6ftÎúNúî6¦v|Î¦6ftÎú¶†úÎ–^¦´¬\°PÎ¦6ftÎúNú–&¼Î¦6ftÎú¶†úÎ–^¦°PN¦.®Nv°P¦6Î¦\°PÎ¦6ftÎúNú–&¼Î¦6ftÎú¶†úÎ–^¦°P–úf®v–úÎöÆú–&4Î¦6ftÎúN&Ú\Î¦6ftÎúNúî6¦vº”°P°P°P°PÄ¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼°PÆ6†ÎÎ"¦n‚‚v†\°P&¦fúú–v–.úúÎ¦6f4–ú¶†úF®fÎ–^¦4–ú&¦F®æú†Æ.–n¦”\°PÎ¦6ftÎúÆfæ¼"¦n¢Æö‚‚v†úÂfæÂ6†ÎÎt‚Âövf–æ‚v†”°PÎ¦6ftÎú&¦F®æú†Æ.–n¦¼–ú&¦F®æú†Æ.–n¦°PÎ¦6ftÎú¶†úF®fÎ–^¦¼–ú¶†úF®fÎ–^¦°PÎ¦6ftÎúÆ6.úöFV¼*ÆÂ6–¦v.‚v†ú
-†N¦v.ÊöÆv&6t
-†N¦v.*ÆÂ6–¦v.ÊöÆv&6‚v†:°Pä"¦n–Æ¦ú*ÆÂ6–¦v.ä4b†6Î¦”°PÎ¦6ftÎúNú.N¦†&ú†Æ.–n¦¼b†6Î¦°PÎ¦6ftÎúNú.N¦†&¼röv¦°PÎ¦6ftÎúÎöÆú¶†¼°PÎ¦6ftÎúÎöÆúÎ.†.¦¼Úº°PÎ¦6ftÎúÎöÆú.¶N¼Úº°PÎ¦6ftÎúÎöÆú¶†Æ–&¼Úº°PÎ¦6ftÎúÎöÆúfN†¶¦úöFV¼Úº°PÎ¦6ftÎúö®.ú¶ÎæúF®f¼F.¦†NN†Î¦6ftÎú¶†úF®fÎ–^¦”°PÎ¦6ftÎú†ú.N¦†&ú†Æ.–n¦¼b†6Î¦°PÎ¦6ftÎú†ú.N¦†&¼röv¦°PÎ¦6ftÎú.–ÆÖÎ¼°P°PÄ´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´°P&¦ffú"¦F®æÎ¦6f4–ú–&4–ú¦n¦ú–&”\°P–f*N®¦¼¼Î¦6ftÎú&¦F®æú†Æ.–n¦\°PÎ¼ä"¦näÔÎ.N–ú–&”ÔäúäÔ–ú¦n¦ú–&°Pª.–6‚v†tæfú"¦F®æ2öæÎ”°P°PÄ´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´°P&¦ffú‚&&ÊöÆ
-†N†¶Î¦6f”\°PÎ¦6ftÎúÎöÆúÎ.†.¦t†¦v&”°PÎ¦6ftÎúÎöÆú.¶Nt†¦v&”°PÎ¦6ftÎúÎöÆú¶†Æ–&t†¦v&”°PÎ¦6ftÎúÎöÆúfN†¶¦úöFVt†¦v&J"†.†bN†¶¦‚v†Î¦6ftÎú¶†úF®fÎ–^¦””°PÎ¦6ftÎúÎöÆú¶†Ô¼Œ°P°P°PÄ´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´°P&¦ffúÂ6¦†N‚66
-†N†¶Î¦6f”\°PföN––vN†væ¦4Î¦6ftÎúÎöÆú¶†4Œ”\°PÎ¦6ftÎúÎöÆúÎ.†.¦tö”°PÎ¦6ftÎúÎöÆú.¶Ntö”°PÎ¦6ftÎúÎöÆú¶†Æ–&tö”°PÎ¦6ftÎúÎöÆúfN†¶¦úöFVtö”°PÎ¦6ftÎúÎöÆú¶†¼°P°P°PÄ´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´°P&¦ffúb–662¦v*¦²†ÆÂNÆ‚v&Ê¦v&Î¦6f4–úÎöÆÖú–&4–ú6¦v4–ú.¦4–ú¶†Æ”\°P–ú6¦vÔ¼L°PÎ¦6ftÎúö®.ú¶ÎæúF®fÚ\Lº¼ª.–6‚v†tæfúb–66ª–v.*öB–v†N2––ú6¦v4L”°PÎ¦6ftÎúö®.ú¶ÎæúF®fÚLº¼–ú.¦°PÎ¦6ftÎúö®.ú¶ÎæúF®fÚÌ\œº¼ª.–6‚v†tæfúb–66ª–v.*öB–v†N2––ú¶†Æ4l”°PÎ¦6ftÎúö®.ú¶ÎæúF®fÚ–ú6¦v´L\–ú6¦vº¼ÚºTL°PÎ¦6ftÎúÆ6.úöFVtæfúÊ¦v&ò®.²Îæ–úÎöÆÖú–&4Î¦6ftÎúö®.ú¶ÎæúF®fÚ\–ú6¦vº”°P°P°PÄ´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´°P&¦ffúb–66ê†n¦Î¦6f4.”\°Pæ6öF†6ænúÊ¶6¦Âö®v.°PV¼ŒÌ°P.¼.ÔŒ”TL°P¶¼vtN†v&ö¶tN†v&–v..4.ÔL”°PföN––vN†væ¦4ænúÊ¶6¦Âö®v.4Œ”\°PÄ–fænúÊ–vî†n¦Ú–º|\°PÄÎ¼ænúÊ–vî†n¦Ú–ºT¶°PÄ¦6Î¦\°PÄÎ¼´ænúÊ–vî†n¦Ú–ºT¶”°PÎ¼ænúÊ–vî†n¦Ú–ºT¶°PÖ¼–v.Î”¤L¬l°PÎ¦6ftÎúö®.ú¶ÎæúF®fÚVº¼Ö°PÎ¦6ftÎúö®.ú¶ÎæúF®fÚVÔŒº¼Ö°PVÔ¼L°P°PÄ´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´°P&¦ffúÊ¦v&’vföbN†¶¦Î¦6f4–”\°PÎ¦6ftfúb–662¦v*¦²†ÆÂNÆ‚v&Ê¦v&–4œ4œ4–”°P°P°PÄ´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´°P&¦ffúÊ¦v&"†.†bN†¶¦Î¦6f4–”\°Pæ6öF†6ænúÊ¶6¦Âö®v.°PÎ¦6ftÎúö®.ú¶ÎæúF®fÚœ\ŒÌº¼ª.–6‚v†tæfúb–66ª–v.*öB–v†N2–Î¦6ftÎú.–ÆÖÎ4,”°PÎ¦6ftfúb–66ê†n¦–”°PÎ¦6ftfúb–662¦v*¦²†ÆÂNÆ‚v&Ê¦v&–4ænúÊ¶6¦Âö®v.TLÔŒÌ44–”°P°PÄ´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´°P&¦ffú¢¦Â¶&ÎÎ¦6f4–úÎöÆú–&4–ú&†.†”\°P–v"¦n²†Æ’&¼ª.–6‚v†tæfúB–v†N2–*ö’v.–ú&†.†ÚÌ\œº4l”°P–f¼¼–v"¦n²†Æ’&\°PÎ¦6ftÎúÆ6.úöFVtæfúÂ6öÎ¦–úÎöÆú–&ÔŒ”°PN¦.®Nv°P–f–v"¦n²†Æ’&„¼Î¦6ftÎúÎöÆú¶†Æ–&Ú–úÎöÆú–&º\°PÎ¦6ftÎúÎöÆú¶†Æ–&Ú–úÎöÆú–&º¼–v"¦n²†Æ’&°P°PÄ´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´°P&¦ffú*N¦†&b®vú’vÆö¶¶–væ¢n¦Î¦6f”\°PÎ¦6ftÎúNú.N¦†&ú†Æ.–n¦¼*N®¦°Pî–6¦*N®¦¼¼Î¦6ftÎúNú.N¦†&ú†Æ.–n¦\°Pª.–6‚v†tæfúÊ6¦¦t¬”°Pî–6¦*N®¦\°PNÊöÆ’&4N¢n¦’&4N¢n¦"†.†¼Î¦6ftÎúÆ6.úöFVtæfúâ¦.¢n¦v.Î”°P–fröv¦¼¼NÊöÆ’&öN¼¼NÊöÆ’&\°PFN¦†Ö°PNÊöÆ’&´¼Œ°P–fNÊöÆ’&|¼Î¦6ftÎúÎöÆú¶†\°PÎ¦6ftÎúÆ6.úöFVtæfúÂ6öÎ¦NÊöÆ’&ÔŒ”°P¦6Î¦\°P–fä"‚*‚ä¼¼N¢n¦’&\°PÎ¦6ftfú"¦F®æNÊöÆ’&ÔŒ4N¢n¦’&”°PÎ¦6ftÎúÎöÆúfN†¶¦úöFVÚNÊöÆ’&ºtæfúâ¦.bN†¶¦NÊöÆ’&4N¢n¦"†.†4Î¦6ftfú¢¦Â¶&Î”°P°P¦6–fäÊ*ò
-ä¼¼N¢n¦’&\°PÎ¦6ftfú"¦F®æNÊöÆ’&ÔŒ4N¢n¦’&”°PÎ¦6ftÎúÎöÆúÎ.†.¦ÚNÊöÆ’&º¼°PÎ¦6ftÎúÎöÆú.¶NÚNÊöÆ’&º¼°PÎ¦6ftÎúÎöÆú¶†Æ–&ÚNÊöÆ’&º¼°PÎ¦6ftÎúÎöÆúfN†¶¦úöFVÚNÊöÆ’&ºtæfúÂ6¦†N”°P°P¦6–fDÊ*‚J*D¼¼N¢n¦’&\°PÎ¦6ftfú"¦F®æNÊöÆ’&ÔŒ4N¢n¦’&”°PÎ¦6ftÎúÎöÆúÎ.†.¦ÚNÊöÆ’&º¼L°PÎ¦6ftÎúÎöÆú.¶NÚNÊöÆ’&º¼°PÎ¦6ftÎúÎöÆú¶†Æ–&ÚNÊöÆ’&º¼°PÎ¦6ftÎúÎöÆúfN†¶¦úöFVÚNÊöÆ’&ºtæfúÂ6¦†N”°P°P¦6Î¦\°PÎ¦6ftfú"¦F®æNÊöÆ’&ÔŒ4N¢n¦’&”°PÎ¦6ftÎúÆ6.úöFVtæfúÂ6öÎ¦NÊöÆ’&ÔŒ”°P°PÄ´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´°P&¦ffú*N¦†&b®vú‚Î¦6f”\°PÎ¦6ftÎú†ú.N¦†&ú†Æ.–n¦¼*N®¦°Pî–6¦*N®¦¼¼Î¦6ftÎú†ú.N¦†&ú†Æ.–n¦\°Pª.–6‚v†tæfúÊ6¦¦tœœ”°PÎ¦6ftÎú.–ÆÖÎÔ¼Œ°PföN––vN†væ¦4Î¦6ftÎúÎöÆú¶†4Œ”\°PÎ¼Î¦6ftÎúÎöÆúÎ.†.¦Ú–º°P¶¼Î¦6ftÎúÎöÆú.¶NÚ–º°P–f¼¼Î\°P¶¼¶ÔŒ°P–f¶|¬\°PÎ¦6ftÎúÆ6.úöFVtæfúÂövv¦Æ.J¦–ÔŒ”°P¶¼°PÎ¦6ftÎúÎöÆúÎ.†.¦Ú–º¼Œ°PÎ¦6ftÎúÎöÆú.¶NÚ–º¼¶°P¦6–fŒ¼¼Î\°P†ÎÎ°P¦6–fL¼¼Î\°P¶¼¶ÔŒ°P–f¶|\°PÎ¦6ftfúÊ¦v&’vföbN†¶¦–ÔŒ”°P¶¼°PÎ¦6ftÎúÎöÆúÎ.†.¦Ú–º¼Ì°PÎ¦6ftÎúÎöÆú.¶NÚ–º¼¶°P¦6Î¦\°P¶¼¶ÔŒ°P–f¶|\°PÎ¦6ftfúÊ¦v&"†.†bN†¶¦–ÔŒ”°P¶¼°PÎ¦6ftÎúÎöÆú.¶NÚ–º¼¶°P°PÄ´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´°P&¦fæfúÊ.†N.Î¦6f”\°PÎ¦6ftÎúÆfætæfú2ö†&Âövf–æ”°PföN––vN†væ¦4Î¦6ftÎúÆfætÎú&¦nú¶†4Œ”\°PÎ¦6ftfú‚&&ÊöÆ
-†N†¶”°PÎ¦6ftÎúNú.N¦†&¼ª.–6‚v†tæfúÊ.†N.*N¦†&‚v†Î¦6ftfú*N¦†&b®vú’vÆö¶¶–væ¢n¦”°PÎ¦6ftÎú†ú.N¦†&¼ª.–6‚v†tæfúÊ.†N.*N¦†&‚v†Î¦6ftfú*N¦†&b®vú‚”°P–¼Î¦6ftÎúÆfætÎúöÎ.°P–¼Î¦6ftÎúÆfætÎúöN.°P–Æ¼Î¦6ftÎúÆfætÎú&¦nú¶†°P–.¼Î¦6ftÎúÆfætÎú–v†Æ.–n–.ú.–¶¦ö®.°PÎ¦6ftÎúÆ6.úöFVtæfúÊ.†N.–4–4–Æ4–.4Œ¬”°P°PÄ´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´°P&¦fæfúÊ.öÎ¦6f”\°PÎ¦6ftÎú†ú.N¦†&ú†Æ.–n¦¼b†6Î¦°Pî–6¦*N®¦¼¼Î¦6ftÎú†ú.N¦†&t–Îú†6–n¦”\°Pª.–6‚v†tæfúÊ6¦¦Œ”°PÎ¦6ftÎú†ú.N¦†&¼röv¦°P°PÎ¦6ftÎúÆ6.úöFVtæfúÊ.ö”°P°PÎ¦6ftÎúNú.N¦†&ú†Æ.–n¦¼b†6Î¦°Pî–6¦*N®¦¼¼Î¦6ftÎúNú.N¦†&t–Îú†6–n¦”\°Pª.–6‚v†tæfúÊ6¦¦Œ”°PÎ¦6ftÎúNú.N¦†&¼röv¦°PÎ¦6ftfúÂ6¦†N‚66
-†N†¶”°P°PÄ¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼°PÄ¦v&öff–6¦°P
+# ============================================================================
+"""
+
+Owner Name    : Vikramsingh
+Company Name  : ANA Software Limited
+Owner Address : SP-106, Silver Palace Apartment, Shobhagpura, Udaipur,
+              : Rajasthan, India, Pin Code - 313001
+Created Date  : 07-Aug-2021
+Licence       : MIT
+
+"""
+
+# ----------------------------------------------------------------------------
+import UtilAna
+import DevEcoAppAna_CfgClass
+import TcpClientAna_ParentSocHndl
+import numpy as np
+
+gv_SmpleCount = 1024
+gv_SinTime = np.arange(0,3.14,3.14/gv_SmpleCount)
+gv_Sinwave = np.sin( gv_SinTime )
+
+# ============================================================================
+class RxDataFrameAna:
+    def __init__(self, i_max_size):
+        self.s_rxd = bytearray(i_max_size)
+        self.s_rx_idx = i_max_size
+        self.s_rx_wlen = 0
+        self.s_max_size = i_max_size
+    def gf_Clear(self):
+        self.s_rx_idx = self.s_max_size
+    def gf_GetFrame(self, i_soc_id, i_data, i_fun):
+        dlen = len(i_data)
+        for i in range(0, dlen, 1):
+            if self.s_rx_idx > self.s_max_size - 1:
+                self.s_rx_idx = 0
+                self.s_rx_wlen = 2
+            self.s_rxd[self.s_rx_idx] = i_data[i]
+            self.s_rx_idx += 1
+            if self.s_rx_idx == self.s_rx_wlen:
+                if 2 == self.s_rx_wlen:
+                    self.s_rx_wlen = UtilAna.gf_BinaryLiToInt(self.s_rxd[0:2], 2)
+                    if self.s_rx_wlen < 5 or self.s_rx_wlen > self.s_max_size-5:
+                        self.s_rx_idx = self.s_max_size
+                        return
+                else:
+                    self.s_rx_idx = self.s_max_size
+                    i_fun(i_soc_id, self.s_rxd[0:self.s_rx_wlen])
+            
+        
+
+# ============================================================================
+class DevAppAna:
+    def __init__(self, i_max_bufsize, i_debug_active):
+        self.s_cfg = DevEcoAppAna_CfgClass.AppConfigAna()
+        self.s_debug_active = i_debug_active
+        self.s_max_bufsize = i_max_bufsize
+        self.s_clt_obj = TcpClientAna_ParentSocHndl.ParentTcpClientSocHndlAna(\
+                                            'Device_TcpClient', False)
+        self.s_rxq_thread_active = False
+        self.s_rxq_thread = None
+        self.s_soc_max = 0
+        self.s_soc_state = []
+        self.s_soc_tmr = []
+        self.s_soc_macid = []
+        self.s_soc_frame_obj = []
+        self.s_out_msg_buf = bytearray(self.s_max_bufsize)
+        self.s_app_thread_active = False
+        self.s_app_thread = None
+        self.s_ticks = 0
+    
+    # ------------------------------------------------------------------------
+    def pf_Debug(self, i_id, i_eve_id):
+        if True == self.s_debug_active:
+            s = 'Dev ' + str(i_id) + '_' + i_eve_id
+            UtilAna.gf_DebugLog( s )
+
+    # ------------------------------------------------------------------------
+    def pf_AddSocParam(self):
+        self.s_soc_state.append(0)
+        self.s_soc_tmr.append(0)
+        self.s_soc_macid.append(0)
+        self.s_soc_frame_obj.append(RxDataFrameAna(self.s_max_bufsize))
+        self.s_soc_max += 1
+
+
+    # ------------------------------------------------------------------------
+    def pf_ClearAllParam(self):
+        for i in  range(0, self.s_soc_max, 1):
+            self.s_soc_state.pop(0)
+            self.s_soc_tmr.pop(0)
+            self.s_soc_macid.pop(0)
+            self.s_soc_frame_obj.pop(0)
+        self.s_soc_max = 0
+
+
+    # ------------------------------------------------------------------------
+    def pf_FillLenTypeMacCrcAndSend(self, i_sock_id, i_len, i_type, i_mac):
+        i_len += 2
+        self.s_out_msg_buf[0:2] = UtilAna.gf_FillUintToBinaryLi(i_len, 2)
+        self.s_out_msg_buf[2] = i_type
+        self.s_out_msg_buf[3:9] = UtilAna.gf_FillUintToBinaryLi(i_mac, 6)
+        self.s_out_msg_buf[i_len-2:i_len] = [0]*2
+        self.s_clt_obj.gf_SendOutMsg(i_sock_id, self.s_out_msg_buf[0:i_len])
+    
+
+    # ------------------------------------------------------------------------
+    def pf_FillWave(self, t):
+        global gv_SmpleCount
+        j = 13
+        t = (t+1)*20
+        m = np.random.randint(t, t+20)
+        for i in range(0,gv_SmpleCount,1):
+            # if gv_Sinwave[i] > 0:
+            #     s = gv_Sinwave[i] * m
+            # else:
+            #     s = -(gv_Sinwave[i] * m)
+            s = gv_Sinwave[i] * m
+            k = int(s) % 256
+            self.s_out_msg_buf[j] = k
+            self.s_out_msg_buf[j+1] = k
+            j += 2
+
+    # ------------------------------------------------------------------------
+    def pf_SendInfoFrame(self, i):
+        self.pf_FillLenTypeMacCrcAndSend(i, 9, 9, i)
+    
+
+    # ------------------------------------------------------------------------
+    def pf_SendDataFrame(self, i):
+        global gv_SmpleCount
+        self.s_out_msg_buf[9:13] = UtilAna.gf_FillUintToBinaryLi(self.s_ticks, 4)
+        self.pf_FillWave(i)
+        self.pf_FillLenTypeMacCrcAndSend(i, gv_SmpleCount*2+13, 8, i)
+
+    # ------------------------------------------------------------------------
+    def pf_ExeCmds(self, i_soc_id, i_data):
+        inDevMacId = UtilAna.gf_BinaryLiToInt(i_data[3:9], 6)
+        if 0 == inDevMacId:
+            self.s_clt_obj.gf_Close(i_soc_id+1)
+            return
+        if inDevMacId != self.s_soc_macid[i_soc_id]:
+            self.s_soc_macid[i_soc_id] = inDevMacId
+
+    # ------------------------------------------------------------------------
+    def pf_ThreadFun_IncommingEve(self):
+        self.s_rxq_thread_active = True
+        while True == self.s_rxq_thread_active:
+            UtilAna.gf_Sleep(0.5)
+            while True:
+                rxSocId, rxEveId, rxEveData = self.s_clt_obj.gf_GetEvents()
+                if None == rxSocId or 0 == rxSocId:
+                    break
+                rxSocId -= 1
+                if rxSocId >= self.s_soc_max:
+                    self.s_clt_obj.gf_Close(rxSocId+1)
+                else:
+                    if 'DATA' == rxEveId:
+                        self.pf_Debug(rxSocId+1, rxEveId)
+                        self.s_soc_frame_obj[rxSocId].gf_GetFrame(rxSocId, rxEveData, self.pf_ExeCmds)
+    
+                    elif 'STOP' == rxEveId:
+                        self.pf_Debug(rxSocId+1, rxEveId)
+                        self.s_soc_state[rxSocId] = 0
+                        self.s_soc_tmr[rxSocId] = 0
+                        self.s_soc_macid[rxSocId] = 0
+                        self.s_soc_frame_obj[rxSocId].gf_Clear()
+        
+                    elif "START" == rxEveId:
+                        self.pf_Debug(rxSocId+1, rxEveId)
+                        self.s_soc_state[rxSocId] = 2
+                        self.s_soc_tmr[rxSocId] = 0
+                        self.s_soc_macid[rxSocId] = 0
+                        self.s_soc_frame_obj[rxSocId].gf_Clear()
+    
+                    else:
+                        self.pf_Debug(rxSocId+1, rxEveId)
+                        self.s_clt_obj.gf_Close(rxSocId+1)
+                    
+    # ------------------------------------------------------------------------
+    def pf_ThreadFun_App(self):
+        self.s_app_thread_active = True
+        while True == self.s_app_thread_active:
+            UtilAna.gf_Sleep(0.990)
+            self.s_ticks += 1
+            for i in range(0, self.s_soc_max, 1):
+                s = self.s_soc_state[i]
+                m = self.s_soc_tmr[i]
+                if 0 == s:
+                    m = m + 1
+                    if m > 5:
+                        self.s_clt_obj.gf_ConnectReq(i+1)
+                        m = 0
+                        self.s_soc_state[i] = 1
+                    self.s_soc_tmr[i] = m
+                elif 1 == s:
+                    pass
+                elif 2 == s:
+                    m = m + 1
+                    if m > 0:
+                        self.pf_SendInfoFrame(i+1)
+                        m = 0
+                        self.s_soc_state[i] = 3
+                    self.s_soc_tmr[i] = m
+                else:
+                    m = m + 1
+                    if m > 0:
+                        self.pf_SendDataFrame(i+1)
+                        m = 0
+                    self.s_soc_tmr[i] = m
+
+    # ------------------------------------------------------------------------
+    def gf_Start(self):
+        self.s_cfg.gf_LoadConfig()
+        for i in range(0, self.s_cfg.s_dev_max, 1):
+            self.pf_AddSocParam()
+        self.s_rxq_thread = UtilAna.gf_StartThreadAna(self.pf_ThreadFun_IncommingEve)
+        self.s_app_thread = UtilAna.gf_StartThreadAna(self.pf_ThreadFun_App)
+        ih = self.s_cfg.s_host
+        ip = self.s_cfg.s_port
+        ic = self.s_cfg.s_dev_max
+        it = self.s_cfg.s_inactivity_timeout
+        self.s_clt_obj.gf_Start(ih, ip, ic, it, 15)
+
+    # ------------------------------------------------------------------------
+    def gf_Stop(self):
+        self.s_app_thread_active = False
+        while True == self.s_app_thread.is_alive():
+            UtilAna.gf_Sleep(1)
+        self.s_app_thread = None
+
+        self.s_clt_obj.gf_Stop()
+
+        self.s_rxq_thread_active = False
+        while True == self.s_rxq_thread.is_alive():
+            UtilAna.gf_Sleep(1)
+        self.s_rxq_thread = None
+        self.pf_ClearAllParam()
+
+# ============================================================================
+# end of file

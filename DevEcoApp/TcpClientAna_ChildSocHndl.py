@@ -1,7 +1,149 @@
-Ä¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼°PDDD°P°Pòîv¦Nr†¶¦\j–ÖN†¶Î–væ°PÂö¶†vžr†¶¦\‚r‚Êöf.î†N¦2–¶–.¦&°Pòîv¦N‚&&N¦ÎÎ\Ê
-´Œl4Ê–6n¦N
-†6†Æ¦‚†N.¶¦v.4ÊöF†æ®N†4ª&†–®N4°P\J†V†Î.†v4’v&–†4
-–vÂö&¦´ÌŒÌŒ°PÂN¦†.¦&"†.¦\ì´‚®æ´LLŒ°P2–Æ¦vÆ¦\²’*°P°PDDD°P°PÄ´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´°P–¶öN.ª.–6‚v†°P°PÄ¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼°PÆ6†ÎÎÂ–6&*ÆÂ6–¦v.ÊöÆv&6‚v†\°PDDD°PDDD°P°P°PÄ´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´°P&¦fúú–v–.úúÎ¦6f4–ú¶žú–&4–ú†N¦v.úöFV”\°PÎ¦6ftÎú¶žú–&¼–ú¶žú–&ÔŒ°PÎ¦6ftÎú†N¦v.úöFV¼–ú†N¦v.úöFV°PÎ¦6ftÎú.–¶¦ö®.úÆö®v.¼°PÎ¦6ftÎúÎöÆÖ¼röv¦°PÎ¦6ftÎúÎ.†.¦¼°PÎ¦6ftÎú.¶Nú.N¦†&¼röv¦°PÎ¦6ftÎúN¦†&ú.N¦†&¼röv¦°PÎ¦6ftfú"¦F®æDòBRúÂJ¢‚*¢D”°P°P°PÄ´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´°P&¦ffú"¦F®æÎ¦6f4–ú¶Îæ”\°PÎ¦6ftÎú†N¦v.úöFVtfú"¦F®æÎ¦6ftÎú¶žú–&4–ú¶Îæ”°P°P°PÄ´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´°P&¦ffú¢NNöNÎ¦6f4–ú¶Îæ”\°PÎ¦6ftÎú†N¦v.úöFVtfú¢NNöNÎ¦6ftÎú¶žú–&4–ú¶Îæ”°P°P°PÄ´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´°P&¦ffúÊ¦v&¢n¦v.Î¦6f4–ú¦n¦v.ú–&4–ú¦n¦v.ú&†.†¼röv¦”\°PÎ¦6ftÎú†N¦v.úöFVtfúÊ†n¦J¢n¦v.ÎÎ¦6ftÎú¶žú–&4–ú¦n¦v.ú–&4–ú¦n¦v.ú&†.†”°P°P°PÄ´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´°P&¦fæfú’ÎbN¦¦Î¦6f”\°P–f¼¼Î¦6ftÎúÎ.†.¦\°P–fröv¦¼¼Î¦6ftÎú.¶Nú.N¦†&\°P–fröv¦¼¼Î¦6ftÎúN¦†&ú.N¦†&\°PN¦.®Nv*N®¦°PN¦.®Nvb†6Î¦°P°P°PÄ´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´°P&¦ffúÂ6öÎ¦Î¦6f”\°P–fröv¦„¼Î¦6ftÎúÎöÆÖ\°P–fb†6Î¦¼¼ª.–6‚v†tæfúÂ6öÎ¦ÊöÆÖ¦.‚v†Î¦6ftÎúÎöÆÖ”\°PÎ¦6ftfú¢NNöNäÊòÂÒ¢*Â6öÎ¦b†–6Îä”°PÎ¦6ftÎúÎöÆÖ¼röv¦°P°P°PÄ´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´°P&¦fæfúÂ6öÎ–væJ¦ŽÎ¦6f”\°P–f„¼Î¦6ftÎúÎ.†.¦\°PÎ¦6ftfúÂ6öÎ¦”°P°P°PÄ´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´°P&¦ffú*¶N*N¦†&b®vÎ¦6f”\°Pî–6¦Î¦6ftÎúÎ.†.¦<Œ\°Pª.–6‚v†tæfúÊ6¦¦tL¬”°PÎ¦6ftÎúÎ.†.¦¼L°PÎ¦6ftfú"¦F®æä*–¶¦ò®.ú*N¦†&úÊ*‚J*ä”°PÎ¦6ftÎú.–¶¦ö®.úÆö®v.¼°P..–¶¦ö®.Æv.¼Î¦6ftÎú†N¦v.úöFVtÎúÆövv¦Æ.–övú.–¶¦ö®.T,°Pî–6¦L¼¼Î¦6ftÎúÎ.†.¦\°Pª.–6‚v†tæfúÊ6¦¦tL¬”°PÎ¦6ftÎú.–¶¦ö®.úÆö®v.¼Î¦6ftÎú.–¶¦ö®.úÆö®v.ÔŒ°P–f..–¶¦ö®.Æv.<Î¦6ftÎú.–¶¦ö®.úÆö®v.\°PÎ¦6ftÎú.–¶¦ö®.úÆö®v.¼°PÎ¦6ftfúÂ6öÎ¦”°PÎ¦6ftÎú.–¶¦ö®.úÆö®v.¼°P..–¶¦ö®.Æv.¼Î¦6ftÎú†N¦v.úöFVtÎú–v†Æ.–n–.žú.–¶¦ö®.°Pî–6¦Ì¼¼Î¦6ftÎúÎ.†.¦\°Pª.–6‚v†tæfúÊ6¦¦Œ”°P–f„¼..–¶¦ö®.Æv.\°PÎ¦6ftÎú.–¶¦ö®.úÆö®v.¼Î¦6ftÎú.–¶¦ö®.úÆö®v.ÔŒ°P–f..–¶¦ö®.Æv.<Î¦6ftÎú.–¶¦ö®.úÆö®v.\°PÎ¦6ftÎú.–¶¦ö®.úÆö®v.¼°PÎ¦6ftfúÂ6öÎ¦”°PÎ¦6ftfú"¦F®æä*–¶¦ò®.ú*N¦†&úÊ*ò
-ä”°PÎ¦6ftfúÂ6öÎ¦”°PÎ¦6ftÎú.¶Nú.N¦†&¼röv¦°PÎ¦6ftÎúÎ.†.¦¼°PÎ¦6ftfúÊ¦v&¢n¦v.äÊ*ò
-ä”°P°P°PÄ´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´°P&¦ffúJ¦†&*N¦†&b®vÎ¦6f”\°PÎ¦6ftÎúÎ.†.¦¼Œ°PÎ¦6ftfú"¦F®æäJ¦†&ú*N¦†&úÊ*‚J*ä”°Pî–6¦Î¦6ftÎúÎ.†.¦<L\°Pª.–6‚v†tæfúÊ6¦¦tL¬”°P°PÎÆ¼ª.–6‚v†tæfúÂövv¦Æ.ÊöÆÖ¦.‚v†Î¦6ftÎú†N¦v.úöFVtÎúöÎ.4Î¦6ftÎú†N¦v.úöFVtÎúöN.”°P–fröv¦„¼ÎÆ\°PÎ¦6ftÎúÎ.†.¦¼Ì°PÎ¦6ftÎúÎöÆÖ¼ÎÆ°PÎ¦6ftfúÊ¦v&¢n¦v.äÊ*‚J*ä”°Pî–6¦Ì¼¼Î¦6ftÎúÎ.†.¦\°P&¼ª.–6‚v†tæfúJ&ÊöÆÖ¦.‚v†ÎÆ”°P–fröv¦„¼&\°PÎ¦6ftfúÊ¦v&¢n¦v.ä"‚*‚ä4&”°PÎ¦6ftÎú.–¶¦ö®.úÆö®v.¼°P¦6Î¦\°PFN¦†Ö°PÎ¦6ftÎúN¦†&ú.N¦†&¼röv¦°PÎ¦6ftÎúÎ.†.¦¼,°PÎ¦6ftfú"¦F®æäJ¦†&ú*N¦†&úÊ*ò
-ä”°P°P°PÄ´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´°P&¦ffúÊ.†N.J¦†&*N¦†&ÎÎ¦6f”\°PÎ¦6ftÎúN¦†&ú.N¦†&¼ª.–6‚v†tæfúÊ.†N.*N¦†&‚v†Î¦6ftfúJ¦†&*N¦†&b®v”°PÎ¦6ftÎú.¶Nú.N¦†&¼ª.–6‚v†tæfúÊ.†N.*N¦†&‚v†Î¦6ftfú*¶N*N¦†&b®v”°P°P°PÄ´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´°P&¦fæfúÂövv¦Æ.J¦ŽÎ¦6f”\°P–f¼¼Î¦6ftÎúÎ.†.¦\°PÎ¦6ftfúÊ.†N.J¦†&*N¦†&Î”°P¦6Î¦\°PÎ¦6ftfú¢NNöNä‚66N¦†&žÆövv¦Æ.¦&ä”°P°P°PÄ´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´°P&¦fæfúÊ¦v&ò®.²ÎæÎ¦6f4–úö®.ú¶Îæ”\°P–fÌ¼¼Î¦6ftÎúÎ.†.¦\°P–f*N®¦¼¼ª.–6‚v†tæfú*&ÊöÆÖ¦.‚v†Î¦6ftÎúÎöÆÖ4–úö®.ú¶Îæ”\°PÎ¦6ftÎú.–¶¦ö®.úÆö®v.¼°P°P°PÄ¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼¼°PÄ¦v&öff–6¦°P°P
+# ============================================================================
+"""
+
+Owner Name    : Vikramsingh
+Company Name  : ANA Software Limited
+Owner Address : SP-106, Silver Palace Apartment, Shobhagpura, Udaipur,
+              : Rajasthan, India, Pin Code - 313001
+Created Date  : 07-Aug-2021
+Licence       : MIT
+
+"""
+
+# ----------------------------------------------------------------------------
+import UtilAna
+
+# ============================================================================
+class ChildTcpClientSocHndlAna:
+    """
+    """
+
+
+    # ------------------------------------------------------------------------
+    def __init__(self, i_my_id, i_parent_obj):
+        self.s_my_id = i_my_id + 1
+        self.s_parent_obj = i_parent_obj
+        self.s_timeout_count = 0
+        self.s_sock = None
+        self.s_state = 0
+        self.s_tmr_thread = None
+        self.s_read_thread = None
+        self.pf_Debug( "OBJ_CREATE" )
+      
+
+    # ------------------------------------------------------------------------
+    def pf_Debug(self, i_msg):
+        self.s_parent_obj.pf_Debug(self.s_my_id, i_msg)
+
+
+    # ------------------------------------------------------------------------
+    def pf_Error(self, i_msg):
+        self.s_parent_obj.pf_Error(self.s_my_id, i_msg)
+
+
+    # ------------------------------------------------------------------------
+    def pf_SendEvent(self, i_event_id, i_event_data = None):
+        self.s_parent_obj.pf_SaveRxEvents(self.s_my_id, i_event_id, i_event_data)
+
+
+    # ------------------------------------------------------------------------
+    def gf_IsFree(self):
+        if 0 == self.s_state:
+            if None == self.s_tmr_thread:
+                if None == self.s_read_thread:
+                    return True
+        return False
+
+
+    # ------------------------------------------------------------------------
+    def pf_Close(self):
+        if None != self.s_sock:
+            if False == UtilAna.gf_CloseSocketAna(self.s_sock):
+                self.pf_Error('SOCKET Close Fails')
+            self.s_sock = None
+
+
+    # ------------------------------------------------------------------------
+    def gf_ClosingReq(self):
+        if 0 != self.s_state:
+            self.pf_Close()
+
+
+    # ------------------------------------------------------------------------
+    def pf_TmrThreadFun(self):
+        while self.s_state < 1:
+            UtilAna.gf_Sleep(0.025)
+        self.s_state = 2
+        self.pf_Debug('TimeOut_Thread_START')
+        self.s_timeout_count = 0
+        ttimeoutcnt = self.s_parent_obj.s_connection_timeout * 4
+        while 2 == self.s_state:
+            UtilAna.gf_Sleep( 0.250 )
+            self.s_timeout_count = self.s_timeout_count + 1
+            if ttimeoutcnt < self.s_timeout_count:
+                self.s_timeout_count = 0
+                self.pf_Close()
+        self.s_timeout_count = 0
+        ttimeoutcnt = self.s_parent_obj.s_inactivity_timeout
+        while 3 == self.s_state:
+            UtilAna.gf_Sleep( 1 )
+            if 0 != ttimeoutcnt:
+                self.s_timeout_count = self.s_timeout_count + 1
+                if ttimeoutcnt < self.s_timeout_count:
+                    self.s_timeout_count = 0
+                    self.pf_Close()
+        self.pf_Debug('TimeOut_Thread_STOP')
+        self.pf_Close()
+        self.s_tmr_thread = None
+        self.s_state = 0
+        self.pf_SendEvent('STOP')
+
+
+    # ------------------------------------------------------------------------
+    def pf_ReadThreadFun(self):
+        self.s_state = 1
+        self.pf_Debug('Read_Thread_START')
+        while self.s_state < 2:
+            UtilAna.gf_Sleep(0.025)
+            
+        sc = UtilAna.gf_ConnectSocketAna(self.s_parent_obj.s_host, self.s_parent_obj.s_port)
+        if None != sc:
+            self.s_state = 3
+            self.s_sock = sc
+            self.pf_SendEvent('START')
+            while 3 == self.s_state:
+                d = UtilAna.gf_RxdSocketAna(sc)
+                if None != d:
+                    self.pf_SendEvent('DATA', d)
+                    self.s_timeout_count = 0
+                else:
+                    break
+        self.s_read_thread = None
+        self.s_state = 4
+        self.pf_Debug('Read_Thread_STOP')
+
+
+    # ------------------------------------------------------------------------
+    def pf_StartReadThreads(self):
+        self.s_read_thread = UtilAna.gf_StartThreadAna( self.pf_ReadThreadFun )
+        self.s_tmr_thread = UtilAna.gf_StartThreadAna( self.pf_TmrThreadFun )
+
+
+    # ------------------------------------------------------------------------
+    def gf_ConnectReq(self):
+        if 0 == self.s_state:
+            self.pf_StartReadThreads()
+        else:
+            self.pf_Error('All ready connected')
+
+
+    # ------------------------------------------------------------------------
+    def gf_SendOutMsg(self, i_out_msg):
+        if 3 == self.s_state:
+            if True == UtilAna.gf_TxdSocketAna(self.s_sock, i_out_msg):
+                self.s_timeout_count = 0
+
+
+# ============================================================================
+# end of file
+

@@ -1,2 +1,4 @@
-ænúöÎ.¼äŒl,t¬LtLŒLtä°Pænú
-öN.r®¶¼,°Pænú’v†Æ.–n–.ž*–¶¦ö®.¼Œ°Pænú"¦n–Æ¦²†ÆÎ¼ÚŒ4Lº°P
+gv_Host = '164.52.212.8'
+gv_PortNum = 40000
+gv_InactivityTimeout = 10
+gv_DeviceMacs = [1, 2]
