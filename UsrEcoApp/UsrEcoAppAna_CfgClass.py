@@ -19,7 +19,7 @@ except Exception:
 # gv_DfltHost = '164.52.212.8'
 gv_DfltHost = '127.0.0.1'
 gv_DfltPort = 30000
-gv_DfltDeviceMacs = []
+gv_DfltDeviceMacs = [[1,2]]
 gv_DfltSelfUserId = 1
 gv_DfltInactivityTimeout = 60
 

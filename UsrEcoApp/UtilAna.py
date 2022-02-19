@@ -23,6 +23,17 @@ def gf_GetDataTimeStr():
     s = dt.strftime("%d-%m-%Y %H:%M:%S.%f : ")
     return s
 
+# ============================================================================
+def gf_GetDataStr():
+    dt = datetime.now()
+    s = dt.strftime("%d-%m-%Y")
+    return s
+
+# ============================================================================
+def gf_GetTimeStr():
+    dt = datetime.now()
+    s = dt.strftime("%H:%M:%S")
+    return s
 
 # ============================================================================
 def gf_DebugLog(i_msg):

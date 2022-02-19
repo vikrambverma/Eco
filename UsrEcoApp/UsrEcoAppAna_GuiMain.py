@@ -12,6 +12,7 @@ Licence       : MIT
 
 # ----------------------------------------------------------------------------
 import UtilAna
+import UsrEcoAppAna_Logic
 import UsrEcoAppAna_GUI
 # import signal
 
@@ -33,12 +34,16 @@ def AppAna_Main(i_app_name):
     
     UtilAna.gf_AppStartMsg(i_app_name)
     
-    s_gui = UsrEcoAppAna_GUI.UsrEcoAppGui()
+    s_usr_hndl = UsrEcoAppAna_Logic.UsrAppAna(4096, True)
+    s_usr_hndl.gf_Start()
+    s_gui = UsrEcoAppAna_GUI.UsrEcoAppGui(s_usr_hndl.gf_GetLiveGuiNSecData)
     s_gui.gf_GuiStart()
 
     # signal.signal(signal.SIGINT, ExitMyApp)
     # while False == gv_ExitApp:
     UtilAna.gf_Sleep(1)
+
+    s_usr_hndl.gf_Stop()
 
     UtilAna.gf_AppStopMsg(i_app_name)
 

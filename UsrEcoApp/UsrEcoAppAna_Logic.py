@@ -16,18 +16,17 @@ import UsrEcoAppAna_CfgClass
 import TcpClientAna_ParentSocHndl
 
 import importlib
-import numpy as np
-import matplotlib.pyplot as plt
+# import numpy as np
+# import matplotlib.pyplot as plt
 try:
     import UserOneCfgAna
 except  Exception:
     pass
 
-gv_DfltSec = 10
-gv_Dflt1SecDSize = 1000
+# 60*15=900 : 15 minutes
+gv_DfltSec = 900
+gv_Dflt1SecDSize = 1024
 gv_DfltDSize = (gv_Dflt1SecDSize * gv_DfltSec)
-gv_DfltXAxis = np.linspace(0, gv_DfltSec, gv_DfltDSize)
-gv_ClrTbl = ['red', 'green', 'blue', 'orange', 'black']
 
 # ============================================================================
 class RxDataFrameAna:
@@ -78,15 +77,12 @@ class UsrAppAna:
 
         self.s_dev_max = 0
         self.s_dev_macs = []
+        self.s_dev_secdata_rcv = []
         self.s_dev_wave_data = []
+        self.s_dev_wave_LTA = []
+        self.s_dev_wave_EVC = []
+        self.s_dev_idl_tmr = 0
         
-        self.s_fig = plt.figure()
-        gs = self.s_fig.add_gridspec(8, hspace=0)
-        self.s_axs = gs.subplots(sharex=True, sharey=True)
-        self.s_fig.suptitle('Eco Device Graph')
-        for ax in self.s_axs:
-            ax.label_outer()
-    
     # ------------------------------------------------------------------------
     def pf_Debug(self, i_id, i_eve_id):
         if True == self.s_debug_active:
@@ -108,47 +104,59 @@ class UsrAppAna:
             i = self.pf_IsDevMacPresent( i_mac )
             if i == self.s_dev_max:
                 self.s_dev_macs.append( i_mac )
+                self.s_dev_secdata_rcv.append( False )
                 self.s_dev_wave_data.append( [0]*gv_DfltDSize )
+                self.s_dev_wave_LTA.append(0)
+                self.s_dev_wave_EVC.append(0)
                 self.s_dev_max += 1
 
     # ------------------------------------------------------------------------
-    def pf_updatewavedata(self, i_bufid, i_start, i_end, i_data):
-        j = 0
-        for i in range(i_start, i_end, 1):
-            self.s_dev_wave_data[i_bufid][i] = i_data[j]
-            j += 1
+    def pf_updateWaveData(self, i_bufid, i_data):
+        s1 = gv_Dflt1SecDSize
+        sm = gv_DfltDSize
+        self.s_dev_wave_data[i_bufid][sm-s1:sm] = i_data[0:s1]
+        self.s_dev_wave_data[i_bufid][0:sm-s1] = self.s_dev_wave_data[i_bufid][s1:sm]
 
     # ------------------------------------------------------------------------
-    def pf_SaveDeviceWaveData(self, i_bufid, i_data):
-        sk = gv_DfltDSize-gv_Dflt1SecDSize
-        ek = gv_DfltDSize
-        self.pf_updatewavedata(i_bufid, sk, ek, i_data )
+    def pf_RxdSaveDeviceWaveData(self, i_bufid, i_data):
+        self.s_dev_secdata_rcv[i_bufid] = True
+        self.pf_updateWaveData(i_bufid, i_data)
 
     # ------------------------------------------------------------------------
-    def pf_ShiftDeviceWaveData(self):
-        sk = gv_DfltDSize-gv_Dflt1SecDSize
-        for i in range(0, self.s_dev_max, 1):
-            self.pf_updatewavedata(i, 0, sk, self.s_dev_wave_data[i][gv_Dflt1SecDSize:])
+    def pf_IdleSaveDeviceWaveData(self):
+        self.s_dev_idl_tmr = self.s_dev_idl_tmr + 1
+        if self.s_dev_idl_tmr > 2:
+            self.s_dev_idl_tmr = 0
             m = [0]*gv_Dflt1SecDSize
-            self.pf_SaveDeviceWaveData( i, m )
+            for i in range(0, self.s_dev_max, 1):
+                if True != self.s_dev_secdata_rcv[i]:
+                    self.s_dev_wave_LTA[i] = 0
+                    self.pf_updateWaveData(i,m)
+                else:
+                    self.s_dev_secdata_rcv[i] = False
 
-    def gf_ShowDeviceData(self):
-        # show graph here
-        for i in range(0, self.s_dev_max, 1):
-            c = gv_ClrTbl[i%5]
-            self.s_axs[i].clear()
-            self.s_axs[i].plot(gv_DfltXAxis, self.s_dev_wave_data[i], c)
-            self.s_axs[i].set_ylabel(str(self.s_dev_macs[i]), rotation=0, labelpad=40)
-        if 0 == self.s_dev_max:
-            self.s_axs[0].clear()
-            self.s_axs[0].plot(gv_DfltXAxis, gv_DfltXAxis)
-        self.s_fig.canvas.draw()
-        self.s_fig.canvas.flush_events()
+    # ------------------------------------------------------------------------
+    def gf_GetLiveGuiNSecData(self, i_sec, i_devcnt, i_mac, i_data, i_LTA, i_EVC):
+        f = False
+        s = gv_DfltDSize - (i_sec+1)*gv_Dflt1SecDSize
+        e = gv_DfltDSize - (1)*gv_Dflt1SecDSize
+        m = [0]*(e-s)
+        for i in range(0, i_devcnt, 1):
+            f = False
+            for j in range(0,self.s_dev_max, 1):
+                if i_mac[i] == self.s_dev_macs[j]:
+                    # UtilAna.gf_DebugLog( ("i_mac[i]" + str(i_mac[i])) )
+                    i_data[i][0:e-s] = self.s_dev_wave_data[j][s:e]
+                    i_LTA[i] = self.s_dev_wave_LTA[j]
+                    i_EVC[i] = self.s_dev_wave_EVC[j]
+                    f = True
+                    break
+            if False == f:
+                i_data[i][0:e-s] = m[0:e-s]
+                i_LTA[i] = 0
+                i_EVC[i] = 0
                 
-        # shift data by one second and fill zero
-        self.pf_ShiftDeviceWaveData()
-
-
+        
     # ------------------------------------------------------------------------
     def pf_SendUserCmd(self, i_len, i_cmd_type):
         i_len += 2
@@ -276,20 +284,23 @@ class UsrAppAna:
         inmac = UtilAna.gf_BinaryLiToInt(i_rcv_data[8:14], 6)
         if inlen == (i_rcvlen - 7):
             if 8 == intype:      # data frame
-                if 2063 == inlen:
+                if ((gv_Dflt1SecDSize*2)+15) == inlen:
                     t = self.pf_IsDevMacPresent(inmac)
                     if t == self.s_dev_max:
                         self.pf_AddMac( inmac )
                         s = "DevData_MAC_" + str(inmac)
                         UtilAna.gf_DebugLog( s )
                     # save data in device data
-                    m = [0] * 1000
+                    m = [0] * gv_Dflt1SecDSize
                     k = 18
-                    for i in range(0,1000,1):
+                    lta = self.s_dev_wave_LTA[t]
+                    for i in range(0,gv_Dflt1SecDSize,1):
                         m[i] = UtilAna.gf_BinaryLiToInt(i_rcv_data[k:k+2],2)
-                        m[i] = m[i] * 5.12/65536 - 2.56
+                        m[i] = round(m[i] * 5.12/65536 - 2.56, 5)
+                        lta = lta + m[i]
                         k += 2
-                    self.pf_SaveDeviceWaveData(t, m)
+                    self.s_dev_wave_LTA[t] = round(lta / (gv_Dflt1SecDSize+1), 5)
+                    self.pf_RxdSaveDeviceWaveData(t, m)
             elif 9 == intype:    # device info
                 if 11 == inlen:
                     s = "DevInfo_MAC_" + str(inmac)
@@ -354,6 +365,7 @@ class UsrAppAna:
         self.s_app_thread_active = True
         while True == self.s_app_thread_active:
             UtilAna.gf_Sleep(0.990)
+            self.pf_IdleSaveDeviceWaveData()
             self.s_ticks += 1
             if 0 == self.s_usr_state:
                 self.s_usr_tmr += 1

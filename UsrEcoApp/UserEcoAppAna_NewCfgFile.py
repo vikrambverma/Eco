@@ -30,7 +30,7 @@ class CfgUserAppAna:
         
         self.s_FileSave_MaxDurationMin = 15
         self.s_LiveDataView_SecMaxAllowed = self.s_FileSave_MaxDurationMin * 60
-        self.s_Device_SamplePerSec = 1000
+        self.s_Device_SamplePerSec = 1024
         
         self.s_Cfg_Change = False
         

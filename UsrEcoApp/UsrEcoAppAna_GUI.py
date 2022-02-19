@@ -15,14 +15,8 @@ import tkinter as tk
 from tkinter import ttk
 from tkinter import filedialog as fd
 from tkinter import messagebox
-import threading
 
-# from tkinter.messagebox import showinfo
-
-# import matplotlib
-# matplotlib.use("TkAgg")
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
-# from matplotlib.figure import Figure
 import matplotlib.pyplot as plt
 
 import UserEcoAppAna_NewCfgFile as mCfg1
@@ -163,8 +157,9 @@ class Page_LDV(tk.Frame):
         self.s_LiveLTA = []
         self.s_LiveEVC = []
         self.s_LiveDSec = 0
-        self.s_LiveDSampleCount = 0
+        self.s_LiveDTSmplCount = 0
         self.s_LiveDeviceCount = 0
+        self.s_LiveDSmplRate = 0
         
         self.s_Chnl_LVD_frame, self.s_Chnl_LVD_fig, self.s_Chnl_LVD_axs, self.s_Chnl_LVD_canv = self.pf_AddFigAxsCanv(0.00, 0.00, 0.87, 1.00, 'blue',  'white')
         self.s_Chnl_LTA_frame, self.s_Chnl_LTA_fig, self.s_Chnl_LTA_axs, self.s_Chnl_LTA_canv = self.pf_AddFigAxsCanv(0.87, 0.00, 0.06, 1.00, 'green', 'white')
@@ -173,7 +168,7 @@ class Page_LDV(tk.Frame):
         self.s_execute_cnt = 0
 
     def pf_BeforeStop(self):
-        self.s_controller.pf_RefreshCallBackSetup(0,None)
+        self.s_controller.pf_StopCbk()
         
         while len(self.s_LiveDx) > 0:
             self.s_LiveDx.pop(0)
@@ -185,7 +180,7 @@ class Page_LDV(tk.Frame):
             self.s_LiveDy.pop(0)
         self.s_LiveDeviceCount = 0
         self.s_LiveDSec = 0
-        self.s_LiveDSampleCount = 0
+        self.s_LiveDTSmplCount = 0
 
     def pf_BeforeStart(self):
         c = self.s_controller.s_Cfg
@@ -198,26 +193,27 @@ class Page_LDV(tk.Frame):
                 self.s_LiveDeviceCount = i + 1
 
         self.s_LiveDSec = c.s_Device_LiveDataSec
-        self.s_LiveDSampleCount = self.s_LiveDSec * 1000
+        self.s_LiveDSmplRate = c.s_Device_SamplePerSec
+        self.s_LiveDTSmplCount = self.s_LiveDSec * c.s_Device_SamplePerSec
 
         # self.pf_dbg()
-        tstep = self.s_LiveDSec/self.s_LiveDSampleCount
-        for i in range(0, self.s_LiveDSampleCount, 1):
-            tts = tstep * i
+        tstep = round(self.s_LiveDSec/self.s_LiveDTSmplCount, 5)
+        for i in range(0, self.s_LiveDTSmplCount, 1):
+            tts = round(tstep * i, 5)
             self.s_LiveDx.append(tts)
         for i in range(0, self.s_LiveDeviceCount, 1):
             self.s_LiveLTA.append(0.0)
             self.s_LiveEVC.append(0)
-            self.s_LiveDy.append([0.0 for j in range(self.s_LiveDSampleCount)])
+            self.s_LiveDy.append([0.0 for j in range(self.s_LiveDTSmplCount)])
         c = self.s_controller.s_Cfg
         s = '[ Live Data ]   ' + c.s_Customer_Name + "   :   " + c.s_Customer_Site
         self.s_Chnl_LVD_axs = self.pf_InitFigAxs(self.s_Chnl_LVD_fig, 0.100, 0.09, 0.999, 0.95, s, self.s_LiveDx, self.s_LiveDy, c.s_Device_Names)
-        self.s_Chnl_LTA_axs = self.pf_InitFigAxs(self.s_Chnl_LTA_fig, 0.010, 0.09, 0.99, 0.95, "E@L", None, None, self.s_LiveLTA)
-        self.s_Chnl_EVC_axs = self.pf_InitFigAxs(self.s_Chnl_EVC_fig, 0.010, 0.09, 0.80, 0.95, "ER@L", None, None, self.s_LiveEVC)
+        self.s_Chnl_LTA_axs = self.pf_InitFigAxs(self.s_Chnl_LTA_fig, 0.010, 0.09, 0.99, 0.95, "Events", None, None, self.s_LiveLTA)
+        self.s_Chnl_EVC_axs = self.pf_InitFigAxs(self.s_Chnl_EVC_fig, 0.010, 0.09, 0.80, 0.95, "Rate", None, None, self.s_LiveEVC)
 
     def pf_AfterStart(self):
         self.s_execute_cnt = 0
-        self.s_controller.pf_RefreshCallBackSetup(1000, self.pf_ShowLvd)
+        self.s_controller.pf_StartCbk(10, self.pf_ShowLvd)
     
     def pf_AddFigAxsCanv(self, i_xs, i_ys, i_xw, i_yh, i_c1, i_c2):
         # frm = pf_GuiLibAdd_Frame(self, i_xs, i_ys, i_xw, i_yh, i_c1)
@@ -251,19 +247,23 @@ class Page_LDV(tk.Frame):
                 i_axs[k].set_ylim(-3,3)
                 i_axs[k].plot(i_gxv, i_gyv[k], clr)
                 i_axs[k].set_ylabel(i_gyl[k], rotation=0, labelpad=40)
+                i_axs[k].set_xlabel( ("Date : " + UtilAna.gf_GetDataStr() + "     Time - " + UtilAna.gf_GetTimeStr() ) )
             else:
                 i_axs[k].get_xaxis().set_visible(False)
                 i_axs[k].set_ylabel(i_gyl[k], rotation=0, labelpad=-60)
         i_fig.canvas.draw()
         i_fig.canvas.flush_events()
-
+        
     def pf_ShowLvd(self):
+        # UtilAna.gf_DebugLog("Draw Start")
         c = self.s_controller.s_Cfg
-        # print("pf_ShowLvd : " + str(self.s_execute_cnt))
-        # self.s_execute_cnt = (self.s_execute_cnt + 1)%1000
+        lf = self.s_controller.s_get_live_data_fun
+        if None != lf:
+            lf(self.s_LiveDSec, self.s_LiveDeviceCount, c.s_Device_MacIds, self.s_LiveDy, self.s_LiveLTA, self.s_LiveEVC)
         self.pf_update_fig(self.s_Chnl_LVD_fig, self.s_Chnl_LVD_axs, self.s_LiveDx, self.s_LiveDy, c.s_Device_Names)
         self.pf_update_fig(self.s_Chnl_LTA_fig, self.s_Chnl_LTA_axs, None, None, self.s_LiveLTA)
         self.pf_update_fig(self.s_Chnl_EVC_fig, self.s_Chnl_EVC_axs, None, None, self.s_LiveEVC)
+        # UtilAna.gf_DebugLog("Draw Stop")
 
 # ---------------------------------------------------------------------------
 # Page_HDV : History Data View
@@ -641,9 +641,10 @@ class UsrEcoAppGui():
     """
     """
     # ------------------------------------------------------------------------
-    def __init__(self):
+    def __init__(self, i_livedatafun):
+        self.s_get_live_data_fun = i_livedatafun
         self.s_root = tk.Tk()
-        # self.s_window.iconbitmap(default="clienticon.ico")
+        # self.s_root.iconbitmap(default="MapsLogo32x32.ico")
         self.s_root.title("GeoPhone Client Application : V1R0")
         # configuring size of the window 
         self.s_height = self.s_root.winfo_screenheight()
@@ -672,26 +673,38 @@ class UsrEcoAppGui():
         self.pf_AddMenuDataView()
         self.pf_AddMenuSettingsView()
         self.s_root.config(menu=self.s_menubar, bg='white')
-        self.s_callbackfun = None
-        self.s_callbacktmr = 500
+        self.s_cbk_active = False
+        self.s_cbk_fun = None
+        self.s_cbk_tmr = 0
         self.s_root_exit = False
         
-    def pf_RefreshCallBackSetup(self, i_tmr, i_fun):
-        self.s_callbacktmr = i_tmr
-        self.s_callbackfun = i_fun
+    def pf_StartCbk(self, i_tmr, i_fun):
+        self.s_cbk_fun = i_fun
+        self.s_cbk_tmr = i_tmr
+        self.s_cbk_active = True
+    def pf_StopCbk(self):
+        self.s_cbk_active = False
+        self.s_cbk_tmr = 0
+        self.s_cbk_fun = None
 
     def pf_CallAfterXxMs(self):
-        t = self.s_callbacktmr
-        cbkf = self.s_callbackfun
-        if None != cbkf:
-            cbkf()
+        t1 = 0
+        t2 = 1
+        if True == self.s_cbk_active:
+            while t1 != t2:
+                cbkf = self.s_cbk_fun
+                t1 = self.s_cbk_tmr
+                t2 = self.s_cbk_tmr
+            if 0 != t1:
+                if None != cbkf:
+                    cbkf()
         else:
-            t = 500
-        if t < 10 or t > 60000:
-            t = 10
+            t1 = 1000
+        if t1 < 1 or t1 > 60000:
+            t1 = 1000
 
         if False == self.s_root_exit:
-            self.s_root.after(t, self.pf_CallAfterXxMs)
+            self.s_root.after(t1, self.pf_CallAfterXxMs)
         
     def pf_ShowPage(self, cont):
         t = False
@@ -726,7 +739,7 @@ class UsrEcoAppGui():
     def pf_AddMenuDataView(self):
         self.s_menu_dataview = tk.Menu(self.s_menubar, tearoff=0)
         self.s_menu_dataview.add_command(label="LiveDataView", command=lambda:self.pf_ShowPage(Page_LDV) )
-        self.s_menu_dataview.add_command(label="HistoryDataView", command=lambda:self.pf_ShowPage(Page_HDV) )
+        self.s_menu_dataview.add_command(label="HistoryDataView", command=lambda:self.pf_ShowPage(Page_None) )
         self.s_menu_dataview.add_separator()
         self.s_menu_dataview.add_command(label="None", command=lambda:self.pf_ShowPage(Page_None) )
         self.s_menu_dataview.add_separator()
