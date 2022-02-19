@@ -20,7 +20,7 @@ except Exception:
 gv_DfltHost = '127.0.0.1'
 gv_DfltPortNum = 40000
 gv_DfltInactivityTimeout = 10
-gv_DfltDeviceMacs = [1,2]
+gv_DfltDeviceMacs = [1,2,3,4]
 
 # ============================================================================
 class AppConfigAna:
