@@ -21,7 +21,7 @@ except Exception:
 gv_DfltHost = '127.0.0.1'
 # gv_DfltHost = '164.52.212.8'
 gv_DlftUserPort = 30000
-gv_DfltUserTimout = 900
+gv_DfltUserTimout = 120
 gv_DfltDevicePort = 40000
 gv_DlftDeviceTimout = 11
 
@@ -29,7 +29,7 @@ gv_DfltUserName = 'admin'
 gv_DfltUserPassword = 'admin@1234'
 gv_DfltUserId = 1 # dont change this
 gv_DfltUserType = 'admin' # dont change this
-gv_DfltUserDeviceMacs = []
+gv_DfltUserDeviceMacs = [1,2,3,4]
 
 # ============================================================================
 class AppConfigAna:
@@ -261,6 +261,7 @@ class AppConfigAna:
 
     # ------------------------------------------------------------------------
     def gf_SaveCfg(self):
+        UtilAna.gf_DebugLog("[SAVE] : SrvEcoAppAna_CfgFile.py")
         fh = open("SrvEcoAppAna_CfgFile.py","w+")
         self.pf_SaveFileCfg( fh )
         fh.close()

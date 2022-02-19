@@ -120,7 +120,7 @@ class SrvDevAppAna:
     def pf_ThreadFun_IncommingEve(self):
         self.s_rxq_thread_active = True
         while True == self.s_rxq_thread_active:
-            UtilAna.gf_Sleep(0.001)
+            UtilAna.gf_Sleep(0.005)
             while True:
                 rxSocId, rxEveId, rxEveData = self.s_srv_obj.gf_GetEvents()
                 if None == rxSocId:
@@ -344,7 +344,7 @@ class SrvUsrAppAna:
     def pf_ThreadFun_IncommingEve(self):
         self.s_rxq_thread_active = True
         while True == self.s_rxq_thread_active:
-            UtilAna.gf_Sleep(0.050)
+            UtilAna.gf_Sleep(0.025)
             while True:
                 rxSocId, rxEveId, rxEveData = self.s_srv_obj.gf_GetEvents()
                 if None == rxSocId:
