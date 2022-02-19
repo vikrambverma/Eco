@@ -153,16 +153,16 @@ class Page_LDV(tk.Frame):
         
         self.s_LiveDy = []
         self.s_LiveDx = []
-        self.s_LiveLTA = []
-        self.s_LiveEVC = []
+        self.s_LiveEvents = []
+        self.s_LiveLERate = []
         self.s_LiveDSec = 0
         self.s_LiveDTSmplCount = 0
         self.s_LiveDeviceCount = 0
         self.s_LiveDSmplRate = 0
         
         self.s_Chnl_LVD_frame, self.s_Chnl_LVD_fig, self.s_Chnl_LVD_axs, self.s_Chnl_LVD_canv = self.pf_AddFigAxsCanv(0.00, 0.00, 0.87, 1.00, 'blue',  'white')
-        self.s_Chnl_LTA_frame, self.s_Chnl_LTA_fig, self.s_Chnl_LTA_axs, self.s_Chnl_LTA_canv = self.pf_AddFigAxsCanv(0.87, 0.00, 0.06, 1.00, 'green', 'white')
-        self.s_Chnl_EVC_frame, self.s_Chnl_EVC_fig, self.s_Chnl_EVC_axs, self.s_Chnl_EVC_canv = self.pf_AddFigAxsCanv(0.93, 0.00, 0.07, 1.00, 'black', 'white')
+        self.s_Chnl_EVENTS_frame, self.s_Chnl_EVENTS_fig, self.s_Chnl_EVENTS_axs, self.s_Chnl_EVENTS_canv = self.pf_AddFigAxsCanv(0.87, 0.00, 0.06, 1.00, 'green', 'white')
+        self.s_Chnl_LERATE_frame, self.s_Chnl_LERATE_fig, self.s_Chnl_LERATE_axs, self.s_Chnl_LERATE_canv = self.pf_AddFigAxsCanv(0.93, 0.00, 0.07, 1.00, 'black', 'white')
         
         self.s_execute_cnt = 0
 
@@ -171,10 +171,10 @@ class Page_LDV(tk.Frame):
         
         while len(self.s_LiveDx) > 0:
             self.s_LiveDx.pop(0)
-        while len(self.s_LiveLTA) > 0:
-            self.s_LiveLTA.pop(0)
-        while len(self.s_LiveEVC) > 0:
-            self.s_LiveEVC.pop(0)
+        while len(self.s_LiveEvents) > 0:
+            self.s_LiveEvents.pop(0)
+        while len(self.s_LiveLERate) > 0:
+            self.s_LiveLERate.pop(0)
         while len(self.s_LiveDy) > 0:
             self.s_LiveDy.pop(0)
         self.s_LiveDeviceCount = 0
@@ -201,14 +201,14 @@ class Page_LDV(tk.Frame):
             tts = -round(tstep * i, 2)
             self.s_LiveDx.append(tts)
         for i in range(0, self.s_LiveDeviceCount, 1):
-            self.s_LiveLTA.append(0.0)
-            self.s_LiveEVC.append(0)
+            self.s_LiveEvents.append(0)
+            self.s_LiveLERate.append(0)
             self.s_LiveDy.append([0.0 for j in range(self.s_LiveDTSmplCount)])
         c = self.s_controller.s_Cfg
         s = '[ Live Data ]   ' + c.s_Customer_Name + "   :   " + c.s_Customer_Site
         self.s_Chnl_LVD_axs = self.pf_InitFigAxs(self.s_Chnl_LVD_fig, 0.100, 0.09, 0.999, 0.95, s, self.s_LiveDx, self.s_LiveDy, c.s_Device_Names)
-        self.s_Chnl_LTA_axs = self.pf_InitFigAxs(self.s_Chnl_LTA_fig, 0.010, 0.09, 0.99, 0.95, "Events", None, None, self.s_LiveLTA)
-        self.s_Chnl_EVC_axs = self.pf_InitFigAxs(self.s_Chnl_EVC_fig, 0.010, 0.09, 0.80, 0.95, "Rate", None, None, self.s_LiveEVC)
+        self.s_Chnl_EVENTS_axs = self.pf_InitFigAxs(self.s_Chnl_EVENTS_fig, 0.010, 0.09, 0.99, 0.95, "Events", None, None, self.s_LiveEvents)
+        self.s_Chnl_LERATE_axs = self.pf_InitFigAxs(self.s_Chnl_LERATE_fig, 0.010, 0.09, 0.80, 0.95, "Rate", None, None, self.s_LiveLERate)
 
     def pf_AfterStart(self):
         self.s_execute_cnt = 0
@@ -259,10 +259,10 @@ class Page_LDV(tk.Frame):
         c = self.s_controller.s_Cfg
         lf = self.s_controller.s_get_live_data_fun
         if None != lf:
-            lf(self.s_LiveDSec, self.s_LiveDeviceCount, c.s_Device_MacIds, self.s_LiveDy, self.s_LiveLTA, self.s_LiveEVC)
+            lf(self.s_LiveDSec, self.s_LiveDeviceCount, c.s_Device_MacIds, self.s_LiveDy, self.s_LiveEvents, self.s_LiveLERate)
         self.pf_update_fig(self.s_Chnl_LVD_fig, self.s_Chnl_LVD_axs, self.s_LiveDx, self.s_LiveDy, c.s_Device_Names)
-        self.pf_update_fig(self.s_Chnl_LTA_fig, self.s_Chnl_LTA_axs, None, None, self.s_LiveLTA)
-        self.pf_update_fig(self.s_Chnl_EVC_fig, self.s_Chnl_EVC_axs, None, None, self.s_LiveEVC)
+        self.pf_update_fig(self.s_Chnl_EVENTS_fig, self.s_Chnl_EVENTS_axs, None, None, self.s_LiveEvents)
+        self.pf_update_fig(self.s_Chnl_LERATE_fig, self.s_Chnl_LERATE_axs, None, None, self.s_LiveLERate)
         # UtilAna.gf_DebugLog("Draw Stop")
 
 # ---------------------------------------------------------------------------
