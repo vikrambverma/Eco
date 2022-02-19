@@ -45,15 +45,21 @@ class CfgUserAppAna:
         self.s_Admin_LoginPwd = 'adminpwd'
         self.s_Admin_Name = "admin-1"
 
-        self.s_RemoteHost_IP = '0.0.0.0'
-        self.s_RemoteHost_Port = 30000
-        self.s_RemoteHost_InactivitySec = 60
+        self.s_RemoteHost_IP = '127.0.0.1'
+        self.s_RemoteHost_Port = 0
+        self.gf_SetRemoteHostPort(30000)
+        self.s_RemoteHost_InactivitySec = 0
+        self.gf_SetRemoteHostInactivitySec(60)
 
-        self.s_Device_LiveDataSec = 10
+        self.s_Device_LiveDataSec = 0
+        self.gf_SetDeviceLiveDataSec(10)
         self.s_Device_HDFilePath = "."
-        self.s_Device_HDWindowSec = 3
-        self.s_Device_HDWStep1 = 1
-        self.s_Device_HDWStep2 = 2
+        self.s_Device_HDWindowSec = 0
+        self.gf_SetDeviceHDWindowSec(10)
+        self.s_Device_HDWStep1 = 0
+        self.gf_SetDeviceHDWStep1(2)
+        self.s_Device_HDWStep2 = 0
+        self.gf_SetDeviceHDWStep1(5)
         
         self.s_Device_MacIds = [i+1 for i in range(self.s_User_DeviceMaxAllowed) ]
         self.s_Device_Names = ['CH-'+str(i+1) for i in range(self.s_User_DeviceMaxAllowed) ]
@@ -112,17 +118,23 @@ class CfgUserAppAna:
 
     def gf_SetRemoteHostPort(self, i_port):
         if i_port != self.s_RemoteHost_Port:
+            if i_port < 0 or i_port > 65535:
+                i_port = 30000
             self.s_RemoteHost_Port = i_port
             self.s_Cfg_Change = True
 
     def gf_SetRemoteHostInactivitySec(self, i_sec):
         if i_sec != self.s_RemoteHost_InactivitySec:
+            if i_sec < 1 or i_sec > 900:
+                i_sec = 60
             self.s_RemoteHost_InactivitySec = i_sec
             self.s_Cfg_Change = True
 
     # ---------------------------------------------------------------------------
     def gf_SetDeviceLiveDataSec(self, i_sec):
         if i_sec != self.s_Device_LiveDataSec:
+            if i_sec < 2 or i_sec > 25:
+                i_sec = 2
             self.s_Device_LiveDataSec = i_sec
             self.s_Cfg_Change = True
 
@@ -133,20 +145,28 @@ class CfgUserAppAna:
 
     def gf_SetDeviceHDWindowSec(self, i_sec):
         if i_sec != self.s_Device_HDWindowSec:
+            if i_sec < 5 or i_sec > 25:
+                i_sec = 5
             self.s_Device_HDWindowSec = i_sec
             self.s_Cfg_Change = True
     def gf_SetDeviceHDWStep1(self, i_sec):
         if i_sec != self.s_Device_HDWStep1:
+            if i_sec < 1 or i_sec > 25:
+                i_sec = 1
             self.s_Device_HDWStep1 = i_sec
             self.s_Cfg_Change = True
     def gf_SetDeviceHDWStep2(self, i_sec):
         if i_sec != self.s_Device_HDWStep2:
+            if i_sec < 1 or i_sec > 25:
+                i_sec = 2
             self.s_Device_HDWStep2 = i_sec
             self.s_Cfg_Change = True
 
     def gf_SetDeviceMacId(self, i_id, i_mac):
         if i_id < self.s_User_DeviceMaxAllowed:
             if i_mac != self.s_Device_MacIds[i_id]:
+                if i_mac < 0 or i_mac > 281474976710655:
+                    i_mac = 0
                 self.s_Device_MacIds[i_id] = i_mac
                 self.s_Cfg_Change = True
 
@@ -208,16 +228,16 @@ class CfgUserAppAna:
                     except Exception:
                         fb = True
                     try:
-                        self.s_RemoteHost_Port = GuiCfgFile.s_RemoteHost_Port
+                        self.gf_SetRemoteHostPort( GuiCfgFile.s_RemoteHost_Port )
                     except Exception:
                         fb = True
                     try:
-                        self.s_RemoteHost_InactivitySec = GuiCfgFile.s_RemoteHost_InactivitySec
+                        self.gf_SetRemoteHostInactivitySec( GuiCfgFile.s_RemoteHost_InactivitySec )
                     except Exception:
                         fb = True
     
                     try:
-                        self.s_Device_LiveDataSec = GuiCfgFile.s_Device_LiveDataSec
+                        self.gf_SetDeviceLiveDataSec( GuiCfgFile.s_Device_LiveDataSec )
                     except Exception:
                         fb = True
     
@@ -226,20 +246,21 @@ class CfgUserAppAna:
                     except Exception:
                         fb = True
                     try:
-                        self.s_Device_HDWindowSec = GuiCfgFile.s_Device_HDWindowSec
+                        self.gf_SetDeviceHDWindowSec( GuiCfgFile.s_Device_HDWindowSec )
                     except Exception:
                         fb = True
                     try:
-                        self.s_Device_HDWStep1 = GuiCfgFile.s_Device_HDWStep1
+                        self.gf_SetDeviceHDWStep1( GuiCfgFile.s_Device_HDWStep1 )
                     except Exception:
                         fb = True
                     try:
-                        self.s_Device_HDWStep2 = GuiCfgFile.s_Device_HDWStep2
+                        self.gf_SetDeviceHDWStep2( GuiCfgFile.s_Device_HDWStep2 )
                     except Exception:
                         fb = True
 
                     try:
-                        self.s_Device_MacIds = GuiCfgFile.s_Device_MacIds
+                        for i in range(0, len(GuiCfgFile.s_Device_MacIds), 1):
+                            self.gf_SetDeviceMacId( i, GuiCfgFile.s_Device_MacIds[i] )
                     except Exception:
                         fb = True
                     try:
@@ -249,10 +270,11 @@ class CfgUserAppAna:
     
             except Exception:
                 fb = True
-    
+                
+        self.s_Cfg_Change = False
         if True == fb:
             self.s_Cfg_Change = True
-            self.gf_SaveCfg()
+        self.gf_SaveCfg()
     
     # ---------------------------------------------------------------------------
     def gf_SaveCfg(self):

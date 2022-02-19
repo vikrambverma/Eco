@@ -101,12 +101,12 @@ def pf_GuiLibAdd_FigCanvsAxs(i_owner, i_xs, i_ys, i_xw, i_yh, i_bgcolor):
     return fig, axs, canv
 
 # ---------------------------------------------------------------------------
-def Check_IntegerEntry( i_str, i_min, i_max ):
+def pf_GetInegerEntryy( i_str ):
     rsts = True
     v = 0
     m = bytearray(i_str, 'utf-8')
     
-    for i in range(0, len(m)):
+    for i in range(0, len(m), 1):
         t = m[i]
         if t < 58:
             if t > 47:
@@ -117,10 +117,9 @@ def Check_IntegerEntry( i_str, i_min, i_max ):
         else:
             rsts = False
     
-    if True == rsts:
-        if v > i_max or v < i_min:
-            rsts = False
-    return rsts, v
+    if False == rsts:
+        v = 0
+    return v
 
 # ---------------------------------------------------------------------------
 # Page_None : History Data View
@@ -198,8 +197,8 @@ class Page_LDV(tk.Frame):
 
         # self.pf_dbg()
         tstep = round(self.s_LiveDSec/self.s_LiveDTSmplCount, 5)
-        for i in range(0, self.s_LiveDTSmplCount, 1):
-            tts = round(tstep * i, 5)
+        for i in range(self.s_LiveDTSmplCount, 0, -1):
+            tts = -round(tstep * i, 2)
             self.s_LiveDx.append(tts)
         for i in range(0, self.s_LiveDeviceCount, 1):
             self.s_LiveLTA.append(0.0)
@@ -247,7 +246,8 @@ class Page_LDV(tk.Frame):
                 i_axs[k].set_ylim(-3,3)
                 i_axs[k].plot(i_gxv, i_gyv[k], clr)
                 i_axs[k].set_ylabel(i_gyl[k], rotation=0, labelpad=40)
-                i_axs[k].set_xlabel( ("Date : " + UtilAna.gf_GetDataStr() + "     Time - " + UtilAna.gf_GetTimeStr() ) )
+                i_axs[k].set_xlabel( ("Date : " + UtilAna.gf_GetDataStr() + "     Time - " + UtilAna.gf_GetTimeStr() ), labelpad=10)
+                i_axs[k].grid()
             else:
                 i_axs[k].get_xaxis().set_visible(False)
                 i_axs[k].set_ylabel(i_gyl[k], rotation=0, labelpad=-60)
@@ -550,27 +550,13 @@ class Page_ADMIN_SET1(tk.Frame):
         c.gf_SetAdminLoginPwd( self.s_admin_loginpwd.get() )
            
         c.gf_SetRemoteHostIp( self.s_remotehost_ip.get() )
-        rsts, v = Check_IntegerEntry(self.s_remotehost_port.get(), 0, 65535 )
-        if True == rsts:
-            c.gf_SetRemoteHostPort( v )
-        rsts, v = Check_IntegerEntry(self.s_remotehost_inactivesec.get(), 3, 900 )
-        if True == rsts:
-            c.gf_SetRemoteHostInactivitySec( v )
-
-        rsts, v = Check_IntegerEntry(self.s_dev_livedatasec.get(), 1, 900 )
-        if True == rsts:
-            c.gf_SetDeviceLiveDataSec( v )
-
+        c.gf_SetRemoteHostPort( pf_GetInegerEntryy( self.s_remotehost_port.get() ) )
+        c.gf_SetRemoteHostInactivitySec( pf_GetInegerEntryy( self.s_remotehost_inactivesec.get() ) )
+        c.gf_SetDeviceLiveDataSec( pf_GetInegerEntryy( self.s_dev_livedatasec.get() ) )
         c.gf_SetDeviceHDFilePath( self.s_dev_hdfpath.get() )
-        rsts, v = Check_IntegerEntry(self.s_dev_hdwinsec.get(), 1, 900 )
-        if True == rsts:
-            c.gf_SetDeviceHDWindowSec( v )
-        rsts, v = Check_IntegerEntry(self.s_dev_hdstep1.get(), 1, 900 )
-        if True == rsts:
-            c.gf_SetDeviceHDWStep1( v )
-        rsts, v = Check_IntegerEntry(self.s_dev_hdstep2.get(), 1, 900 )
-        if True == rsts:
-            c.gf_SetDeviceHDWStep2( v )
+        c.gf_SetDeviceHDWindowSec( pf_GetInegerEntryy( self.s_dev_hdwinsec.get() ) )
+        c.gf_SetDeviceHDWStep1( pf_GetInegerEntryy( self.s_dev_hdstep1.get() ) )
+        c.gf_SetDeviceHDWStep2( pf_GetInegerEntryy( self.s_dev_hdstep2.get() ) )
 
         c.gf_SaveCfg()
         self.pf_Update()
@@ -628,9 +614,7 @@ class Page_ADMIN_SET2(tk.Frame):
         c = self.s_controller.s_Cfg
 
         for i in range(0, self.s_controller.s_Cfg.s_User_DeviceMaxAllowed):
-            rsts, v = Check_IntegerEntry(self.s_dev_mac[i].get(), 0, 281474976710655)
-            if True == rsts:
-                c.gf_SetDeviceMacId( i, v );
+            c.gf_SetDeviceMacId( i, pf_GetInegerEntryy( self.s_dev_mac[i].get() ) )
             c.gf_SetDeviceName( i, self.s_dev_name[i].get() )
 
         c.gf_SaveCfg()
@@ -741,7 +725,7 @@ class UsrEcoAppGui():
         self.s_menu_dataview.add_command(label="LiveDataView", command=lambda:self.pf_ShowPage(Page_LDV) )
         self.s_menu_dataview.add_command(label="HistoryDataView", command=lambda:self.pf_ShowPage(Page_None) )
         self.s_menu_dataview.add_separator()
-        self.s_menu_dataview.add_command(label="None", command=lambda:self.pf_ShowPage(Page_None) )
+        self.s_menu_dataview.add_command(label="IdleView", command=lambda:self.pf_ShowPage(Page_None) )
         self.s_menu_dataview.add_separator()
         self.s_menu_dataview.add_command(label="Exit", command=lambda:self.pf_ExitGui() )
         self.s_menubar.add_cascade(label="DataView", underline=0, menu=self.s_menu_dataview)
