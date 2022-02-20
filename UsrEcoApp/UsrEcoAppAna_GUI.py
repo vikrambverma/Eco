@@ -19,7 +19,6 @@ from tkinter import messagebox
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 import matplotlib.pyplot as plt
 
-import UserEcoAppAna_NewCfgFile as mCfg1
 import UtilAna
 
 gv_MyColor = ['red', 'green', 'blue', 'orange', 'black']
@@ -69,6 +68,22 @@ def pf_GuiLibAdd_LabelEntry_TxtVarThree(i_owner, i_xs, i_ys, i_xw1, i_yh, i_xw2,
     i_xs = i_xs + i_xw3
     v3Obj, e3Obj = pf_GuiLibAdd_Entry_TxtVar(i_owner, i_xs, i_ys, i_xw4, i_yh)
     return v1Obj, v2Obj, v3Obj, e1Obj, e2Obj, e3Obj, lObj
+
+def pf_GuiLibAdd_LabelEntry_TxtVarSix(i_owner, i_xs, i_ys, i_xw1, i_yh, i_xw2, i_xw3, i_xw4, i_xw5, i_xw6, i_xw7, i_txt):
+    lObj = pf_GuiLibAdd_Label_FixTxt(i_owner, 'e', i_xs, i_ys, i_xw1, i_yh, i_txt)
+    i_xs = i_xs + i_xw1
+    v1Obj, e1Obj = pf_GuiLibAdd_Entry_TxtVar(i_owner, i_xs, i_ys, i_xw2, i_yh)
+    i_xs = i_xs + i_xw2
+    v2Obj, e2Obj = pf_GuiLibAdd_Entry_TxtVar(i_owner, i_xs, i_ys, i_xw3, i_yh)
+    i_xs = i_xs + i_xw3
+    v3Obj, e3Obj = pf_GuiLibAdd_Entry_TxtVar(i_owner, i_xs, i_ys, i_xw4, i_yh)
+    i_xs = i_xs + i_xw4
+    v4Obj, e4Obj = pf_GuiLibAdd_Entry_TxtVar(i_owner, i_xs, i_ys, i_xw5, i_yh)
+    i_xs = i_xs + i_xw5
+    v5Obj, e5Obj = pf_GuiLibAdd_Entry_TxtVar(i_owner, i_xs, i_ys, i_xw6, i_yh)
+    i_xs = i_xs + i_xw6
+    v6Obj, e6Obj = pf_GuiLibAdd_Entry_TxtVar(i_owner, i_xs, i_ys, i_xw7, i_yh)
+    return v1Obj, v2Obj, v3Obj, v4Obj, v5Obj, v6Obj, e1Obj, e2Obj, e3Obj, e4Obj, e5Obj, e6Obj, lObj
 
 # ---------------------------------------------------------------------------
 def pf_AddLoginEntry(i_owner, i_xs, i_ys, i_xw, i_yh, i_txt):
@@ -151,10 +166,13 @@ class Page_LDV(tk.Frame):
         self.s_parent = parent;
         self.s_controller = controller
         
-        self.s_LiveDy = []
+        self.s_LiveDys = []
         self.s_LiveDx = []
         self.s_LiveEvents = []
-        self.s_LiveLERate = []
+        self.s_LiveLERates = []
+        self.s_LiveDevMacs = []
+        self.s_LiveDevNames = []
+
         self.s_LiveDSec = 0
         self.s_LiveDTSmplCount = 0
         self.s_LiveDeviceCount = 0
@@ -173,23 +191,35 @@ class Page_LDV(tk.Frame):
             self.s_LiveDx.pop(0)
         while len(self.s_LiveEvents) > 0:
             self.s_LiveEvents.pop(0)
-        while len(self.s_LiveLERate) > 0:
-            self.s_LiveLERate.pop(0)
-        while len(self.s_LiveDy) > 0:
-            self.s_LiveDy.pop(0)
+        while len(self.s_LiveLERates) > 0:
+            self.s_LiveLERates.pop(0)
+        while len(self.s_LiveDys) > 0:
+            self.s_LiveDys.pop(0)
+        while len(self.s_LiveDevMacs) > 0:
+            self.s_LiveDevMacs.pop(0)
+        while len(self.s_LiveDevNames) > 0:
+            self.s_LiveDevNames.pop(0)
+
         self.s_LiveDeviceCount = 0
         self.s_LiveDSec = 0
         self.s_LiveDTSmplCount = 0
 
     def pf_BeforeStart(self):
         c = self.s_controller.s_Cfg
-        self.s_LiveDeviceCount = 1
-        for i in range(0,16,1):
-            if 0 == c.s_Device_MacIds[i]:
-                self.s_LiveDeviceCount = i
-                break
-            else:
-                self.s_LiveDeviceCount = i + 1
+        self.s_LiveDeviceCount = 0
+        for i in range(0, c.s_User_DeviceMaxAllowed, 1):
+            if 1 == c.s_Device_LDVEnableds[i]:
+                self.s_LiveDevMacs.append( c.s_Device_MacIds[i] )
+                self.s_LiveDevNames.append( c.s_Device_Names[i] )
+                self.s_LiveDeviceCount = self.s_LiveDeviceCount + 1
+        if self.s_LiveDeviceCount < 1:
+            self.s_LiveDevMacs.append( 0 )
+            self.s_LiveDevNames.append( "Not Selected - 1" )
+            self.s_LiveDeviceCount = self.s_LiveDeviceCount + 1
+        if self.s_LiveDeviceCount < 2:
+            self.s_LiveDevMacs.append( 0 )
+            self.s_LiveDevNames.append( "Not Selected - 2" )
+            self.s_LiveDeviceCount = self.s_LiveDeviceCount + 1
 
         self.s_LiveDSec = c.s_Device_LiveDataSec
         self.s_LiveDSmplRate = c.s_Device_SamplePerSec
@@ -202,17 +232,16 @@ class Page_LDV(tk.Frame):
             self.s_LiveDx.append(tts)
         for i in range(0, self.s_LiveDeviceCount, 1):
             self.s_LiveEvents.append(0)
-            self.s_LiveLERate.append(0)
-            self.s_LiveDy.append([0.0 for j in range(self.s_LiveDTSmplCount)])
-        c = self.s_controller.s_Cfg
+            self.s_LiveLERates.append(0)
+            self.s_LiveDys.append([0.0 for j in range(self.s_LiveDTSmplCount)])
         s = '[ Live Data ]   ' + c.s_Customer_Name + "   :   " + c.s_Customer_Site
-        self.s_Chnl_LVD_axs = self.pf_InitFigAxs(self.s_Chnl_LVD_fig, 0.100, 0.09, 0.999, 0.95, s, self.s_LiveDx, self.s_LiveDy, c.s_Device_Names)
+        self.s_Chnl_LVD_axs = self.pf_InitFigAxs(self.s_Chnl_LVD_fig, 0.100, 0.09, 0.999, 0.95, s, self.s_LiveDx, self.s_LiveDys, self.s_LiveDevNames)
         self.s_Chnl_EVENTS_axs = self.pf_InitFigAxs(self.s_Chnl_EVENTS_fig, 0.010, 0.09, 0.99, 0.95, "Events", None, None, self.s_LiveEvents)
-        self.s_Chnl_LERATE_axs = self.pf_InitFigAxs(self.s_Chnl_LERATE_fig, 0.010, 0.09, 0.80, 0.95, "Rate", None, None, self.s_LiveLERate)
+        self.s_Chnl_LERATE_axs = self.pf_InitFigAxs(self.s_Chnl_LERATE_fig, 0.010, 0.09, 0.80, 0.95, "Rate", None, None, self.s_LiveLERates)
 
     def pf_AfterStart(self):
         self.s_execute_cnt = 0
-        self.s_controller.pf_StartCbk(10, self.pf_ShowLvd)
+        self.s_controller.pf_StartCbk(900, self.pf_ShowLvd)
     
     def pf_AddFigAxsCanv(self, i_xs, i_ys, i_xw, i_yh, i_c1, i_c2):
         # frm = pf_GuiLibAdd_Frame(self, i_xs, i_ys, i_xw, i_yh, i_c1)
@@ -226,7 +255,7 @@ class Page_LDV(tk.Frame):
         axs = gs.subplots(sharex=True, sharey=True)
         i_fig.suptitle( i_str )
         i_fig.set_animated(True)
-        for k in range(0,self.s_LiveDeviceCount, 1):
+        for k in range(0, self.s_LiveDeviceCount, 1):
             if None != i_gxv:
                 axs[k].label_outer()
             axs[k].spines["top"].set_visible(False)
@@ -256,13 +285,13 @@ class Page_LDV(tk.Frame):
         
     def pf_ShowLvd(self):
         # UtilAna.gf_DebugLog("Draw Start")
-        c = self.s_controller.s_Cfg
+        # c = self.s_controller.s_Cfg
         lf = self.s_controller.s_get_live_data_fun
         if None != lf:
-            lf(self.s_LiveDSec, self.s_LiveDeviceCount, c.s_Device_MacIds, self.s_LiveDy, self.s_LiveEvents, self.s_LiveLERate)
-        self.pf_update_fig(self.s_Chnl_LVD_fig, self.s_Chnl_LVD_axs, self.s_LiveDx, self.s_LiveDy, c.s_Device_Names)
+            lf(self.s_LiveDSec, self.s_LiveDeviceCount, self.s_LiveDevMacs, self.s_LiveDys, self.s_LiveEvents, self.s_LiveLERates)
+        self.pf_update_fig(self.s_Chnl_LVD_fig, self.s_Chnl_LVD_axs, self.s_LiveDx, self.s_LiveDys, self.s_LiveDevNames)
         self.pf_update_fig(self.s_Chnl_EVENTS_fig, self.s_Chnl_EVENTS_axs, None, None, self.s_LiveEvents)
-        self.pf_update_fig(self.s_Chnl_LERATE_fig, self.s_Chnl_LERATE_axs, None, None, self.s_LiveLERate)
+        self.pf_update_fig(self.s_Chnl_LERATE_fig, self.s_Chnl_LERATE_axs, None, None, self.s_LiveLERates)
         # UtilAna.gf_DebugLog("Draw Stop")
 
 # ---------------------------------------------------------------------------
@@ -573,15 +602,24 @@ class Page_ADMIN_SET2(tk.Frame):
         
         self.s_dev_mac = []
         self.s_dev_name = []
+        self.s_dev_ldvenabled = []
+        self.s_dev_stasmplcnt = []
+        self.s_dev_stapattncnt = []
+        self.s_dev_staltaratio = []
 
         rh = 0.03
         ry = 0.00
 
         for i in range(0, self.s_controller.s_Cfg.s_User_DeviceMaxAllowed):
             ry = ry + 0.04
-            v1, v2, v3, v4, v5 = pf_GuiLibAdd_LabelEntry_TxtVarTwo(self, 0.05, ry, 0.20, rh, 0.10, 0.50, 'Device-' + str(i+1) + '( MACID , Name ) :')
+            v1, v2, v3, v4, v5, v6, v7 = pf_GuiLibAdd_LabelEntry_TxtVarThree(self, 0.05, ry, 0.20, rh, 0.295, 0.295, 0.01, ("Device-" + str(i+1) + "( MACID , Name, LDVEnabled ) :") )
+            v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13 = pf_GuiLibAdd_LabelEntry_TxtVarSix(self, 0.05, ry, 0.25, rh, 0.25, 0.25, 0.01, 0.03, 0.03, 0.03, ("Dev-" + str(i+1) + "( MACID , Name, LVDEnabled, STA(ms), Patt, Ratio ) :") )
             self.s_dev_mac.append(v1)
             self.s_dev_name.append(v2)
+            self.s_dev_ldvenabled.append(v3)
+            self.s_dev_stasmplcnt.append(v4)
+            self.s_dev_stapattncnt.append(v5)
+            self.s_dev_staltaratio.append(v6)
         
         ry = ry + 0.04
         self.s_save_button = tk.Button(self, text="Save", command=self.pf_SaveSubmit)
@@ -606,9 +644,13 @@ class Page_ADMIN_SET2(tk.Frame):
         c = self.s_controller.s_Cfg
         c.gf_LoadCfg()
         
-        for i in range(0, self.s_controller.s_Cfg.s_User_DeviceMaxAllowed):
+        for i in range(0, c.s_User_DeviceMaxAllowed):
             self.s_dev_mac[i].set( str(c.s_Device_MacIds[i]) )
             self.s_dev_name[i].set( c.s_Device_Names[i] )
+            self.s_dev_ldvenabled[i].set( str(c.s_Device_LDVEnableds[i]) )
+            self.s_dev_stasmplcnt[i].set( str(c.gf_GetDeviceStaSmplCnt(i)) )
+            self.s_dev_stapattncnt[i].set( str(c.s_Device_StaPattnCnts[i]) )
+            self.s_dev_staltaratio[i].set( str(c.s_Device_StaLtaRatios[i]) )
 
     def pf_SaveSubmit(self):
         c = self.s_controller.s_Cfg
@@ -616,6 +658,10 @@ class Page_ADMIN_SET2(tk.Frame):
         for i in range(0, self.s_controller.s_Cfg.s_User_DeviceMaxAllowed):
             c.gf_SetDeviceMacId( i, pf_GetInegerEntryy( self.s_dev_mac[i].get() ) )
             c.gf_SetDeviceName( i, self.s_dev_name[i].get() )
+            c.gf_SetDeviceLDVEnabled( i, pf_GetInegerEntryy( self.s_dev_ldvenabled[i].get() ) )
+            c.gf_SetDeviceStaSmplCnt( i, pf_GetInegerEntryy( self.s_dev_stasmplcnt[i].get() ) )
+            c.gf_SetDeviceStaPattnCnt( i, pf_GetInegerEntryy( self.s_dev_stapattncnt[i].get() ) )
+            c.gf_SetDeviceStaLtaRatio( i, pf_GetInegerEntryy( self.s_dev_staltaratio[i].get() ) )
 
         c.gf_SaveCfg()
         self.pf_Update()
@@ -625,7 +671,7 @@ class UsrEcoAppGui():
     """
     """
     # ------------------------------------------------------------------------
-    def __init__(self, i_livedatafun):
+    def __init__(self, i_livedatafun, i_cfg):
         self.s_get_live_data_fun = i_livedatafun
         self.s_root = tk.Tk()
         # self.s_root.iconbitmap(default="MapsLogo32x32.ico")
@@ -638,7 +684,7 @@ class UsrEcoAppGui():
         style.theme_use('clam')
         self.s_root.state( 'zoomed' )
         
-        self.s_Cfg = mCfg1.CfgUserAppAna()
+        self.s_Cfg = i_cfg
         self.s_UserLogInOk = False
         
         self.s_container = tk.Frame(self.s_root)
@@ -733,6 +779,7 @@ class UsrEcoAppGui():
     def pf_AddMenuSettingsView(self):
         self.s_menu_settingsview = tk.Menu(self.s_menubar, tearoff=0)
         self.s_menu_settingsview.add_command(label="User Settings", command=lambda:self.pf_ShowPage(Page_USER_LOGIN) )
+        self.s_menu_settingsview.add_separator()
         self.s_menu_settingsview.add_command(label="Admin Settings", command=lambda:self.pf_ShowPage(Page_ADMIN_LOGIN) )
         self.s_menubar.add_cascade(label="Configuration", underline=0, menu=self.s_menu_settingsview)
 

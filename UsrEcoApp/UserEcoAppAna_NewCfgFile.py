@@ -26,12 +26,13 @@ class CfgUserAppAna:
     # ------------------------------------------------------------------------
     def __init__(self):
         self.s_User_DeviceMaxAllowed = 16
-        self.s_UserIndex = 1
+        self.s_UserSelfId = 1
         
         self.s_FileSave_MaxDurationMin = 15
-        self.s_LiveDataView_SecMaxAllowed = self.s_FileSave_MaxDurationMin * 60
+        self.s_FileData_SecMaxAllowed = self.s_FileSave_MaxDurationMin * 60
         self.s_Device_SamplePerSec = 1024
-        
+        self.s_Device_MaxFileDataSize = self.s_Device_SamplePerSec * self.s_FileData_SecMaxAllowed
+ 
         self.s_Cfg_Change = False
         
         self.s_Customer_Name = "MAPS Technologies"
@@ -61,10 +62,19 @@ class CfgUserAppAna:
         self.s_Device_HDWStep2 = 0
         self.gf_SetDeviceHDWStep1(5)
         
-        self.s_Device_MacIds = [i+1 for i in range(self.s_User_DeviceMaxAllowed) ]
-        self.s_Device_Names = ['CH-'+str(i+1) for i in range(self.s_User_DeviceMaxAllowed) ]
+        self.s_Device_MacIds = [i+1 for i in range(0, self.s_User_DeviceMaxAllowed, 1) ]
+        self.s_Device_Names = ['CH-'+str(i+1) for i in range(0, self.s_User_DeviceMaxAllowed, 1) ]
+        self.s_Device_LDVEnableds = [0 for i in range(0, self.s_User_DeviceMaxAllowed, 1) ]
+        self.s_Device_EventCounts = [0 for i in range(0, self.s_User_DeviceMaxAllowed, 1) ]
+        self.s_Device_LastEventTimes = [0 for i in range(0, self.s_User_DeviceMaxAllowed, 1) ]
+        self.s_Device_LastEventRates = [0 for i in range(0, self.s_User_DeviceMaxAllowed, 1)  ]
+        self.s_Device_StaSmplCnts = [10 for i in range(0, self.s_User_DeviceMaxAllowed, 1)  ]
+        self.s_Device_StaPattnCnts = [3 for i in range(0, self.s_User_DeviceMaxAllowed, 1)  ]
+        self.s_Device_StaLtaRatios = [3 for i in range(0, self.s_User_DeviceMaxAllowed, 1)  ]
+
+        self.s_Device_LiveData = [[0 for j in range(self.s_Device_MaxFileDataSize)] for i in range(self.s_User_DeviceMaxAllowed)]
         
-        self.gf_LoadCfg()
+        self.gf_LoadCfg(True)
 
     # ---------------------------------------------------------------------------
     def gf_SetCustomerName(self, i_name):
@@ -176,8 +186,66 @@ class CfgUserAppAna:
                 self.s_Device_Names[i_id] = i_name
                 self.s_Cfg_Change = True
 
+    def gf_SetDeviceLDVEnabled(self, i_id, i_v):
+        if i_id < self.s_User_DeviceMaxAllowed:
+            if i_v != self.s_Device_LDVEnableds[i_id]:
+                if i_v < 0 or i_v > 1:
+                    i_v = 0
+                self.s_Device_LDVEnableds[i_id] = i_v
+                self.s_Cfg_Change = True
+
+    def gf_SetDeviceEventCount(self, i_id, i_v):
+        if i_id < self.s_User_DeviceMaxAllowed:
+            if i_v != self.s_Device_EventCounts[i_id]:
+                self.s_Device_EventCounts[i_id] = i_v
+                self.s_Cfg_Change = True
+
+    def gf_SetDeviceLastEventTime(self, i_id, i_v):
+        if i_id < self.s_User_DeviceMaxAllowed:
+            if i_v != self.s_Device_LastEventTimes[i_id]:
+                self.s_Device_LastEventTimes[i_id] = i_v
+                self.s_Cfg_Change = True
+
+    def gf_SetDeviceLastEventRate(self, i_id, i_v):
+        if i_id < self.s_User_DeviceMaxAllowed:
+            if i_v != self.s_Device_LastEventRates[i_id]:
+                self.s_Device_LastEventRates[i_id] = i_v
+                self.s_Cfg_Change = True
+
+    def gf_SetDeviceStaSmplCnt(self, i_id, i_v):
+        if i_id < self.s_User_DeviceMaxAllowed:
+            if i_v < 1 or i_v > 1000:
+                i_v = 10
+            i_v = int( (self.s_Device_SamplePerSec*i_v) / 1000) + 1
+            if i_v != self.s_Device_StaSmplCnts[i_id]:
+                self.s_Device_StaSmplCnts[i_id] = i_v
+                self.s_Cfg_Change = True
+
+    def gf_GetDeviceStaSmplCnt(self, i_id):
+        v = 10
+        if i_id < self.s_User_DeviceMaxAllowed:
+            v = self.s_Device_StaSmplCnts[i_id]
+            v = int((v*1000)/self.s_Device_SamplePerSec)
+        return v
+
+    def gf_SetDeviceStaPattnCnt(self, i_id, i_v):
+        if i_id < self.s_User_DeviceMaxAllowed:
+            if i_v != self.s_Device_StaPattnCnts[i_id]:
+                if i_v < 1 or i_v > 20:
+                    i_v = 3
+                self.s_Device_StaPattnCnts[i_id] = i_v
+                self.s_Cfg_Change = True
+
+    def gf_SetDeviceStaLtaRatio(self, i_id, i_v):
+        if i_id < self.s_User_DeviceMaxAllowed:
+            if i_v != self.s_Device_StaLtaRatios[i_id]:
+                if i_v < 1 or i_v > 100:
+                    i_v = 5
+                self.s_Device_StaLtaRatios[i_id] = i_v
+                self.s_Cfg_Change = True
+
     # ---------------------------------------------------------------------------
-    def gf_LoadCfg(self):
+    def gf_LoadCfg(self, i_sts=False):
         fb = False
         try:
             importlib.reload(GuiCfgFile)
@@ -197,6 +265,7 @@ class CfgUserAppAna:
                     except Exception:
                         fb = True
     
+
                     try:
                         self.s_User_LoginId = GuiCfgFile.s_User_LoginId
                     except Exception:
@@ -210,6 +279,7 @@ class CfgUserAppAna:
                     except Exception:
                         fb = True
     
+
                     try:
                         self.s_Admin_LoginId = GuiCfgFile.s_Admin_LoginId
                     except Exception:
@@ -223,6 +293,8 @@ class CfgUserAppAna:
                     except Exception:
                         fb = True
     
+
+
                     try:
                         self.s_RemoteHost_IP = GuiCfgFile.s_RemoteHost_IP
                     except Exception:
@@ -235,7 +307,24 @@ class CfgUserAppAna:
                         self.gf_SetRemoteHostInactivitySec( GuiCfgFile.s_RemoteHost_InactivitySec )
                     except Exception:
                         fb = True
-    
+
+
+
+                    try:
+                        self.gf_SetDeviceShortAvgCfg_SampleCnt( GuiCfgFile.s_Device_ShortAvgCfg_SampleCnt )
+                    except Exception:
+                        fb = True
+                    try:
+                        self.gf_SetDeviceShortAvgCfg_ContEventCnt( GuiCfgFile.s_Device_ShortAvgCfg_ContEventCnt )
+                    except Exception:
+                        fb = True
+                    try:
+                        self.gf_SetDeviceShortAvgCfg_RatioForEvent( GuiCfgFile.s_Device_ShortAvgCfg_RatioForEvent )
+                    except Exception:
+                        fb = True
+
+
+
                     try:
                         self.gf_SetDeviceLiveDataSec( GuiCfgFile.s_Device_LiveDataSec )
                     except Exception:
@@ -261,10 +350,15 @@ class CfgUserAppAna:
                     try:
                         for i in range(0, len(GuiCfgFile.s_Device_MacIds), 1):
                             self.gf_SetDeviceMacId( i, GuiCfgFile.s_Device_MacIds[i] )
-                    except Exception:
-                        fb = True
-                    try:
-                        self.s_Device_Names = GuiCfgFile.s_Device_Names
+                            self.gf_SetDeviceName(i, GuiCfgFile.s_Device_Names[i] )
+                            self.gf_SetDeviceLDVEnabled(i, GuiCfgFile.s_Device_LDVEnableds[i] )
+                            self.s_Device_StaSmplCnts[i] = GuiCfgFile.s_Device_StaSmplCnts[i]
+                            self.gf_SetDeviceStaPattnCnt(i, GuiCfgFile.s_Device_StaPattnCnts[i] )
+                            self.gf_SetDeviceStaLtaRatio(i, GuiCfgFile.s_Device_StaLtaRatios[i] )
+                            if True == i_sts:
+                                self.gf_SetDeviceEventCount(i, GuiCfgFile.s_Device_EventCounts[i] )
+                                self.gf_SetDeviceLastEventTime(i, GuiCfgFile.s_Device_LastEventTimes[i] )
+                                self.gf_SetDeviceLastEventRate(i, GuiCfgFile.s_Device_LastEventRates[i] )
                     except Exception:
                         fb = True
     
@@ -307,7 +401,8 @@ class CfgUserAppAna:
             fh.write( s )
             s = "s_RemoteHost_InactivitySec = " + str( self.s_RemoteHost_InactivitySec ) + "\n"
             fh.write( s )
-    
+
+
             s = "s_Device_LiveDataSec = " + str( self.s_Device_LiveDataSec ) + "\n"
             fh.write( s )
             s = "s_Device_HDFilePath = '" + str( self.s_Device_HDFilePath ) + "'\n"
@@ -322,6 +417,20 @@ class CfgUserAppAna:
             s = "s_Device_MacIds = " + str( self.s_Device_MacIds ) + "\n"
             fh.write( s )
             s = "s_Device_Names = " + str( self.s_Device_Names ) + "\n"
+            fh.write( s )
+            s = "s_Device_EventCounts = " + str( self.s_Device_EventCounts ) + "\n"
+            fh.write( s )
+            s = "s_Device_LastEventTimes = " + str( self.s_Device_LastEventTimes ) + "\n"
+            fh.write( s )
+            s = "s_Device_LastEventRates = " + str( self.s_Device_LastEventRates ) + "\n"
+            fh.write( s )
+            s = "s_Device_LDVEnableds = " + str( self.s_Device_LDVEnableds ) + "\n"
+            fh.write( s )
+            s = "s_Device_StaSmplCnts = " + str( self.s_Device_StaSmplCnts ) + "\n"
+            fh.write( s )
+            s = "s_Device_StaPattnCnts = " + str( self.s_Device_StaPattnCnts ) + "\n"
+            fh.write( s )
+            s = "s_Device_StaLtaRatios = " + str( self.s_Device_StaLtaRatios ) + "\n"
             fh.write( s )
             
             s = "s_Cfg_Change = " + str( self.s_Cfg_Change ) + "\n"

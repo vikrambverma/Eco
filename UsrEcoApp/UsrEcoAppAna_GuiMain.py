@@ -14,6 +14,8 @@ Licence       : MIT
 import UtilAna
 import UsrEcoAppAna_Logic
 import UsrEcoAppAna_GUI
+import UserEcoAppAna_NewCfgFile
+
 # import signal
 
 # gv_RestartApp = False
@@ -34,9 +36,12 @@ def AppAna_Main(i_app_name):
     
     UtilAna.gf_AppStartMsg(i_app_name)
     
-    s_usr_hndl = UsrEcoAppAna_Logic.UsrAppAna(4096, True)
+    s_cfg = UserEcoAppAna_NewCfgFile.CfgUserAppAna()
+    
+    s_usr_hndl = UsrEcoAppAna_Logic.UsrAppAna(s_cfg, 4096, True)
     s_usr_hndl.gf_Start()
-    s_gui = UsrEcoAppAna_GUI.UsrEcoAppGui(s_usr_hndl.gf_GetLiveGuiNSecData)
+    
+    s_gui = UsrEcoAppAna_GUI.UsrEcoAppGui(s_usr_hndl.gf_GetLiveGuiNSecData, s_cfg)
     s_gui.gf_GuiStart()
 
     # signal.signal(signal.SIGINT, ExitMyApp)
