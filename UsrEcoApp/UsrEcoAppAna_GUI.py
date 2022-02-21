@@ -275,7 +275,7 @@ class Page_LDV(tk.Frame):
                 i_axs[k].set_ylim(-3,3)
                 i_axs[k].plot(i_gxv, i_gyv[k], clr)
                 i_axs[k].set_ylabel(i_gyl[k], rotation=0, labelpad=40)
-                i_axs[k].set_xlabel( ("Date : " + UtilAna.gf_GetDataStr() + "     Time - " + UtilAna.gf_GetTimeStr() ), labelpad=10)
+                i_axs[k].set_xlabel( ("Date : " + UtilAna.gf_GetDataStr() + "             Time - " + UtilAna.gf_GetTimeStr() ), labelpad=10, loc="right")
                 i_axs[k].grid()
             else:
                 i_axs[k].get_xaxis().set_visible(False)
@@ -613,7 +613,7 @@ class Page_ADMIN_SET2(tk.Frame):
         for i in range(0, self.s_controller.s_Cfg.s_User_DeviceMaxAllowed):
             ry = ry + 0.04
             v1, v2, v3, v4, v5, v6, v7 = pf_GuiLibAdd_LabelEntry_TxtVarThree(self, 0.05, ry, 0.20, rh, 0.295, 0.295, 0.01, ("Device-" + str(i+1) + "( MACID , Name, LDVEnabled ) :") )
-            v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13 = pf_GuiLibAdd_LabelEntry_TxtVarSix(self, 0.05, ry, 0.25, rh, 0.25, 0.25, 0.01, 0.03, 0.03, 0.03, ("Dev-" + str(i+1) + "( MACID , Name, LVDEnabled, STA(ms), Patt, Ratio ) :") )
+            v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13 = pf_GuiLibAdd_LabelEntry_TxtVarSix(self, 0.05, ry, 0.27, rh, 0.22, 0.22, 0.02, 0.04, 0.04, 0.04, ("Dev-" + str(i+1) + "( MACID , Name, LVDEnabled, STA(ms), Patt, Ratio ) :") )
             self.s_dev_mac.append(v1)
             self.s_dev_name.append(v2)
             self.s_dev_ldvenabled.append(v3)

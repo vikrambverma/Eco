@@ -75,11 +75,70 @@ class UsrAppAna:
         self.s_dev_shrtconts = [0 for i in range(self.s_dev_max)]
         self.s_dev_idl_tmr = 0
         
+        self.s_file_mm = self.pf_FileNameMm()
+        self.s_datafile_hndl = None
+        self.s_eventfile_hndl = None
+        self.pf_OpenFileMm()
+
     # ------------------------------------------------------------------------
     def pf_Debug(self, i_id, i_eve_id):
         if True == self.s_debug_active:
             s = 'USER_SOC_' + str(i_id) + '_' + i_eve_id
             UtilAna.gf_DebugLog( s )
+
+    # ------------------------------------------------------------------------
+    def pf_PreareFileName(self, i_str):
+        mm = UtilAna.gf_GetNowMinutes()
+        mt = mm % self.s_cfgNew.s_FileSave_MaxDurationMin
+        mm = mm - mt
+        return mm
+
+    # ------------------------------------------------------------------------
+    def pf_FileNameMm(self):
+        mm = UtilAna.gf_GetNowMinutes()
+        mt = mm % self.s_cfgNew.s_FileSave_MaxDurationMin
+        mm = mm - mt
+        return mm
+
+    # ------------------------------------------------------------------------
+    def pf_OpenFileMm(self):
+        if self.s_datafile_hndl == None:
+            s = UtilAna.gf_UsrEcoAppFileNameStr(self.s_file_mm, "DATA_", self.s_cfgNew.s_Device_HDFilePath)
+            print(("Open File : " + s))
+            self.s_datafile_hndl = UtilAna.gf_FileAna_Open( s, "w+" )
+        
+        if self.s_eventfile_hndl == None:
+            s = UtilAna.gf_UsrEcoAppFileNameStr(self.s_file_mm, "EVENT_", self.s_cfgNew.s_Device_HDFilePath)
+            print(("Open File : " + s))
+            self.s_eventfile_hndl = UtilAna.gf_FileAna_Open( s, "w+" )
+
+    # ------------------------------------------------------------------------
+    def pf_CloseFileMm(self):
+        if self.s_datafile_hndl != None:
+            UtilAna.gf_FileAna_Close( self.s_datafile_hndl )
+            self.s_datafile_hndl = None
+
+        if self.s_eventfile_hndl != None:
+            UtilAna.gf_FileAna_Close( self.s_eventfile_hndl )
+            self.s_eventfile_hndl = None
+
+    # ------------------------------------------------------------------------
+    def pf_ChkFileMm(self):
+        mm = self.pf_FileNameMm()
+        if mm != self.s_file_mm:
+            self.pf_CloseFileMm()
+            self.s_file_mm = mm
+        self.pf_OpenFileMm()
+    
+    def pf_SaveEventFile(self, i_did):
+        self.pf_ChkFileMm()
+        if None != self.s_eventfile_hndl:
+            pass
+
+    def pf_SaveDataFile(self, i_did, m):
+        self.pf_ChkFileMm()
+        if None != self.s_eventfile_hndl:
+            pass
 
     # ------------------------------------------------------------------------
     def pf_IsDevMacPresent(self, i_mac):
@@ -108,6 +167,7 @@ class UsrAppAna:
         self.s_dev_idl_tmr = self.s_dev_idl_tmr + 1
         if self.s_dev_idl_tmr > 2:
             self.s_dev_idl_tmr = 0
+            self.pf_ChkFileMm()
             m = [0]*self.s_cfgNew.s_Device_SamplePerSec
             for i in range(0, self.s_dev_max, 1):
                 if True != self.s_dev_secdata_rcvs[i]:
@@ -289,19 +349,16 @@ class UsrAppAna:
             if sta_lscnt >= sta_cvc:
                 sta_lscnt = 0
                 sta_lav = round((sta_lav/(sta_cvc+1)), 5)
-                if 0 != lta_l:
-                    z = sta_lav / lta_l
-                else:
+                if 0 == lta_l:
                     lta_l = sta_lav
                     z = 1
-                if z > sta_efra or z < -sta_efra:
+                else:
+                    z = sta_lav / lta_l
+                if z > sta_efra:
                     sta_lcesa = sta_lcesa + 1
-                    if sta_lcesa >= sta_efcc:
+                    if sta_lcesa == sta_efcc:
                         dev_eve_cnts = dev_eve_cnts + 1
-                        # if 0 == t:
-                        #     UtilAna.gf_DebugLog(("Found : " + str(z) ))
-                        # found
-                        sta_lcesa = 0
+                        self.pf_SaveEventFile(i_did)
                 else:
                     sta_lcesa = 0
             k += 2
@@ -316,6 +373,7 @@ class UsrAppAna:
         self.s_cfgNew.s_Device_EventCounts[i_did] = dev_eve_cnts
         self.s_cfgNew.s_Device_LastEventTimes[i_did] = dev_eve_times
         self.s_cfgNew.s_Device_LastEventRates[i_did] = dev_eve_rates
+        self.pf_SaveDataFile(i_did, m)
         self.pf_RxdSaveDeviceWaveData(i_did, m)
         
     # ------------------------------------------------------------------------

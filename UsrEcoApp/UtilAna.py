@@ -18,21 +18,51 @@ import socket
 import os
 
 # ============================================================================
+def gf_UsrEcoAppFileNameStr(i_mm, i_ft="", i_path="."):
+    dt = datetime.now()
+    s = dt.strftime(i_path + "/%d_%m_%Y")
+    try:
+        os.mkdir( s )
+    except Exception:
+        None
+    s = s + "/" + i_ft + dt.strftime("%d_%m_%Y_%H_") + str(i_mm) + ".txt"
+    return s
+
+# ============================================================================
 def gf_GetDataTimeStr():
     dt = datetime.now()
     s = dt.strftime("%d-%m-%Y %H:%M:%S.%f : ")
     return s
 
 # ============================================================================
-def gf_GetDataStr():
+def gf_GetDataStr( i_type = '-' ):
+    s = ""
     dt = datetime.now()
-    s = dt.strftime("%d-%m-%Y")
+    if '_' == i_type:
+        s = dt.strftime("%d_%m_%Y")
+    elif '\\' == i_type:
+        s = dt.strftime("%d\%m\%Y")
+    elif '/' == i_type:
+        s = dt.strftime("%d/%m/%Y")
+    else:
+        s = dt.strftime("%d-%m-%Y")
     return s
 
 # ============================================================================
-def gf_GetTimeStr():
+def gf_GetNowMinutes():
     dt = datetime.now()
-    s = dt.strftime("%H:%M:%S")
+    return dt.minute
+
+# ============================================================================
+def gf_GetTimeStr( i_type = ':' ):
+    s = ""
+    dt = datetime.now()
+    if '_' == i_type:
+        s = dt.strftime("%H_%M_%S")
+    if '-' == i_type:
+        s = dt.strftime("%H-%M-%S")
+    else:
+        s = dt.strftime("%H:%M:%S")
     return s
 
 # ============================================================================
@@ -220,9 +250,9 @@ def gf_RxdSocketAna(i_sock):
 # ============================================================================
 # File Functions
 # ============================================================================
-def gf_FileAna_Open( i_file_name ):
+def gf_FileAna_Open( i_file_name, i_mode ):
     try:
-        f = open( i_file_name, 'r+b')
+        f = open( i_file_name, i_mode )
         return f
     except Exception:
         gf_DebugLog( "File open fails : " + i_file_name )
