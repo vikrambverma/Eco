@@ -19,7 +19,7 @@ except Exception:
     pass
 
 gv_DfltHost = '127.0.0.1'
-# gv_DfltHost = '164.52.212.8'
+# gv_DfltHost = '165.22.216.99'
 gv_DlftUserPort = 30000
 gv_DfltUserTimout = 120
 gv_DfltDevicePort = 40000
@@ -29,7 +29,7 @@ gv_DfltUserName = 'admin'
 gv_DfltUserPassword = 'admin@1234'
 gv_DfltUserId = 1 # dont change this
 gv_DfltUserType = 'admin' # dont change this
-gv_DfltUserDeviceMacs = [1,2,3,4]
+gv_DfltUserDeviceMacs = [1,2]
 
 # ============================================================================
 class AppConfigAna:
@@ -231,33 +231,43 @@ class AppConfigAna:
     def pf_SaveFileCfg(self, fh):
         s = "gv_Host = '" + self.s_host + str("'\n")
         fh.write( s )
+        print( s )
 
         s = 'gv_UserPort = ' + str(self.s_user_port) + str('\n')
         fh.write( s )
+        print( s )
 
         s = 'gv_UserTimeout = ' + str(self.s_user_timeout) + str('\n')
         fh.write( s )
+        print( s )
 
         s = 'gv_DevicePort = ' + str(self.s_device_port) + str('\n')
         fh.write( s )
+        print( s )
 
         s = 'gv_DeviceTimeout = ' + str(self.s_device_timeout) + str('\n')
         fh.write( s )
+        print( s )
 
         s = 'gv_UserIds = ' + str(self.s_user_ids) + str('\n')
         fh.write( s )
+        print( s )
 
         s = 'gv_UserNames = ' + str(self.s_user_names) + str('\n')
         fh.write( s )
+        print( s )
 
         s = 'gv_UserPasswords = ' + str(self.s_user_passwords) + str('\n')
         fh.write( s )
+        print( s )
 
         s = 'gv_UserTypes = ' + str(self.s_user_types) + str('\n')
         fh.write( s )
+        print( s )
 
         s = 'gv_UserDeviceMacs = ' + str(self.s_user_dev_macs) + str('\n')
         fh.write( s )
+        print( s )
 
     # ------------------------------------------------------------------------
     def gf_SaveCfg(self):

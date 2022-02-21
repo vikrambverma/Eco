@@ -286,8 +286,8 @@ class SrvUsrAppAna:
                     self.pf_Txd_Y_Response( inUsrId, i_soc_id, intype, True )
 
                 elif 3 == intype:     # req = save config and restart
-                    self.s_cfg.gf_SaveCfg()
                     self.pf_Txd_Y_Response( inUsrId, i_soc_id, intype, True )
+                    self.s_cfg.gf_SaveCfg()
                     self.s_parent_obj.s_restart()
 
                 elif 4 == intype:     # req = user and dev inactivity timeout

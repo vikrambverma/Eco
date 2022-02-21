@@ -40,10 +40,11 @@ def AppAna_Main(i_app_name):
     while False == gv_ExitApp:
         UtilAna.gf_Sleep(1)
         if True == gv_RestartApp:
+            gv_RestartApp = False
             UtilAna.gf_Sleep(5)
             s_srvapp_hndl.gf_Stop()
+            UtilAna.gf_Sleep(5)
             s_srvapp_hndl.gf_Start()
-            gv_RestartApp = False
 
     s_srvapp_hndl.gf_Stop()
      
