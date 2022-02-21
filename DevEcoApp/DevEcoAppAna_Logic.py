@@ -14,11 +14,13 @@ Licence       : MIT
 import UtilAna
 import DevEcoAppAna_CfgClass
 import TcpClientAna_ParentSocHndl
-import numpy as np
+import random
 
 gv_SmpleCount = 1024
-gv_SinTime = np.arange(0,3.14,3.14/gv_SmpleCount)
-gv_Sinwave = np.sin( gv_SinTime )
+gv_EveSmplCnt = 50
+gv_Eve1Smples = [random.randint(65270,65290) for i in range(gv_EveSmplCnt)]
+gv_Eve2Smples = [random.randint(0,1000) for i in range(gv_EveSmplCnt)]
+gv_NoiceSmples = [random.randint(31058,34478) for i in range(gv_SmpleCount)]
 
 # ============================================================================
 class RxDataFrameAna:
@@ -62,6 +64,7 @@ class DevAppAna:
         self.s_soc_max = 0
         self.s_soc_state = []
         self.s_soc_tmr = []
+        self.s_soc_event_send_tmr = []
         self.s_soc_macid = []
         self.s_soc_frame_obj = []
         self.s_out_msg_buf = bytearray(self.s_max_bufsize)
@@ -79,6 +82,7 @@ class DevAppAna:
     def pf_AddSocParam(self):
         self.s_soc_state.append(0)
         self.s_soc_tmr.append(0)
+        self.s_soc_event_send_tmr.append(0)
         self.s_soc_macid.append(0)
         self.s_soc_frame_obj.append(RxDataFrameAna(self.s_max_bufsize))
         self.s_soc_max += 1
@@ -105,20 +109,32 @@ class DevAppAna:
     
 
     # ------------------------------------------------------------------------
-    def pf_FillWave(self, t):
+    def pf_FillWave(self, i_soc_id, i_etmr):
         global gv_SmpleCount
+        global gv_NoiceSmples
+        global gv_Eve1Smples
+        global gv_Eve2Smples
         j = 13
-        t = (t+1)*20
-        m = np.random.randint(t, t+20)
-        for i in range(0,gv_SmpleCount,1):
-            # if gv_Sinwave[i] > 0:
-            #     s = gv_Sinwave[i] * m
-            # else:
-            #     s = -(gv_Sinwave[i] * m)
-            s = gv_Sinwave[i] * m
-            k = int(s) % 256
-            self.s_out_msg_buf[j] = k
-            self.s_out_msg_buf[j+1] = k
+        t = random.randint(0,1)
+        k0 = 0
+        ps = random.randint(10,gv_SmpleCount-(5*gv_EveSmplCnt))
+        pe = ps + gv_EveSmplCnt - 1
+        for i in range( 0, gv_SmpleCount, 1):
+            if i < ps or i > pe:
+                k0 = int(gv_NoiceSmples[i])
+            else:
+                if 0 ==i_etmr:
+                    if 0 == t:
+                        k0 = int(gv_Eve1Smples[i-ps])
+                    else:
+                        k0 = int(gv_Eve2Smples[i-ps])
+                else:
+                    k0 = int(gv_NoiceSmples[i])
+                
+            k1 = int( int(k0) % 256 )
+            k2 = int( int(k0) / 256 )
+            self.s_out_msg_buf[j] = k1
+            self.s_out_msg_buf[j+1] = k2
             j += 2
 
     # ------------------------------------------------------------------------
@@ -127,10 +143,10 @@ class DevAppAna:
     
 
     # ------------------------------------------------------------------------
-    def pf_SendDataFrame(self, i):
+    def pf_SendDataFrame(self, i, etmr):
         global gv_SmpleCount
         self.s_out_msg_buf[9:13] = UtilAna.gf_FillUintToBinaryLi(self.s_ticks, 4)
-        self.pf_FillWave(i)
+        self.pf_FillWave(i, etmr)
         self.pf_FillLenTypeMacCrcAndSend(i, gv_SmpleCount*2+13, 8, i)
 
     # ------------------------------------------------------------------------
@@ -205,8 +221,12 @@ class DevAppAna:
                 else:
                     m = m + 1
                     if m > 0:
-                        self.pf_SendDataFrame(i+1)
-                        m = 0
+                        etmr = self.s_soc_event_send_tmr[i]
+                        etmr = etmr + 1
+                        if etmr > (60 + random.randint(0, 60)):
+                            etmr = 0
+                        self.s_soc_event_send_tmr[i] = etmr
+                        self.pf_SendDataFrame(i+1, etmr)
                     self.s_soc_tmr[i] = m
 
     # ------------------------------------------------------------------------
