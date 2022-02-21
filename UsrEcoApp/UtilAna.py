@@ -29,6 +29,11 @@ def gf_UsrEcoAppFileNameStr(i_mm, i_ft="", i_path="."):
     return s
 
 # ============================================================================
+def gf_GetDataTimeStemp():
+    dt = datetime.now()
+    return round( dt.timestamp(), 2)
+
+# ============================================================================
 def gf_GetDataTimeStr():
     dt = datetime.now()
     s = dt.strftime("%d-%m-%Y %H:%M:%S.%f : ")
@@ -279,7 +284,8 @@ def gf_FileAna_FileLength( i_file_name ):
 def gf_FileAna_Write( i_file_hndl, i_wr_offset, i_wr_data ):
     retStatus = False
     try:
-        i_file_hndl.seek( i_wr_offset )
+        if None != i_wr_offset:
+            i_file_hndl.seek( i_wr_offset )
         i_file_hndl.write( i_wr_data )
         retStatus = True
     except Exception:

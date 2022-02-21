@@ -130,15 +130,25 @@ class UsrAppAna:
             self.s_file_mm = mm
         self.pf_OpenFileMm()
     
-    def pf_SaveEventFile(self, i_did):
+    def pf_SaveEventFile(self, i_did, i_ecnt):
         self.pf_ChkFileMm()
         if None != self.s_eventfile_hndl:
-            pass
+            ms = str(self.s_cfgNew.s_Device_MacIds[i_did])
+            mn = str(self.s_cfgNew.s_Device_Names[i_did])
+            dd = UtilAna.gf_GetDataStr()
+            dt = UtilAna.gf_GetTimeStr()
+            s = ms + "," + mn + "," + dd  + "," + dt + "," + str(i_ecnt) + "\n"
+            UtilAna.gf_FileAna_Write(self.s_eventfile_hndl, None, s)
 
     def pf_SaveDataFile(self, i_did, m):
         self.pf_ChkFileMm()
-        if None != self.s_eventfile_hndl:
-            pass
+        if None != self.s_datafile_hndl:
+            ms = str(self.s_cfgNew.s_Device_MacIds[i_did])
+            mn = str(self.s_cfgNew.s_Device_Names[i_did])
+            dd = UtilAna.gf_GetDataStr()
+            dt = UtilAna.gf_GetTimeStr()
+            s = ms + "," + mn + "," + dd  + "," + dt + "," + str(m) + "\n"
+            UtilAna.gf_FileAna_Write(self.s_datafile_hndl, None, s)
 
     # ------------------------------------------------------------------------
     def pf_IsDevMacPresent(self, i_mac):
@@ -338,6 +348,7 @@ class UsrAppAna:
         sta_cvc = self.s_cfgNew.s_Device_StaSmplCnts[i_did]
         sta_efra = self.s_cfgNew.s_Device_StaLtaRatios[i_did]
         sta_efcc = self.s_cfgNew.s_Device_StaPattnCnts[i_did]
+        eve_found = False
         
         for i in range(0, i_ds1, 1):
             z = UtilAna.gf_BinaryLiToInt( i_rcv_data[k:k+2],2 )
@@ -357,8 +368,15 @@ class UsrAppAna:
                 if z > sta_efra:
                     sta_lcesa = sta_lcesa + 1
                     if sta_lcesa == sta_efcc:
+                        eve_found = True
                         dev_eve_cnts = dev_eve_cnts + 1
-                        self.pf_SaveEventFile(i_did)
+                        tms = UtilAna.gf_GetDataTimeStemp()
+                        tmd = tms - dev_eve_times
+                        if 0 == tmd:
+                            tmd = 1
+                        dev_eve_rates = round( (3600/tmd), 3)
+                        dev_eve_times = tms
+                        self.pf_SaveEventFile(i_did, dev_eve_cnts)
                 else:
                     sta_lcesa = 0
             k += 2
@@ -373,8 +391,11 @@ class UsrAppAna:
         self.s_cfgNew.s_Device_EventCounts[i_did] = dev_eve_cnts
         self.s_cfgNew.s_Device_LastEventTimes[i_did] = dev_eve_times
         self.s_cfgNew.s_Device_LastEventRates[i_did] = dev_eve_rates
-        self.pf_SaveDataFile(i_did, m)
         self.pf_RxdSaveDeviceWaveData(i_did, m)
+        self.pf_SaveDataFile(i_did, m)
+        if True == eve_found:
+            self.s_cfgNew.s_Cfg_Change = True
+            self.s_cfgNew.gf_SaveCfg()
         
     # ------------------------------------------------------------------------
     def gf_ExeDevEveData(self, i_rcvlen, i_rcv_data):
@@ -508,6 +529,7 @@ class UsrAppAna:
         while True == self.s_rxq_thread.is_alive():
             UtilAna.gf_Sleep(1)
         self.s_rxq_thread = None
+        self.pf_CloseFileMm()
 
 # ============================================================================
 # end of file

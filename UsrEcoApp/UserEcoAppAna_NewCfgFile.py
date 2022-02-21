@@ -54,7 +54,7 @@ class CfgUserAppAna:
 
         self.s_Device_LiveDataSec = 0
         self.gf_SetDeviceLiveDataSec(10)
-        self.s_Device_HDFilePath = "."
+        self.s_Device_HDFilePath = "./.."
         self.s_Device_HDWindowSec = 0
         self.gf_SetDeviceHDWindowSec(10)
         self.s_Device_HDWStep1 = 0
