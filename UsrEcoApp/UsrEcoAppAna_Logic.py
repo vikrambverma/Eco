@@ -143,12 +143,13 @@ class UsrAppAna:
     def pf_SaveDataFile(self, i_did, m):
         self.pf_ChkFileMm()
         if None != self.s_datafile_hndl:
-            ms = str(self.s_cfgNew.s_Device_MacIds[i_did])
-            mn = str(self.s_cfgNew.s_Device_Names[i_did])
-            dd = UtilAna.gf_GetDataStr()
-            dt = UtilAna.gf_GetTimeStr()
-            s = ms + "," + mn + "," + dd  + "," + dt + "," + str(m) + "\n"
-            UtilAna.gf_FileAna_Write(self.s_datafile_hndl, None, s)
+            pass
+            # ms = str(self.s_cfgNew.s_Device_MacIds[i_did])
+            # mn = str(self.s_cfgNew.s_Device_Names[i_did])
+            # dd = UtilAna.gf_GetDataStr()
+            # dt = UtilAna.gf_GetTimeStr()
+            # s = ms + "," + mn + "," + dd  + "," + dt + "," + str(m) + "\n"
+            # UtilAna.gf_FileAna_Write(self.s_datafile_hndl, None, s)
 
     # ------------------------------------------------------------------------
     def pf_IsDevMacPresent(self, i_mac):
