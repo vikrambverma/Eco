@@ -18,8 +18,8 @@ try:
 except Exception:
     pass
 
-gv_DfltHost = '127.0.0.1'
-# gv_DfltHost = '165.22.216.99'
+# gv_DfltHost = '127.0.0.1'
+gv_DfltHost = '165.22.216.99'
 gv_DlftUserPort = 30000
 gv_DfltUserTimout = 120
 gv_DfltDevicePort = 40000
@@ -272,9 +272,12 @@ class AppConfigAna:
     # ------------------------------------------------------------------------
     def gf_SaveCfg(self):
         UtilAna.gf_DebugLog("[SAVE] : SrvEcoAppAna_CfgFile.py")
-        fh = open("SrvEcoAppAna_CfgFile.py","w+")
-        self.pf_SaveFileCfg( fh )
-        fh.close()
+        try:
+            fh = open("SrvEcoAppAna_CfgFile.py","w+")
+            self.pf_SaveFileCfg( fh )
+            fh.close()
+        except Exception:
+            UtilAna.gf_DebugLog("[SAVE FAILED] : SrvEcoAppAna_CfgFile.py")
         
     # ------------------------------------------------------------------------
     def gf_GetMacIdToUserIdList(self, i_mac_id):
