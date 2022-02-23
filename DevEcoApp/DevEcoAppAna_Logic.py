@@ -16,11 +16,21 @@ import DevEcoAppAna_CfgClass
 import TcpClientAna_ParentSocHndl
 import random
 
+# (0, 65535)
+gv_E1M = 60000
+gv_E1R = 5000
+
+gv_E2M = 5000
+gv_E2R = 5000
+
+gv_NM = 32767
+gv_NR = 2000
+
 gv_SmpleCount = 1024
-gv_EveSmplCnt = 50
-gv_Eve1Smples = [random.randint(65270,65290) for i in range(gv_EveSmplCnt)]
-gv_Eve2Smples = [random.randint(0,1000) for i in range(gv_EveSmplCnt)]
-gv_NoiceSmples = [random.randint(31058,34478) for i in range(gv_SmpleCount)]
+gv_EveSmplCnt = 100
+gv_Eve1Smples = [random.randint(gv_E1M-gv_E1R,gv_E1M+gv_E1R) for i in range(gv_EveSmplCnt)]
+gv_Eve2Smples = [random.randint(gv_E2M-gv_E2R,gv_E2M+gv_E2R) for i in range(gv_EveSmplCnt)]
+gv_NoiceSmples = [random.randint(gv_NM-gv_NR,gv_NM+gv_NR) for i in range(gv_SmpleCount)]
 
 # ============================================================================
 class RxDataFrameAna:
@@ -117,7 +127,7 @@ class DevAppAna:
         j = 13
         t = random.randint(0,1)
         k0 = 0
-        ps = random.randint(10,gv_SmpleCount-(5*gv_EveSmplCnt))
+        ps = random.randint(0,(gv_SmpleCount-gv_EveSmplCnt))
         pe = ps + gv_EveSmplCnt - 1
         for i in range( 0, gv_SmpleCount, 1):
             if i < ps or i > pe:
