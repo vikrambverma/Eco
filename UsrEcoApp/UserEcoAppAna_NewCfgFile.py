@@ -26,7 +26,7 @@ class CfgUserAppAna:
     # ------------------------------------------------------------------------
     def __init__(self):
         self.s_User_DeviceMaxAllowed = 16
-        self.s_UserSelfId = 1
+        self.s_UserSelfId = 2
         
         self.s_FileSave_MaxDurationMin = 15
         self.s_FileData_SecMaxAllowed = self.s_FileSave_MaxDurationMin * 60
