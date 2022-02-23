@@ -229,53 +229,56 @@ class AppConfigAna:
     
     # ------------------------------------------------------------------------
     def pf_SaveFileCfg(self, fh):
-        s = "gv_Host = '" + self.s_host + str("'\n")
-        fh.write( s )
-        UtilAna.gf_DebugLog( s )
+        try:
+            s = "gv_Host = '" + self.s_host + str("'\n")
+            fh.write( s )
+            UtilAna.gf_DebugLog( s )
 
-        s = 'gv_UserPort = ' + str(self.s_user_port) + str('\n')
-        fh.write( s )
-        UtilAna.gf_DebugLog( s )
+            s = 'gv_UserPort = ' + str(self.s_user_port) + str('\n')
+            fh.write( s )
+            UtilAna.gf_DebugLog( s )
 
-        s = 'gv_UserTimeout = ' + str(self.s_user_timeout) + str('\n')
-        fh.write( s )
-        UtilAna.gf_DebugLog( s )
+            s = 'gv_UserTimeout = ' + str(self.s_user_timeout) + str('\n')
+            fh.write( s )
+            UtilAna.gf_DebugLog( s )
 
-        s = 'gv_DevicePort = ' + str(self.s_device_port) + str('\n')
-        fh.write( s )
-        UtilAna.gf_DebugLog( s )
+            s = 'gv_DevicePort = ' + str(self.s_device_port) + str('\n')
+            fh.write( s )
+            UtilAna.gf_DebugLog( s )
 
-        s = 'gv_DeviceTimeout = ' + str(self.s_device_timeout) + str('\n')
-        fh.write( s )
-        UtilAna.gf_DebugLog( s )
+            s = 'gv_DeviceTimeout = ' + str(self.s_device_timeout) + str('\n')
+            fh.write( s )
+            UtilAna.gf_DebugLog( s )
 
-        s = 'gv_UserIds = ' + str(self.s_user_ids) + str('\n')
-        fh.write( s )
-        UtilAna.gf_DebugLog( s )
+            s = 'gv_UserIds = ' + str(self.s_user_ids) + str('\n')
+            fh.write( s )
+            UtilAna.gf_DebugLog( s )
 
-        s = 'gv_UserNames = ' + str(self.s_user_names) + str('\n')
-        fh.write( s )
-        UtilAna.gf_DebugLog( s )
+            s = 'gv_UserNames = ' + str(self.s_user_names) + str('\n')
+            fh.write( s )
+            UtilAna.gf_DebugLog( s )
 
-        s = 'gv_UserPasswords = ' + str(self.s_user_passwords) + str('\n')
-        fh.write( s )
-        UtilAna.gf_DebugLog( s )
+            s = 'gv_UserPasswords = ' + str(self.s_user_passwords) + str('\n')
+            fh.write( s )
+            UtilAna.gf_DebugLog( s )
 
-        s = 'gv_UserTypes = ' + str(self.s_user_types) + str('\n')
-        fh.write( s )
-        UtilAna.gf_DebugLog( s )
+            s = 'gv_UserTypes = ' + str(self.s_user_types) + str('\n')
+            fh.write( s )
+            UtilAna.gf_DebugLog( s )
 
-        s = 'gv_UserDeviceMacs = ' + str(self.s_user_dev_macs) + str('\n')
-        fh.write( s )
-        UtilAna.gf_DebugLog( s )
+            s = 'gv_UserDeviceMacs = ' + str(self.s_user_dev_macs) + str('\n')
+            fh.write( s )
+            UtilAna.gf_DebugLog( s )
+        except Exception:
+            pass
 
     # ------------------------------------------------------------------------
     def gf_SaveCfg(self):
-        UtilAna.gf_DebugLog("[SAVE] : SrvEcoAppAna_CfgFile.py")
         try:
             fh = open("SrvEcoAppAna_CfgFile.py","w+")
             self.pf_SaveFileCfg( fh )
             fh.close()
+            UtilAna.gf_DebugLog("[SAVE OK] : SrvEcoAppAna_CfgFile.py")
         except Exception:
             UtilAna.gf_DebugLog("[SAVE FAILED] : SrvEcoAppAna_CfgFile.py")
         
