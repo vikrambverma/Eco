@@ -309,5 +309,72 @@ def gf_FileAna_Read( i_file_hndl, i_rd_offset, i_rd_cnt ):
     return ( retSts, rdcnt, rddata )
 
 # ============================================================================
+def gf_Get_HexStrToInt( i_str, i_bytes = None ):
+    v = 0
+    c = 0
+
+    m = bytearray(i_str, 'utf-8')
+    ln = len(m)
+
+    if None != i_bytes:
+        if i_bytes != ln:
+            return v
+
+    for i in range(0, ln, 1):
+        c = m[i]
+        v = v * 16
+        if (c > 47) and (c < 58):
+            v = v + c - 48
+        elif (c > 64) and (c < 71):
+            v = v + c + 10 - 65
+        elif (c > 96) and (c < 103):
+            v = v + c + 10 - 97
+        else:
+            v = 0
+            break
+    return v
+
+# ============================================================================
+def gf_Get_IntToHexStr( i_val, i_bytes = None ):
+    m = ['0', '1', '2', '3','4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F']
+    s = ""
+    t = 1
+    if None == i_bytes:
+        i_bytes = 1
+   
+    for i in range(0, i_bytes, 1):
+        t = t * 16
+        
+    i_val = i_val % t
+    for i in range(0, i_bytes, 1):
+        k = t / 16
+        v = int(i_val / k)
+        i_val = i_val % k
+        t = k
+        s = s + m[v]
+    return s
+
+# ---------------------------------------------------------------------------
+def pf_Get_StrToInt( i_str ):
+    rsts = True
+    v = 0
+    m = bytearray(i_str, 'utf-8')
+    
+    for i in range(0, len(m), 1):
+        t = m[i]
+        if t < 58:
+            if t > 47:
+                t = t - 48
+                v = v * 10 + t
+            else:
+                rsts = False
+        else:
+            rsts = False
+    
+    if False == rsts:
+        v = 0
+    return v
+
+# ============================================================================
 # end of file
 

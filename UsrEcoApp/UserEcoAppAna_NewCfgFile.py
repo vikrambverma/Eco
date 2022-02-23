@@ -46,7 +46,7 @@ class CfgUserAppAna:
         self.s_Admin_LoginPwd = 'adminpwd'
         self.s_Admin_Name = "admin-1"
 
-        self.s_RemoteHost_IP = '127.0.0.1'
+        self.s_RemoteHost_IP = '165.22.216.99'
         self.s_RemoteHost_Port = 0
         self.gf_SetRemoteHostPort(30000)
         self.s_RemoteHost_InactivitySec = 0

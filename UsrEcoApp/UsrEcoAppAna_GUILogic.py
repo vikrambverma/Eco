@@ -645,7 +645,7 @@ class Page_ADMIN_SET2(tk.Frame):
         c.gf_LoadCfg()
         
         for i in range(0, c.s_User_DeviceMaxAllowed):
-            self.s_dev_mac[i].set( str(c.s_Device_MacIds[i]) )
+            self.s_dev_mac[i].set( UtilAna.gf_Get_IntToHexStr(c.s_Device_MacIds[i], 12) )
             self.s_dev_name[i].set( c.s_Device_Names[i] )
             self.s_dev_ldvenabled[i].set( str(c.s_Device_LDVEnableds[i]) )
             self.s_dev_stasmplcnt[i].set( str(c.gf_GetDeviceStaSmplCnt(i)) )
@@ -656,7 +656,7 @@ class Page_ADMIN_SET2(tk.Frame):
         c = self.s_controller.s_Cfg
 
         for i in range(0, self.s_controller.s_Cfg.s_User_DeviceMaxAllowed):
-            c.gf_SetDeviceMacId( i, pf_GetInegerEntryy( self.s_dev_mac[i].get() ) )
+            c.gf_SetDeviceMacId( i, UtilAna.gf_Get_HexStrToInt( self.s_dev_mac[i].get(), 12 ) )
             c.gf_SetDeviceName( i, self.s_dev_name[i].get() )
             c.gf_SetDeviceLDVEnabled( i, pf_GetInegerEntryy( self.s_dev_ldvenabled[i].get() ) )
             c.gf_SetDeviceStaSmplCnt( i, pf_GetInegerEntryy( self.s_dev_stasmplcnt[i].get() ) )
