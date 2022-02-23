@@ -18,16 +18,65 @@ import socket
 import os
 
 # ============================================================================
+def gf_UsrEcoAppFileNameStr(i_mm, i_ft="", i_path="."):
+    dt = datetime.now()
+    s = dt.strftime(i_path + "/%d_%m_%Y")
+    try:
+        os.mkdir( s )
+    except Exception:
+        None
+    s = s + "/" + i_ft + dt.strftime("%d_%m_%Y_%H_") + str(i_mm) + ".txt"
+    return s
+
+# ============================================================================
+def gf_GetDataTimeStemp():
+    dt = datetime.now()
+    return round( dt.timestamp(), 2)
+
+# ============================================================================
 def gf_GetDataTimeStr():
     dt = datetime.now()
     s = dt.strftime("%d-%m-%Y %H:%M:%S.%f : ")
     return s
 
+# ============================================================================
+def gf_GetDataStr( i_type = '-' ):
+    s = ""
+    dt = datetime.now()
+    if '_' == i_type:
+        s = dt.strftime("%d_%m_%Y")
+    elif '\\' == i_type:
+        s = dt.strftime("%d\%m\%Y")
+    elif '/' == i_type:
+        s = dt.strftime("%d/%m/%Y")
+    else:
+        s = dt.strftime("%d-%m-%Y")
+    return s
+
+# ============================================================================
+def gf_GetNowMinutes():
+    dt = datetime.now()
+    return dt.minute
+
+# ============================================================================
+def gf_GetTimeStr( i_type = ':' ):
+    s = ""
+    dt = datetime.now()
+    if '_' == i_type:
+        s = dt.strftime("%H_%M_%S")
+    if '-' == i_type:
+        s = dt.strftime("%H-%M-%S")
+    else:
+        s = dt.strftime("%H:%M:%S")
+    return s
 
 # ============================================================================
 def gf_DebugLog(i_msg):
     s = gf_GetDataTimeStr() + i_msg
-    print( s )
+    try:
+        print( s )
+    except Exception:
+        pass
 
         
 # ============================================================================
@@ -209,9 +258,9 @@ def gf_RxdSocketAna(i_sock):
 # ============================================================================
 # File Functions
 # ============================================================================
-def gf_FileAna_Open( i_file_name ):
+def gf_FileAna_Open( i_file_name, i_mode ):
     try:
-        f = open( i_file_name, 'r+b')
+        f = open( i_file_name, i_mode )
         return f
     except Exception:
         gf_DebugLog( "File open fails : " + i_file_name )
@@ -238,7 +287,8 @@ def gf_FileAna_FileLength( i_file_name ):
 def gf_FileAna_Write( i_file_hndl, i_wr_offset, i_wr_data ):
     retStatus = False
     try:
-        i_file_hndl.seek( i_wr_offset )
+        if None != i_wr_offset:
+            i_file_hndl.seek( i_wr_offset )
         i_file_hndl.write( i_wr_data )
         retStatus = True
     except Exception:
@@ -262,5 +312,71 @@ def gf_FileAna_Read( i_file_hndl, i_rd_offset, i_rd_cnt ):
     return ( retSts, rdcnt, rddata )
 
 # ============================================================================
-# end of file
+def gf_Get_HexStrToInt( i_str, i_bytes = None ):
+    v = 0
+    c = 0
 
+    m = bytearray(i_str, 'utf-8')
+    ln = len(m)
+
+    if None != i_bytes:
+        if i_bytes != ln:
+            return v
+
+    for i in range(0, ln, 1):
+        c = m[i]
+        v = v * 16
+        if (c > 47) and (c < 58):
+            v = v + c - 48
+        elif (c > 64) and (c < 71):
+            v = v + c + 10 - 65
+        elif (c > 96) and (c < 103):
+            v = v + c + 10 - 97
+        else:
+            v = 0
+            break
+    return v
+
+# ============================================================================
+def gf_Get_IntToHexStr( i_val, i_bytes = None ):
+    m = ['0', '1', '2', '3','4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F']
+    s = ""
+    t = 1
+    if None == i_bytes:
+        i_bytes = 1
+   
+    for i in range(0, i_bytes, 1):
+        t = t * 16
+        
+    i_val = i_val % t
+    for i in range(0, i_bytes, 1):
+        k = t / 16
+        v = int(i_val / k)
+        i_val = i_val % k
+        t = k
+        s = s + m[v]
+    return s
+
+# ---------------------------------------------------------------------------
+def pf_Get_StrToInt( i_str ):
+    rsts = True
+    v = 0
+    m = bytearray(i_str, 'utf-8')
+    
+    for i in range(0, len(m), 1):
+        t = m[i]
+        if t < 58:
+            if t > 47:
+                t = t - 48
+                v = v * 10 + t
+            else:
+                rsts = False
+        else:
+            rsts = False
+    
+    if False == rsts:
+        v = 0
+    return v
+
+# ============================================================================
+# end of file
