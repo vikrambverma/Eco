@@ -16,22 +16,6 @@ import DevEcoAppAna_CfgClass
 import TcpClientAna_ParentSocHndl
 import random
 
-# (0, 65535)
-gv_E1M = 60000
-gv_E1R = 5000
-
-gv_E2M = 5000
-gv_E2R = 5000
-
-gv_NM = 32767
-gv_NR = 2000
-
-gv_SmpleCount = 1024
-gv_EveSmplCnt = 100
-gv_Eve1Smples = [random.randint(gv_E1M-gv_E1R,gv_E1M+gv_E1R) for i in range(gv_EveSmplCnt)]
-gv_Eve2Smples = [random.randint(gv_E2M-gv_E2R,gv_E2M+gv_E2R) for i in range(gv_EveSmplCnt)]
-gv_NoiceSmples = [random.randint(gv_NM-gv_NR,gv_NM+gv_NR) for i in range(gv_SmpleCount)]
-
 # ============================================================================
 class RxDataFrameAna:
     def __init__(self, i_max_size):
@@ -120,26 +104,22 @@ class DevAppAna:
 
     # ------------------------------------------------------------------------
     def pf_FillWave(self, i_soc_id, i_etmr):
-        global gv_SmpleCount
-        global gv_NoiceSmples
-        global gv_Eve1Smples
-        global gv_Eve2Smples
         j = 13
         t = random.randint(0,1)
         k0 = 0
-        ps = random.randint(0,(gv_SmpleCount-gv_EveSmplCnt))
-        pe = ps + gv_EveSmplCnt - 1
-        for i in range( 0, gv_SmpleCount, 1):
+        ps = random.randint(0,(self.s_cfg.s_total_smpl_cnt-self.s_cfg.s_event_smpl_cnt))
+        pe = ps + self.s_cfg.s_event_smpl_cnt - 1
+        for i in range( 0, self.s_cfg.s_total_smpl_cnt, 1):
             if i < ps or i > pe:
-                k0 = int(gv_NoiceSmples[i])
+                k0 = int(self.s_cfg.s_noic_smpls[i])
             else:
                 if 0 ==i_etmr:
                     if 0 == t:
-                        k0 = int(gv_Eve1Smples[i-ps])
+                        k0 = int(self.s_cfg.s_eve1_smpls[i-ps])
                     else:
-                        k0 = int(gv_Eve2Smples[i-ps])
+                        k0 = int(self.s_cfg.s_eve2_smpls[i-ps])
                 else:
-                    k0 = int(gv_NoiceSmples[i])
+                    k0 = int(self.s_cfg.s_noic_smpls[i])
                 
             k1 = int( int(k0) % 256 )
             k2 = int( int(k0) / 256 )
@@ -157,7 +137,7 @@ class DevAppAna:
         global gv_SmpleCount
         self.s_out_msg_buf[9:13] = UtilAna.gf_FillUintToBinaryLi(self.s_ticks, 4)
         self.pf_FillWave(i, etmr)
-        self.pf_FillLenTypeMacCrcAndSend(i, gv_SmpleCount*2+13, 8, i)
+        self.pf_FillLenTypeMacCrcAndSend(i, ((self.s_cfg.s_total_smpl_cnt*2)+13), 8, i)
 
     # ------------------------------------------------------------------------
     def pf_ExeCmds(self, i_soc_id, i_data):
