@@ -18,8 +18,7 @@ try:
 except Exception:
     pass
 
-# gv_DfltHost = '127.0.0.1'
-gv_DfltHost = '165.22.216.99'
+gv_DfltHost = '127.0.0.1'
 gv_DlftUserPort = 30000
 gv_DfltUserTimout = 120
 gv_DfltDevicePort = 40000
@@ -302,4 +301,3 @@ class AppConfigAna:
 
 # ============================================================================
 # end of file
-
