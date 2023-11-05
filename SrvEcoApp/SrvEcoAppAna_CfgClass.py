@@ -24,11 +24,11 @@ gv_DfltUserTimout = 120
 gv_DfltDevicePort = 40000
 gv_DlftDeviceTimout = 11
 
-gv_DfltUserName = 'admin'
-gv_DfltUserPassword = 'admin@1234'
-gv_DfltUserId = 1 # dont change this
-gv_DfltUserType = 'admin' # dont change this
-gv_DfltUserDeviceMacs = [1,2]
+gv_DfltUserNames = ['admin','user1']
+gv_DfltUserPasswords = ['admin@1234','user1@1234']
+gv_DfltUserIds = [1,2] # dont change this
+gv_DfltUserTypes = ['admin','user'] # dont change this
+gv_DfltUserDeviceMacs = [[1,2],[1,2]]
 
 # ============================================================================
 class AppConfigAna:
@@ -126,24 +126,24 @@ class AppConfigAna:
 
     def gf_SetUserName(self, i_usr_offset, i_usr_name):
         if i_usr_offset < self.s_user_max_cnt:
-            if gv_DfltUserId == self.s_user_ids[i_usr_offset]:
-                i_usr_name = gv_DfltUserName
+            if gv_DfltUserIds[0] == self.s_user_ids[i_usr_offset]:
+                i_usr_name = gv_DfltUserNames[0]
             self.s_user_names[i_usr_offset] = i_usr_name
             return True
         return False
 
     def gf_SetUserPassward(self, i_usr_offset, i_usr_passward):
         if i_usr_offset < self.s_user_max_cnt:
-            # if gv_DfltUserId == self.s_user_ids[i_usr_offset]:
-            #     i_usr_passward = gv_DfltUserName
+            # if gv_DfltUserIds[0] == self.s_user_ids[i_usr_offset]:
+            #      i_usr_passward = gv_DfltUserPasswords[0]
             self.s_user_passwords[i_usr_offset] = i_usr_passward
             return True
         return False
 
     def gf_SetUserType(self, i_usr_offset, i_usr_type):
         if i_usr_offset < self.s_user_max_cnt:
-            if gv_DfltUserId == self.s_user_ids[i_usr_offset]:
-                i_usr_type = gv_DfltUserType
+            if gv_DfltUserIds[0] == self.s_user_ids[i_usr_offset]:
+                i_usr_type = gv_DfltUserTypes[0]
             self.s_user_types[i_usr_offset] = i_usr_type
             return True
         return False
@@ -178,11 +178,17 @@ class AppConfigAna:
     # ------------------------------------------------------------------------
     def pf_SetDfltUser(self):
         self.pf_SetUserAllInfo(0,
-                               gv_DfltUserId,
-                               gv_DfltUserName,
-                               gv_DfltUserPassword,
-                               gv_DfltUserType,
-                               gv_DfltUserDeviceMacs)
+                               gv_DfltUserIds[0],
+                               gv_DfltUserNames[0],
+                               gv_DfltUserPasswords[0],
+                               gv_DfltUserTypes[0],
+                               gv_DfltUserDeviceMacs[0])
+        self.pf_SetUserAllInfo(1,
+                               gv_DfltUserIds[1],
+                               gv_DfltUserNames[1],
+                               gv_DfltUserPasswords[1],
+                               gv_DfltUserTypes[1],
+                               gv_DfltUserDeviceMacs[1])
 
     # ------------------------------------------------------------------------
     def gf_LoadConfig(self):
@@ -214,7 +220,7 @@ class AppConfigAna:
             if len(u) == len(n) == len(p) == len(t):
                 for i in range( 0, len(u) ):
                     self.pf_SetUserAllInfo(i, u[i], n[i], p[i], u[i], d[i])
-                if self.s_user_dev_max == self.pf_IsUserIdPresent( gv_DfltUserId ):
+                if self.s_user_dev_max == self.pf_IsUserIdPresent( gv_DfltUserIds[0] ):
                     self.pf_SetDfltUser()
                     save_req = True
             else:
