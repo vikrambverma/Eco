@@ -514,6 +514,9 @@ class Page_ADMIN_SET1(tk.Frame):
         self.s_dev_hdwinsec, self.s_dev_hdstep1, self.s_dev_hdstep2, v4, v5, v6, v7 = pf_GuiLibAdd_LabelEntry_TxtVarThree(self, 0.05, ry, 0.20, rh, 0.20, 0.20, 0.20, "History Data View ( Window, Step1, Step2 ) :")
 
         ry = ry + 0.04
+        self.s_dev_samplespersec, v2, v3 = pf_GuiLibAdd_LabelEntry_TxtVarOne(self, 0.05, ry, 0.20, rh, 0.60, 'Device Samples / sec :')
+
+        ry = ry + 0.04
         self.s_save_button = tk.Button(self, text="Save", command=self.pf_SaveSubmit)
         self.s_save_button.place(relx=0.30, rely=ry, relwidth=0.09, relheight=rh)
         self.s_close_button = tk.Button(self, text="Close", command=lambda:self.s_controller.pf_ShowPage(Page_None) )
@@ -563,6 +566,7 @@ class Page_ADMIN_SET1(tk.Frame):
         self.s_dev_hdwinsec.set( str(c.s_Device_HDWindowSec) )
         self.s_dev_hdstep1.set( str(c.s_Device_HDWStep1) )
         self.s_dev_hdstep2.set( str(c.s_Device_HDWStep2) )
+        self.s_dev_samplespersec.set( str(c.s_Device_SamplePerSec) )
 
     def pf_SaveSubmit(self):
         c = self.s_controller.s_Cfg
@@ -586,6 +590,7 @@ class Page_ADMIN_SET1(tk.Frame):
         c.gf_SetDeviceHDWindowSec( pf_GetInegerEntryy( self.s_dev_hdwinsec.get() ) )
         c.gf_SetDeviceHDWStep1( pf_GetInegerEntryy( self.s_dev_hdstep1.get() ) )
         c.gf_SetDeviceHDWStep2( pf_GetInegerEntryy( self.s_dev_hdstep2.get() ) )
+        c.gf_SetDeviceSamplesPerSec( pf_GetInegerEntryy( self.s_dev_samplespersec.get() ) )
 
         c.gf_SaveCfg()
         self.pf_Update()

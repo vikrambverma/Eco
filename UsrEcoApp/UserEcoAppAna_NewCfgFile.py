@@ -35,18 +35,18 @@ class CfgUserAppAna:
  
         self.s_Cfg_Change = False
         
-        self.s_Customer_Name = "MAPS Technologies"
-        self.s_Customer_Site = "Officers Campus Extension, Jaipur"
+        self.s_Customer_Name = ""
+        self.s_Customer_Site = ""
 
-        self.s_User_LoginId = 'user'
-        self.s_User_LoginPwd = 'userpwd'
-        self.s_User_Name = "user-1"
+        self.s_User_LoginId = ''
+        self.s_User_LoginPwd = ''
+        self.s_User_Name = ""
 
-        self.s_Admin_LoginId = 'admin'
-        self.s_Admin_LoginPwd = 'adminpwd'
-        self.s_Admin_Name = "admin-1"
+        self.s_Admin_LoginId = ''
+        self.s_Admin_LoginPwd = ''
+        self.s_Admin_Name = ""
 
-        self.s_RemoteHost_IP = '165.22.216.99'
+        self.s_RemoteHost_IP = '127.0.0.1'
         self.s_RemoteHost_Port = 0
         self.gf_SetRemoteHostPort(30000)
         self.s_RemoteHost_InactivitySec = 0
@@ -141,6 +141,13 @@ class CfgUserAppAna:
             self.s_Cfg_Change = True
 
     # ---------------------------------------------------------------------------
+    def gf_SetDeviceSamplesPerSec(self, i_smpl):
+        if i_smpl != self.s_Device_SamplePerSec:
+            if i_smpl < 2:
+                i_smpl = 2
+            self.s_Device_SamplePerSec = i_smpl
+            self.s_Cfg_Change = True
+
     def gf_SetDeviceLiveDataSec(self, i_sec):
         if i_sec != self.s_Device_LiveDataSec:
             if i_sec < 2 or i_sec > 25:
@@ -326,6 +333,11 @@ class CfgUserAppAna:
 
 
                     try:
+                        self.gf_SetDeviceSamplesPerSec( GuiCfgFile.s_Device_SamplesPerSec )
+                    except Exception:
+                        fb = True
+
+                    try:
                         self.gf_SetDeviceLiveDataSec( GuiCfgFile.s_Device_LiveDataSec )
                     except Exception:
                         fb = True
@@ -412,6 +424,8 @@ class CfgUserAppAna:
             s = "s_Device_HDWStep1 = " + str( self.s_Device_HDWStep1 ) + "\n"
             fh.write( s )
             s = "s_Device_HDWStep2 = " + str( self.s_Device_HDWStep2 ) + "\n"
+            fh.write( s )
+            s = "s_Device_SamplePerSec = " + str( self.s_Device_SamplePerSec ) + "\n"
             fh.write( s )
         
             s = "s_Device_MacIds = " + str( self.s_Device_MacIds ) + "\n"
