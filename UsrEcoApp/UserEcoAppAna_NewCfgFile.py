@@ -65,6 +65,8 @@ class CfgUserAppAna:
         self.s_Device_MacIds = [i+1 for i in range(0, self.s_User_DeviceMaxAllowed, 1) ]
         self.s_Device_Names = ['CH-'+str(i+1) for i in range(0, self.s_User_DeviceMaxAllowed, 1) ]
         self.s_Device_LDVEnableds = [0 for i in range(0, self.s_User_DeviceMaxAllowed, 1) ]
+        self.s_Device_LDVEnableds[0] = 1
+        self.s_Device_LDVEnableds[1] = 1
         self.s_Device_EventCounts = [0 for i in range(0, self.s_User_DeviceMaxAllowed, 1) ]
         self.s_Device_LastEventTimes = [0 for i in range(0, self.s_User_DeviceMaxAllowed, 1) ]
         self.s_Device_LastEventRates = [0 for i in range(0, self.s_User_DeviceMaxAllowed, 1)  ]
